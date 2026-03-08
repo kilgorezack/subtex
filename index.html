@@ -223,7 +223,7 @@
     .btn-ghost svg { transition: transform 0.2s; }
     .btn-ghost:hover svg { transform: translateX(3px); }
 
-    /* Phone mockup */
+    /* Phone mockup image */
     .hero-visual {
       display: flex;
       justify-content: center;
@@ -231,145 +231,11 @@
       position: relative;
     }
 
-    .phone-shell {
-      width: 260px;
-      height: 520px;
-      background: linear-gradient(160deg, #1a4366 0%, #0d2133 100%);
-      border-radius: 36px;
-      border: 2px solid rgba(195,216,209,0.15);
-      position: relative;
-      box-shadow:
-        0 40px 80px rgba(0,0,0,0.4),
-        0 0 0 1px rgba(255,255,255,0.04),
-        inset 0 1px 0 rgba(255,255,255,0.08);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .phone-notch {
-      width: 90px;
-      height: 24px;
-      background: #0d2133;
-      border-radius: 0 0 16px 16px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .phone-screen {
-      flex: 1;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .phone-ui-header {
-      text-align: center;
-      padding-top: 4px;
-    }
-
-    .phone-ui-title {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #fff;
-    }
-
-    .phone-ui-sub {
-      font-size: 9px;
-      color: rgba(195,216,209,0.6);
-      letter-spacing: 0.08em;
-      margin-top: 2px;
-    }
-
-    .phone-qr {
-      background: rgba(195,216,209,0.06);
-      border: 1px solid rgba(195,216,209,0.12);
-      border-radius: 12px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      flex: 1;
-    }
-
-    .qr-grid {
-      width: 100px;
-      height: 100px;
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 2px;
-    }
-
-    .qr-cell {
-      border-radius: 1px;
-      background: rgba(195,216,209,0.15);
-    }
-
-    .qr-cell.on { background: var(--marigold); }
-    .qr-cell.corner { background: var(--celeste); border-radius: 2px; }
-
-    .qr-label {
-      font-size: 8px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(195,216,209,0.5);
-    }
-
-    .phone-contacts {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .phone-contact-chip {
-      background: rgba(245,171,98,0.1);
-      border: 1px solid rgba(245,171,98,0.2);
-      border-radius: 8px;
-      padding: 8px 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .contact-avatar {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: var(--herb);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 9px;
-      font-weight: 700;
-      color: #fff;
-      flex-shrink: 0;
-    }
-
-    .contact-info { flex: 1; }
-
-    .contact-name {
-      font-size: 9px;
-      font-weight: 700;
-      color: var(--celeste);
-      letter-spacing: 0.04em;
-    }
-
-    .contact-tag {
-      font-size: 8px;
-      color: rgba(195,216,209,0.5);
-    }
-
-    .contact-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--marigold);
+    .hero-phone-img {
+      width: 480px;
+      max-width: 100%;
+      display: block;
+      mix-blend-mode: screen;
     }
 
     /* floating accent dots */
@@ -899,7 +765,7 @@
       .hero-actions { justify-content: center; }
 
       .hero-visual { order: -1; }
-      .phone-shell { width: 200px; height: 400px; }
+      .hero-phone-img { width: 320px; }
 
       .section { padding: 72px 24px; }
 
@@ -978,97 +844,7 @@
       <div class="hero-visual">
         <div class="hero-dot hero-dot-1"></div>
         <div class="hero-dot hero-dot-2"></div>
-        <div class="phone-shell">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="phone-ui-header">
-              <div class="phone-ui-title">Subtex.</div>
-              <div class="phone-ui-sub">Your QR Code</div>
-            </div>
-            <div class="phone-qr">
-              <!-- Stylized QR pattern -->
-              <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Corner squares -->
-                <rect x="4" y="4" width="30" height="30" rx="4" fill="rgba(195,216,209,0.15)"/>
-                <rect x="8" y="8" width="22" height="22" rx="2" fill="#f5ab62" opacity="0.8"/>
-                <rect x="76" y="4" width="30" height="30" rx="4" fill="rgba(195,216,209,0.15)"/>
-                <rect x="80" y="8" width="22" height="22" rx="2" fill="#f5ab62" opacity="0.8"/>
-                <rect x="4" y="76" width="30" height="30" rx="4" fill="rgba(195,216,209,0.15)"/>
-                <rect x="8" y="80" width="22" height="22" rx="2" fill="#f5ab62" opacity="0.8"/>
-                <!-- Inner corner dots -->
-                <rect x="14" y="14" width="10" height="10" rx="1" fill="#024466"/>
-                <rect x="86" y="14" width="10" height="10" rx="1" fill="#024466"/>
-                <rect x="14" y="86" width="10" height="10" rx="1" fill="#024466"/>
-                <!-- Data cells -->
-                <rect x="42" y="4" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.5"/>
-                <rect x="52" y="4" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.3"/>
-                <rect x="62" y="4" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.6"/>
-                <rect x="42" y="14" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.4"/>
-                <rect x="52" y="14" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.6"/>
-                <rect x="62" y="14" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.3"/>
-                <rect x="42" y="24" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.7"/>
-                <rect x="52" y="24" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.2"/>
-                <rect x="62" y="24" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.4"/>
-                <rect x="4"  y="42" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.6"/>
-                <rect x="14" y="42" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.4"/>
-                <rect x="24" y="42" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.3"/>
-                <rect x="4"  y="52" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.2"/>
-                <rect x="14" y="52" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.5"/>
-                <rect x="24" y="52" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.5"/>
-                <rect x="4"  y="62" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.3"/>
-                <rect x="14" y="62" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.4"/>
-                <rect x="24" y="62" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.6"/>
-                <rect x="42" y="42" width="26" height="26" rx="4" fill="rgba(245,171,98,0.08)" stroke="rgba(245,171,98,0.2)" stroke-width="1"/>
-                <rect x="49" y="49" width="12" height="12" rx="2" fill="#f5ab62" opacity="0.7"/>
-                <rect x="76" y="42" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.5"/>
-                <rect x="86" y="42" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.4"/>
-                <rect x="96" y="42" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.6"/>
-                <rect x="76" y="52" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.3"/>
-                <rect x="86" y="52" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.4"/>
-                <rect x="96" y="52" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.5"/>
-                <rect x="76" y="62" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.6"/>
-                <rect x="86" y="62" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.5"/>
-                <rect x="96" y="62" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.2"/>
-                <rect x="42" y="76" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.4"/>
-                <rect x="52" y="76" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.5"/>
-                <rect x="62" y="76" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.3"/>
-                <rect x="76" y="76" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.6"/>
-                <rect x="86" y="76" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.3"/>
-                <rect x="96" y="76" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.5"/>
-                <rect x="42" y="86" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.3"/>
-                <rect x="52" y="86" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.5"/>
-                <rect x="62" y="86" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.4"/>
-                <rect x="76" y="86" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.4"/>
-                <rect x="86" y="86" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.6"/>
-                <rect x="96" y="86" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.3"/>
-                <rect x="42" y="96" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.6"/>
-                <rect x="52" y="96" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.3"/>
-                <rect x="62" y="96" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.5"/>
-                <rect x="76" y="96" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.4"/>
-                <rect x="86" y="96" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.3"/>
-                <rect x="96" y="96" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.6"/>
-              </svg>
-              <div class="qr-label">Tap to share</div>
-            </div>
-            <div class="phone-contacts">
-              <div class="phone-contact-chip">
-                <div class="contact-avatar">JL</div>
-                <div class="contact-info">
-                  <div class="contact-name">Jamie L.</div>
-                  <div class="contact-tag">Product · Panel Q&amp;A</div>
-                </div>
-                <div class="contact-dot"></div>
-              </div>
-              <div class="phone-contact-chip">
-                <div class="contact-avatar" style="background: #024466;">MR</div>
-                <div class="contact-info">
-                  <div class="contact-name">Marcus R.</div>
-                  <div class="contact-tag">Investor · Seed stage</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img src="images/hero-mockup.jpg" alt="Subtex app showing Cards screen" class="hero-phone-img" />
       </div>
     </div>
   </section>
