@@ -231,11 +231,28 @@
       position: relative;
     }
 
+    /* Near-black absorber behind the image prevents the dark-blue hero
+       from bleeding through the screen blend and tinting the phone */
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      background: radial-gradient(ellipse 90% 100% at center, #000 0%, #000 35%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
     .hero-phone-img {
-      width: 480px;
+      /* Fill the column and crop portrait — zooms into the phone */
+      width: 510px;
+      height: 620px;
       max-width: 100%;
+      object-fit: cover;
+      object-position: center center;
       display: block;
       mix-blend-mode: screen;
+      position: relative;
+      z-index: 1;
     }
 
     /* floating accent dots */
@@ -765,7 +782,7 @@
       .hero-actions { justify-content: center; }
 
       .hero-visual { order: -1; }
-      .hero-phone-img { width: 320px; }
+      .hero-phone-img { width: 100%; height: 380px; }
 
       .section { padding: 72px 24px; }
 
