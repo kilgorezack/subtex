@@ -155,29 +155,20 @@
       box-shadow: 0 4px 24px rgba(2, 68, 102, 0.06);
     }
 
-    /* Override JotForm iframe defaults */
-    .form-container iframe,
-    .form-container .jotform-form {
-      width: 100% !important;
+    /* JotForm full-source embed overrides */
+    /* Prevent JotForm CDN stylesheets from overriding the page background */
+    body {
+      background-color: var(--lionsmane) !important;
+    }
+
+    .form-container .form-all {
+      border-radius: 0 !important;
       border: none !important;
+      box-shadow: none !important;
     }
 
-    /* Hide JotForm branding bar via overlay */
-    .form-container {
-      position: relative;
-    }
-
-    .form-container::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 54px;
-      background-color: #fff;
-      border-radius: 0 0 12px 12px;
-      pointer-events: none;
-      z-index: 10;
+    .form-container .supernova {
+      background-color: transparent !important;
     }
 
     /* ── FOOTER ── */
@@ -292,7 +283,189 @@
   <!-- FORM -->
   <div class="form-wrap">
     <div class="form-container">
-      <script type="text/javascript" src="https://form.jotform.com/jsform/260666689636071"></script>
+      <script>window.enableEventObserver=true</script>
+      <script>window.enableRenameUploadFile=false</script>
+      <script>window.CDN="https://cdn.jotfor.ms/"</script>
+      <script>window.umdRootPath="https://cdn.jotfor.ms/s/umd/6e3786a0ada/"</script>
+      <script>window.staticRootPath="https://cdn.jotfor.ms/s/static/c255b239173/"</script>
+      <script src="https://cdn.jotfor.ms/s/static/c255b239173/static/prototype.forms.js" type="text/javascript"></script>
+      <script src="https://cdn.jotfor.ms/s/static/c255b239173/static/jotform.forms.js" type="text/javascript"></script>
+      <script src="https://cdn.jotfor.ms/s/static/c255b239173/js/punycode-1.4.1.min.js" type="text/javascript" defer></script>
+      <script src="https://cdn.jotfor.ms/s/static/c255b239173/js/vendor/smoothscroll.min.js" type="text/javascript"></script>
+      <script src="https://cdn.jotfor.ms/s/static/c255b239173/js/errorNavigation.js" type="text/javascript"></script>
+      <script type="text/javascript">	JotForm.newDefaultTheme = true;
+	JotForm.extendsNewTheme = false;
+	JotForm.singleProduct = false;
+	JotForm.newPaymentUIForNewCreatedForms = false;
+	JotForm.texts = {"confirmEmail":"E-mail does not match","pleaseWait":"Please wait...","validateEmail":"You need to validate this e-mail","confirmClearForm":"Are you sure you want to clear the form","lessThan":"Your score should be less than or equal to","incompleteFields":"There are incomplete required fields. Please complete them.","required":"This field is required.","requireOne":"At least one field required.","requireEveryRow":"Every row is required.","requireEveryCell":"Every cell is required.","email":"Enter a valid e-mail address","alphabetic":"This field can only contain letters","numeric":"This field can only contain numeric values","alphanumeric":"This field can only contain letters and numbers.","cyrillic":"This field can only contain cyrillic characters","url":"This field can only contain a valid URL","currency":"This field can only contain currency values.","fillMask":"Field value must fill mask.","uploadExtensions":"You can only upload following files:","noUploadExtensions":"File has no extension file type (e.g. .txt, .png, .jpeg)","uploadFilesize":"File size cannot be bigger than:","uploadFilesizemin":"File size cannot be smaller than:","gradingScoreError":"Score total should only be less than or equal to","inputCarretErrorA":"Input should not be less than the minimum value:","inputCarretErrorB":"Input should not be greater than the maximum value:","maxDigitsError":"The maximum digits allowed is","minCharactersError":"The number of characters should not be less than the minimum value:","maxCharactersError":"The number of characters should not be more than the maximum value:","freeEmailError":"Free email accounts are not allowed","minSelectionsError":"The minimum required number of selections is ","maxSelectionsError":"The maximum number of selections allowed is ","pastDatesDisallowed":"Date must not be in the past.","dateLimited":"This date is unavailable.","dateInvalid":"This date is not valid. The date format is {format}","dateInvalidSeparate":"This date is not valid. Enter a valid {element}.","ageVerificationError":"You must be older than {minAge} years old to submit this form.","multipleFileUploads_typeError":"{file} has invalid extension. Only {extensions} are allowed.","multipleFileUploads_sizeError":"{file} is too large, maximum file size is {sizeLimit}.","multipleFileUploads_minSizeError":"{file} is too small, minimum file size is {minSizeLimit}.","multipleFileUploads_emptyError":"{file} is empty, please select files again without it.","multipleFileUploads_uploadFailed":"File upload failed, please remove it and upload the file again.","multipleFileUploads_onLeave":"The files are being uploaded, if you leave now the upload will be cancelled.","multipleFileUploads_fileLimitError":"Only {fileLimit} file uploads allowed.","dragAndDropFilesHere_infoMessage":"Drag and drop files here","chooseAFile_infoMessage":"Choose a file","maxFileSize_infoMessage":"Max. file size","generalError":"There are errors on the form. Please fix them before continuing.","generalPageError":"There are errors on this page. Please fix them before continuing.","wordLimitError":"Too many words. The limit is","wordMinLimitError":"Too few words.  The minimum is","characterLimitError":"Too many Characters.  The limit is","characterMinLimitError":"Too few characters. The minimum is","ccInvalidNumber":"Credit Card Number is invalid.","ccInvalidCVC":"CVC number is invalid.","ccInvalidExpireDate":"Expire date is invalid.","ccInvalidExpireMonth":"Expiration month is invalid.","ccInvalidExpireYear":"Expiration year is invalid.","ccMissingDetails":"Please fill up the credit card details.","ccMissingProduct":"Please select at least one product.","ccMissingDonation":"Please enter numeric values for donation amount.","disallowDecimals":"Please enter a whole number.","restrictedDomain":"This domain is not allowed","ccDonationMinLimitError":"Minimum amount is {minAmount} {currency}","requiredLegend":"All fields marked with * are required and must be filled.","geoPermissionTitle":"Permission Denied","geoPermissionDesc":"Check your browser's privacy settings.","geoNotAvailableTitle":"Position Unavailable","geoNotAvailableDesc":"Location provider not available. Please enter the address manually.","geoTimeoutTitle":"Timeout","geoTimeoutDesc":"Please check your internet connection and try again.","selectedTime":"Selected Time","formerSelectedTime":"Former Time","cancelAppointment":"Cancel Appointment","cancelSelection":"Cancel Selection","confirmSelection":"Confirm Selection","noSlotsAvailable":"No slots available","slotUnavailable":"{time} on {date} has been selected is unavailable. Please select another slot.","multipleError":"There are {count} errors on this page. Please correct them before moving on.","oneError":"There is {count} error on this page. Please correct it before moving on.","doneMessage":"Well done! All errors are fixed.","invalidTime":"Enter a valid time","doneButton":"Done","reviewSubmitText":"Review and Submit","nextButtonText":"Next","prevButtonText":"Previous","seeErrorsButton":"See Errors","notEnoughStock":"Not enough stock for the current selection","notEnoughStock_remainedItems":"Not enough stock for the current selection ({count} items left)","soldOut":"Sold Out","justSoldOut":"Just Sold Out","selectionSoldOut":"Selection Sold Out","subProductItemsLeft":"({count} items left)","startButtonText":"START","submitButtonText":"Submit","submissionLimit":"Sorry! Only one entry is allowed. <br> Multiple submissions are disabled for this form.","reviewBackText":"Back to Form","seeAllText":"See All","progressMiddleText":"of","fieldError":"field has an error.","error":"Error"};
+	JotForm.newPaymentUI = true;
+	JotForm.originalLanguage = "en";
+	JotForm.isFormViewTrackingAllowed = true;
+	JotForm.replaceTagTest = true;
+	JotForm.activeRedirect = "thanktext";
+	JotForm.uploadServerURL = "https://upload.jotform.com/upload";
+	JotForm.clearFieldOnHide="disable";
+	JotForm.submitError="jumpToFirstError";
+	JotForm.isFullSource = true;
+	JotForm.init(function(){
+	/*INIT-START*/
+    $('input_4').rating({stars:'5',
+    inputClassName:'form-textbox validate[required]',
+    imagePath: 'https://cdn.jotfor.ms/assets/v3/images/stars_v2.png',
+    cleanFirst:true, value:''});
+$('input_4').setAttribute('role','radiogroup');
+$('input_4').setAttribute('aria-labelledby','label_4');
+    Array.from($('input_4').children).map(function(e, i){
+      if(i === 0) e.setAttribute('tabindex', 0);
+      else e.setAttribute('tabindex', -1);
+      e.setAttribute('aria-label', i + 1 === 1 ? '1 star' : (i + 1) + ' stars');
+      e.setAttribute('role','radio');
+      e.setAttribute('aria-checked','false');
+      e.classList.add('form-star-rating-star', 'Stars');
+      e.onkeydown = function(k){
+        var stars = Array.from($('input_4').children).slice(0, 5);
+        var currentIndex = stars.indexOf(e);
+        var nextIndex = -1;
+        if(k.keyCode == 39 || k.keyCode == 40) {
+          k.preventDefault();
+          nextIndex = currentIndex < stars.length - 1 ? currentIndex + 1 : 0;
+        }
+        else if(k.keyCode == 37 || k.keyCode == 38) {
+          k.preventDefault();
+          nextIndex = currentIndex > 0 ? currentIndex - 1 : stars.length - 1;
+        }
+        if(nextIndex !== -1) {
+          stars[nextIndex].focus();
+          stars[nextIndex].click();
+        }
+        stars.forEach(star => {
+          if(star.getAttribute('aria-checked') === 'true') {
+            star.setAttribute('tabindex', 0);
+          }
+          else {
+            star.setAttribute('tabindex', -1);
+          }
+        });
+      };
+    });
+if (window.JotForm && JotForm.accessible) $('input_5').setAttribute('tabindex',0);
+if (window.JotForm && JotForm.accessible) $('input_6').setAttribute('tabindex',0);
+if (window.JotForm && JotForm.accessible) $('input_7').setAttribute('tabindex',0);
+	/*INIT-END*/
+	});
+   setTimeout(function() {
+JotForm.paymentExtrasOnTheFly([null,null,{"description":"","name":"q2_fullname0","qid":"2","text":"Your Name","type":"control_fullname"},{"description":"","name":"q3_email1","qid":"3","subLabel":"example@example.com","text":"Email Address (optional, for follow-up)","type":"control_email"},{"description":"","name":"q4_rating2","qid":"4","text":"How satisfied are you with the current version of the app?","type":"control_rating"},{"description":"","mde":"No","name":"q5_textarea3","qid":"5","subLabel":"","text":"Please describe your overall experience with the app.","type":"control_textarea","wysiwyg":"Disable"},{"description":"","mde":"No","name":"q6_textarea4","qid":"6","subLabel":"","text":"What do you like most about the app?","type":"control_textarea","wysiwyg":"Disable"},{"description":"","mde":"No","name":"q7_textarea5","qid":"7","subLabel":"","text":"What can we improve or change in future updates?","type":"control_textarea","wysiwyg":"Disable"},{"name":"q8_submit","qid":"8","text":"Submit Feedback","type":"control_button"}]);}, 20);
+</script>
+      <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/stylebuilder/static/form-common.css?v=234e4a4"/>
+      <style type="text/css">@media print{*{-webkit-print-color-adjust: exact !important;color-adjust: exact !important;}.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+      <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.69901&themeRevisionID=65660e4b326633110492e01a"/>
+      <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/s/static/c255b239173/css/styles/payment/payment_styles.css?3.3.69901" />
+      <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/s/static/c255b239173/css/styles/payment/payment_feature.css?3.3.69901" />
+      <style type="text/css" id="form-designer-style">
+.form-all { font-family: "Helvetica", sans-serif; max-width: 100%; font-size: 16px; }
+.form-textbox, .form-textarea, .form-radio-other-input, .form-checkbox-other-input, .form-captcha input, .form-spinner input { background-color: #ffffff; border-radius: 3px; }
+.form-textarea { border-radius: 3px; }
+.form-line { margin-top: 12px; margin-bottom: 12px; }
+.supernova .form-all, .form-all { background-color: #fdf4e7; border-radius: 12px; }
+.form-section:first-child { border-radius: 12px 12px 0 0; }
+.form-section:last-child { border-radius: 0 0 12px 12px; }
+.form-all, .form-label-top, .form-label-left, .form-label-right, .form-html, .form-checkbox-item label, .form-radio-item label, .form-sub-label { color: #1a4366; }
+@media screen and (min-width: 768px) { ul.form-section { padding: 0px 38px; } }
+.form-submit-button { background-color: #FFFFFF; color: #2C3345; border: 1px solid #9BB9E8; box-shadow: none; border-radius: 3px; font-size: 16px; font-weight: normal; font-family: inherit; min-width: 180px; }
+.form-submit-button:hover { background-color: #F7F9FC; }
+.form-textbox:not(#productSearch-input), .form-textarea, .form-dropdown { background-color: #FFFFFF; border-color: #DEE1E6; }
+.form-textbox:not(#productSearch-input):focus, .form-textarea:focus, .form-dropdown:focus { border-color: #9BB9E8; box-shadow: 0 0 0 2px color-mix(in srgb, #9BB9E8 35%, transparent); }
+.form-line.form-line-error { background-color: #ffd6d6; }
+.form-line.form-line-error .form-error-message { background-color: #f23a3c; }
+.form-line-active { background-color: #f1f5ff; }
+.form-all { box-shadow: none; border: 1px solid #DEE1E6; }
+.form-header-group { border-bottom: 1px solid #DEE1E6; margin-top: 0; padding-top: 24px; }
+.form-line .form-buttons-wrapper { border-top: 1px solid #DEE1E6; }
+li[data-type="control_button"] .form-submit-button { color: #2c3345; }
+      </style>
+      <form class="jotform-form" onsubmit="return typeof testSubmitFunction !== 'undefined' && testSubmitFunction();" action="https://submit.jotform.com/submit/260666689636071" method="post" name="form_260666689636071" id="260666689636071" accept-charset="utf-8" autocomplete="on">
+        <input type="hidden" name="formID" value="260666689636071" />
+        <input type="hidden" id="JWTContainer" value="" />
+        <input type="hidden" id="cardinalOrderNumber" value="" />
+        <input type="hidden" id="jsExecutionTracker" name="jsExecutionTracker" value="build-date-1773007170618" />
+        <input type="hidden" id="submitSource" name="submitSource" value="unknown" />
+        <input type="hidden" id="submitDate" name="submitDate" value="undefined" />
+        <input type="hidden" id="buildDate" name="buildDate" value="1773007170618" />
+        <input type="hidden" name="uploadServerUrl" value="https://upload.jotform.com/upload" />
+        <input type="hidden" name="eventObserver" value="1" />
+        <div role="main" class="form-all">
+          <ul class="form-section page-section" role="presentation">
+            <li class="form-line" data-type="control_fullname" id="id_2">
+              <label class="form-label form-label-top form-label-auto" id="label_2" for="first_2" aria-hidden="false"> Your Name </label>
+              <div id="cid_2" class="form-input-wide" data-layout="full">
+                <div aria-labelledby="label_2" role="group" data-wrapper-react="true">
+                  <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_2" name="q2_q2_fullname0[first]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_2 given-name" size="10" data-component="first" aria-labelledby="sublabel_2_first" value="" /><label class="form-sub-label" for="first_2" id="sublabel_2_first" style="min-height:13px">First Name</label></span>
+                  <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_2" name="q2_q2_fullname0[last]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_2 family-name" size="15" data-component="last" aria-labelledby="sublabel_2_last" value="" /><label class="form-sub-label" for="last_2" id="sublabel_2_last" style="min-height:13px">Last Name</label></span>
+                </div>
+              </div>
+            </li>
+            <li class="form-line" data-type="control_email" id="id_3">
+              <label class="form-label form-label-top form-label-auto" id="label_3" for="input_3" aria-hidden="false"> Email Address (optional, for follow-up) </label>
+              <div id="cid_3" class="form-input-wide" data-layout="half">
+                <span class="form-sub-label-container" style="vertical-align:top"><input type="email" id="input_3" name="q3_q3_email1" class="form-textbox validate[Email]" data-defaultvalue="" autoComplete="section-input_3 email" style="width:310px" size="310" data-component="email" aria-labelledby="label_3 sublabel_input_3" value="" /><label class="form-sub-label" for="input_3" id="sublabel_input_3" style="min-height:13px">example@example.com</label></span>
+              </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_rating" id="id_4">
+              <label class="form-label form-label-top form-label-auto" id="label_4" for="input_4" aria-hidden="false"> How satisfied are you with the current version of the app?<span class="form-required">*</span> </label>
+              <div id="cid_4" class="form-input-wide jf-required" data-layout="full">
+                <div id="input_4" name="q4_q4_rating2" data-component="rating" data-version="v2">
+                  <select name="q4_q4_rating2" aria-label="How satisfied are you with the current version of the app?">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_textarea" id="id_5">
+              <label class="form-label form-label-top form-label-auto" id="label_5" for="input_5" aria-hidden="false"> Please describe your overall experience with the app.<span class="form-required">*</span> </label>
+              <div id="cid_5" class="form-input-wide jf-required" data-layout="full">
+                <textarea id="input_5" class="form-textarea validate[required]" name="q5_q5_textarea3" style="width:100%;height:163px" data-component="textarea" required="" aria-labelledby="label_5"></textarea>
+              </div>
+            </li>
+            <li class="form-line" data-type="control_textarea" id="id_6">
+              <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6" aria-hidden="false"> What do you like most about the app? </label>
+              <div id="cid_6" class="form-input-wide" data-layout="full">
+                <textarea id="input_6" class="form-textarea" name="q6_q6_textarea4" style="width:100%;height:163px" data-component="textarea" aria-labelledby="label_6"></textarea>
+              </div>
+            </li>
+            <li class="form-line" data-type="control_textarea" id="id_7">
+              <label class="form-label form-label-top form-label-auto" id="label_7" for="input_7" aria-hidden="false"> What can we improve or change in future updates? </label>
+              <div id="cid_7" class="form-input-wide" data-layout="full">
+                <textarea id="input_7" class="form-textarea" name="q7_q7_textarea5" style="width:100%;height:163px" data-component="textarea" aria-labelledby="label_7"></textarea>
+              </div>
+            </li>
+            <li class="form-line" data-type="control_button" id="id_8">
+              <div id="cid_8" class="form-input-wide" data-layout="full">
+                <div data-align="auto" class="form-buttons-wrapper form-buttons-auto jsTest-button-wrapperField">
+                  <button id="input_8" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField legacy-submit" data-component="button" data-content="">Submit Feedback</button>
+                </div>
+              </div>
+            </li>
+            <li style="display:none">Should be Empty: <input type="text" name="website" value="" /></li>
+          </ul>
+        </div>
+        <script>
+          JotForm.showJotFormPowered = false;
+        </script>
+        <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="260666689636071" />
+        <script type="text/javascript">
+          var all_spc = document.querySelectorAll("form[id='260666689636071'] .si" + "mple" + "_spc");
+          for (var i = 0; i < all_spc.length; i++) {
+            all_spc[i].value = "260666689636071-260666689636071";
+          }
+        </script>
+      </form>
+      <link id="color-scheme-style" href="https://cdn.jotfor.ms/stylebuilder/static/color-scheme.css?v=3.3.69901" type="text/css" rel="stylesheet" />
+      <script type="text/javascript">JotForm.ownerView=true;</script>
+      <script type="text/javascript">JotForm.isNewSACL=true;</script>
     </div>
   </div>
 
