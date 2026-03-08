@@ -231,28 +231,13 @@
       position: relative;
     }
 
-    /* Near-black absorber behind the image prevents the dark-blue hero
-       from bleeding through the screen blend and tinting the phone */
-    .hero-visual::before {
-      content: '';
-      position: absolute;
-      inset: -20px;
-      background: radial-gradient(ellipse 90% 100% at center, #000 0%, #000 35%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
     .hero-phone-img {
-      /* Fill the column and crop portrait — zooms into the phone */
       width: 510px;
       height: 620px;
       max-width: 100%;
       object-fit: cover;
       object-position: center center;
       display: block;
-      mix-blend-mode: screen;
-      position: relative;
-      z-index: 1;
     }
 
     /* floating accent dots */
@@ -861,7 +846,7 @@
       <div class="hero-visual">
         <div class="hero-dot hero-dot-1"></div>
         <div class="hero-dot hero-dot-2"></div>
-        <img src="images/hero-mockup.jpg" alt="Subtex app showing Cards screen" class="hero-phone-img" />
+        <img src="images/Cards.png" alt="Subtex app showing Cards screen" class="hero-phone-img" />
       </div>
     </div>
   </section>
