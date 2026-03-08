@@ -162,6 +162,24 @@
       border: none !important;
     }
 
+    /* Hide JotForm branding bar via overlay */
+    .form-container {
+      position: relative;
+    }
+
+    .form-container::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 54px;
+      background-color: #fff;
+      border-radius: 0 0 12px 12px;
+      pointer-events: none;
+      z-index: 10;
+    }
+
     /* ── FOOTER ── */
     footer {
       background-color: var(--twilight);
