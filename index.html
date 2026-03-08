@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subtex — Meaningful Connections</title>
+  <meta name="description" content="Subtex replaces the business card shuffle with something better. Scan, connect, and remember everyone you meet.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --twilight:   #024466;
+      --twilight-d: #1a4366;
+      --lionsmane:  #fdf4e7;
+      --celeste:    #c3d8d1;
+      --herb:       #7b9874;
+      --marigold:   #f5ab62;
+      --body-text:  #3a5a6e;
+      --muted:      #a09585;
+      --divider:    #e4ddd0;
+      --bg:         #f0ebe0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      background-color: var(--lionsmane);
+      color: var(--body-text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 40px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(2, 68, 102, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--marigold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--celeste);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .nav-cta {
+      background-color: var(--marigold) !important;
+      color: var(--twilight) !important;
+      padding: 10px 22px;
+      border-radius: 3px;
+      font-weight: 700 !important;
+    }
+
+    .nav-cta:hover { background-color: #f0a050 !important; }
+
+    /* ── HERO ── */
+    .hero {
+      background-color: var(--twilight);
+      padding: 160px 40px 120px;
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(245,171,98,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(195,216,209,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--marigold);
+      margin-bottom: 24px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background-color: var(--marigold);
+    }
+
+    .hero-title {
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--marigold);
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--celeste);
+      line-height: 1.75;
+      max-width: 420px;
+      margin-bottom: 44px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--marigold);
+      color: var(--twilight);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 18px 36px;
+      border-radius: 3px;
+      transition: background-color 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background-color: #f0a050;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--celeste);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+
+    .btn-ghost:hover { color: #fff; }
+
+    .btn-ghost svg { transition: transform 0.2s; }
+    .btn-ghost:hover svg { transform: translateX(3px); }
+
+    /* Phone mockup */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .phone-shell {
+      width: 260px;
+      height: 520px;
+      background: linear-gradient(160deg, #1a4366 0%, #0d2133 100%);
+      border-radius: 36px;
+      border: 2px solid rgba(195,216,209,0.15);
+      position: relative;
+      box-shadow:
+        0 40px 80px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(255,255,255,0.04),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .phone-notch {
+      width: 90px;
+      height: 24px;
+      background: #0d2133;
+      border-radius: 0 0 16px 16px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .phone-screen {
+      flex: 1;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .phone-ui-header {
+      text-align: center;
+      padding-top: 4px;
+    }
+
+    .phone-ui-title {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .phone-ui-sub {
+      font-size: 9px;
+      color: rgba(195,216,209,0.6);
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+
+    .phone-qr {
+      background: rgba(195,216,209,0.06);
+      border: 1px solid rgba(195,216,209,0.12);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .qr-grid {
+      width: 100px;
+      height: 100px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+    }
+
+    .qr-cell {
+      border-radius: 1px;
+      background: rgba(195,216,209,0.15);
+    }
+
+    .qr-cell.on { background: var(--marigold); }
+    .qr-cell.corner { background: var(--celeste); border-radius: 2px; }
+
+    .qr-label {
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(195,216,209,0.5);
+    }
+
+    .phone-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .phone-contact-chip {
+      background: rgba(245,171,98,0.1);
+      border: 1px solid rgba(245,171,98,0.2);
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--herb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .contact-info { flex: 1; }
+
+    .contact-name {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--celeste);
+      letter-spacing: 0.04em;
+    }
+
+    .contact-tag {
+      font-size: 8px;
+      color: rgba(195,216,209,0.5);
+    }
+
+    .contact-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--marigold);
+    }
+
+    /* floating accent dots */
+    .hero-dot {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-dot-1 {
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(245,171,98,0.12) 0%, transparent 70%);
+      top: -80px;
+      right: -60px;
+    }
+
+    .hero-dot-2 {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(123,152,116,0.15) 0%, transparent 70%);
+      bottom: -60px;
+      left: 10px;
+    }
+
+    /* color bar */
+    .color-bar {
+      height: 5px;
+      display: flex;
+    }
+
+    .color-bar-seg { flex: 1; }
+
+    /* ── SECTION SHARED ── */
+    .section {
+      padding: 100px 40px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--herb);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 800;
+      color: var(--twilight);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .section-body {
+      font-size: 15px;
+      color: var(--body-text);
+      line-height: 1.75;
+      max-width: 480px;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-section {
+      background-color: var(--bg);
+    }
+
+    .how-header {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 72px;
+      max-width: 560px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .step {
+      background-color: var(--lionsmane);
+      padding: 48px 40px;
+      position: relative;
+    }
+
+    .step:first-child { border-radius: 4px 0 0 4px; }
+    .step:last-child  { border-radius: 0 4px 4px 0; }
+
+    .step-num {
+      font-size: 64px;
+      font-weight: 900;
+      color: var(--celeste);
+      line-height: 1;
+      margin-bottom: 28px;
+      opacity: 0.5;
+    }
+
+    .step-icon {
+      width: 44px;
+      height: 44px;
+      background-color: var(--twilight);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .step-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--twilight);
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--body-text);
+      line-height: 1.7;
+    }
+
+    .step-accent {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--marigold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .step:hover .step-accent { transform: scaleX(1); }
+
+    /* ── FEATURES ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .features-text { padding-right: 20px; }
+
+    .features-text .section-eyebrow { margin-bottom: 14px; }
+    .features-text .section-title   { margin-bottom: 20px; }
+    .features-text .section-body    { margin-bottom: 48px; }
+
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .feature-row {
+      display: flex;
+      gap: 20px;
+      padding: 24px 0;
+      border-top: 1px solid var(--divider);
+      align-items: flex-start;
+    }
+
+    .feature-row:last-child { border-bottom: 1px solid var(--divider); }
+
+    .feature-icon-wrap {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: var(--celeste);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .feature-copy {}
+
+    .feature-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--twilight);
+      margin-bottom: 4px;
+    }
+
+    .feature-blurb {
+      font-size: 13px;
+      color: var(--body-text);
+      line-height: 1.6;
+    }
+
+    /* Right visual panel */
+    .features-visual {
+      background: linear-gradient(145deg, var(--twilight) 0%, #0d2133 100%);
+      border-radius: 16px;
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .features-visual::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(245,171,98,0.1) 0%, transparent 70%);
+    }
+
+    .vis-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--marigold);
+      margin-bottom: 4px;
+    }
+
+    .vis-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .vis-card {
+      background: rgba(195,216,209,0.07);
+      border: 1px solid rgba(195,216,209,0.12);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+
+    .vis-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .vis-card-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--celeste);
+    }
+
+    .vis-card-badge {
+      background: rgba(245,171,98,0.2);
+      color: var(--marigold);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 100px;
+    }
+
+    .vis-card-note {
+      font-size: 11px;
+      color: rgba(195,216,209,0.5);
+      line-height: 1.5;
+    }
+
+    .vis-ai-summary {
+      background: rgba(245,171,98,0.08);
+      border: 1px solid rgba(245,171,98,0.2);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+
+    .vis-ai-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--marigold);
+      margin-bottom: 8px;
+    }
+
+    .vis-ai-text {
+      font-size: 11px;
+      color: rgba(195,216,209,0.7);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    /* ── SOCIAL PROOF / STATS ── */
+    .stats-section {
+      background-color: var(--twilight);
+      padding: 80px 40px;
+    }
+
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .stat-block {
+      text-align: center;
+      padding: 48px 32px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 4px;
+    }
+
+    .stat-num {
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--marigold);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--celeste);
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background-color: var(--lionsmane);
+      padding: 120px 40px;
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cta-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--herb);
+      margin-bottom: 20px;
+    }
+
+    .cta-title {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 900;
+      color: var(--twilight);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+
+    .cta-title em {
+      font-style: normal;
+      color: var(--marigold);
+    }
+
+    .cta-body {
+      font-size: 15px;
+      color: var(--body-text);
+      line-height: 1.75;
+      margin-bottom: 44px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background-color: var(--twilight);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 4px;
+      transition: background-color 0.2s, transform 0.15s;
+    }
+
+    .store-badge:hover {
+      background-color: var(--twilight-d);
+      transform: translateY(-2px);
+    }
+
+    .store-badge svg { flex-shrink: 0; }
+
+    .store-badge-text { text-align: left; }
+
+    .store-line1 {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--celeste);
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .store-line2 {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+
+    .cta-note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background-color: var(--twilight);
+      padding: 48px 40px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(195,216,209,0.1);
+      margin-bottom: 28px;
+    }
+
+    .footer-brand {}
+
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .footer-logo span { color: var(--marigold); }
+
+    .footer-tagline {
+      font-size: 12px;
+      color: var(--celeste);
+      opacity: 0.6;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--celeste);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover { opacity: 1; }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(195,216,209,0.35);
+    }
+
+    .footer-email {
+      font-size: 11px;
+      color: var(--herb);
+      text-decoration: none;
+    }
+
+    .footer-email:hover { color: var(--celeste); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+
+      .nav-links { gap: 20px; }
+      .nav-links li:not(:last-child) { display: none; }
+
+      .hero { padding: 120px 24px 80px; }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+      }
+
+      .hero-eyebrow { justify-content: center; }
+      .hero-sub { max-width: 100%; }
+      .hero-actions { justify-content: center; }
+
+      .hero-visual { order: -1; }
+      .phone-shell { width: 200px; height: 400px; }
+
+      .section { padding: 72px 24px; }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .step:first-child { border-radius: 4px 4px 0 0; }
+      .step:last-child  { border-radius: 0 0 4px 4px; }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .features-text { padding-right: 0; }
+
+      .stats-inner { grid-template-columns: 1fr; gap: 2px; }
+
+      .footer-top {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-title { font-size: 36px; }
+      .cta-title  { font-size: 30px; }
+      .btn-primary { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Subtex<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="https://apps.apple.com/us/app/anno-meaningful-networking/id6758132245" class="nav-cta">Get the App</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Meaningful Connections</div>
+        <h1 class="hero-title">
+          Stop shuffling<br>cards. Start<br><em>connecting.</em>
+        </h1>
+        <p class="hero-sub">
+          Subtex replaces the business card shuffle with something better. Scan a QR code, swap profiles instantly, and remember everyone you meet — long after the event ends.
+        </p>
+        <div class="hero-actions">
+          <a href="https://apps.apple.com/us/app/anno-meaningful-networking/id6758132245" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.19 1.28-2.17 3.82.03 3.02 2.65 4.03 2.68 4.04l-.06.21zm-5.25-17.43c.65-.79 1.72-1.39 2.61-1.43.09 1.1-.32 2.19-.93 2.98-.61.8-1.63 1.43-2.6 1.36-.1-1.07.35-2.16.92-2.91z"/></svg>
+            Download for iOS
+          </a>
+          <a href="#how" class="btn-ghost">
+            See how it works
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Phone mockup -->
+      <div class="hero-visual">
+        <div class="hero-dot hero-dot-1"></div>
+        <div class="hero-dot hero-dot-2"></div>
+        <div class="phone-shell">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-ui-header">
+              <div class="phone-ui-title">Subtex.</div>
+              <div class="phone-ui-sub">Your QR Code</div>
+            </div>
+            <div class="phone-qr">
+              <!-- Stylized QR pattern -->
+              <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Corner squares -->
+                <rect x="4" y="4" width="30" height="30" rx="4" fill="rgba(195,216,209,0.15)"/>
+                <rect x="8" y="8" width="22" height="22" rx="2" fill="#f5ab62" opacity="0.8"/>
+                <rect x="76" y="4" width="30" height="30" rx="4" fill="rgba(195,216,209,0.15)"/>
+                <rect x="80" y="8" width="22" height="22" rx="2" fill="#f5ab62" opacity="0.8"/>
+                <rect x="4" y="76" width="30" height="30" rx="4" fill="rgba(195,216,209,0.15)"/>
+                <rect x="8" y="80" width="22" height="22" rx="2" fill="#f5ab62" opacity="0.8"/>
+                <!-- Inner corner dots -->
+                <rect x="14" y="14" width="10" height="10" rx="1" fill="#024466"/>
+                <rect x="86" y="14" width="10" height="10" rx="1" fill="#024466"/>
+                <rect x="14" y="86" width="10" height="10" rx="1" fill="#024466"/>
+                <!-- Data cells -->
+                <rect x="42" y="4" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.5"/>
+                <rect x="52" y="4" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.3"/>
+                <rect x="62" y="4" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.6"/>
+                <rect x="42" y="14" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.4"/>
+                <rect x="52" y="14" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.6"/>
+                <rect x="62" y="14" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.3"/>
+                <rect x="42" y="24" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.7"/>
+                <rect x="52" y="24" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.2"/>
+                <rect x="62" y="24" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.4"/>
+                <rect x="4"  y="42" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.6"/>
+                <rect x="14" y="42" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.4"/>
+                <rect x="24" y="42" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.3"/>
+                <rect x="4"  y="52" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.2"/>
+                <rect x="14" y="52" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.5"/>
+                <rect x="24" y="52" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.5"/>
+                <rect x="4"  y="62" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.3"/>
+                <rect x="14" y="62" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.4"/>
+                <rect x="24" y="62" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.6"/>
+                <rect x="42" y="42" width="26" height="26" rx="4" fill="rgba(245,171,98,0.08)" stroke="rgba(245,171,98,0.2)" stroke-width="1"/>
+                <rect x="49" y="49" width="12" height="12" rx="2" fill="#f5ab62" opacity="0.7"/>
+                <rect x="76" y="42" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.5"/>
+                <rect x="86" y="42" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.4"/>
+                <rect x="96" y="42" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.6"/>
+                <rect x="76" y="52" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.3"/>
+                <rect x="86" y="52" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.4"/>
+                <rect x="96" y="52" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.5"/>
+                <rect x="76" y="62" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.6"/>
+                <rect x="86" y="62" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.5"/>
+                <rect x="96" y="62" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.2"/>
+                <rect x="42" y="76" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.4"/>
+                <rect x="52" y="76" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.5"/>
+                <rect x="62" y="76" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.3"/>
+                <rect x="76" y="76" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.6"/>
+                <rect x="86" y="76" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.3"/>
+                <rect x="96" y="76" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.5"/>
+                <rect x="42" y="86" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.3"/>
+                <rect x="52" y="86" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.5"/>
+                <rect x="62" y="86" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.4"/>
+                <rect x="76" y="86" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.4"/>
+                <rect x="86" y="86" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.6"/>
+                <rect x="96" y="86" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.3"/>
+                <rect x="42" y="96" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.6"/>
+                <rect x="52" y="96" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.3"/>
+                <rect x="62" y="96" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.5"/>
+                <rect x="76" y="96" width="6" height="6" rx="1" fill="#f5ab62" opacity="0.4"/>
+                <rect x="86" y="96" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.3"/>
+                <rect x="96" y="96" width="6" height="6" rx="1" fill="#c3d8d1" opacity="0.6"/>
+              </svg>
+              <div class="qr-label">Tap to share</div>
+            </div>
+            <div class="phone-contacts">
+              <div class="phone-contact-chip">
+                <div class="contact-avatar">JL</div>
+                <div class="contact-info">
+                  <div class="contact-name">Jamie L.</div>
+                  <div class="contact-tag">Product · Panel Q&amp;A</div>
+                </div>
+                <div class="contact-dot"></div>
+              </div>
+              <div class="phone-contact-chip">
+                <div class="contact-avatar" style="background: #024466;">MR</div>
+                <div class="contact-info">
+                  <div class="contact-name">Marcus R.</div>
+                  <div class="contact-tag">Investor · Seed stage</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOR BAR -->
+  <div class="color-bar">
+    <div class="color-bar-seg" style="background:#024466;"></div>
+    <div class="color-bar-seg" style="background:#c3d8d1;"></div>
+    <div class="color-bar-seg" style="background:#7b9874;"></div>
+    <div class="color-bar-seg" style="background:#f5ab62;"></div>
+    <div class="color-bar-seg" style="background:#fdf4e7; border-top:1px solid #e4ddd0;"></div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="section how-section" id="how">
+    <div class="section-inner">
+      <div class="how-header">
+        <div class="section-eyebrow">How It Works</div>
+        <h2 class="section-title">Three steps.<br>Zero friction.</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5ab62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+            </svg>
+          </div>
+          <div class="step-title">Open &amp; Scan</div>
+          <div class="step-desc">Launch Subtex, open your QR code, and let another user scan — or scan theirs. No fumbling with keyboards, no typos.</div>
+          <div class="step-accent"></div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5ab62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <div class="step-title">Connect Instantly</div>
+          <div class="step-desc">Profiles are swapped in seconds. You both get each other's contact info, ready to follow up — right when the conversation is still warm.</div>
+          <div class="step-accent"></div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5ab62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+          </div>
+          <div class="step-title">Remember Everything</div>
+          <div class="step-desc">Add notes, tag by topic or group, and let AI surface the details that matter — so every connection stays meaningful, not just memorable.</div>
+          <div class="step-accent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features" style="background-color: var(--lionsmane);">
+    <div class="section-inner">
+      <div class="features-grid">
+        <div class="features-text">
+          <div class="section-eyebrow">What You Get</div>
+          <h2 class="section-title">Built for the<br>way you actually<br>network.</h2>
+          <p class="section-body">
+            Everything you need to turn a brief conversation into a lasting connection — in the time it takes to shake hands.
+          </p>
+          <div class="feature-list">
+            <div class="feature-row">
+              <div class="feature-icon-wrap">⬡</div>
+              <div class="feature-copy">
+                <div class="feature-name">QR Code Exchange</div>
+                <div class="feature-blurb">Scan any Subtex user's code and instantly swap profiles. No manual entry, no spelling out email addresses.</div>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-icon-wrap">✎</div>
+              <div class="feature-copy">
+                <div class="feature-name">Notes &amp; Tags</div>
+                <div class="feature-blurb">Capture context right when you meet. Tag contacts by topic, group, or event, and find anyone instantly later.</div>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-icon-wrap">◈</div>
+              <div class="feature-copy">
+                <div class="feature-name">AI Summaries</div>
+                <div class="feature-blurb">Subtex surfaces the details that matter — AI-generated summaries remind you who you met and why it matters.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-visual">
+          <div class="vis-tag">Connection Details</div>
+          <div class="vis-title">Every context.<br>Always there.</div>
+          <div class="vis-card">
+            <div class="vis-card-header">
+              <div class="vis-card-name">Sarah Chen · Founder, Opal Labs</div>
+              <div class="vis-card-badge">Tech</div>
+            </div>
+            <div class="vis-card-note">Met at demo tables. Interested in B2B integrations. Follow up re: pilot program next week — she wants an intro to Marcus.</div>
+          </div>
+          <div class="vis-ai-summary">
+            <div class="vis-ai-label">✦ AI Summary</div>
+            <div class="vis-ai-text">"Sarah leads product at Opal Labs, a B2B SaaS startup focused on workflow automation. You discussed partnership opportunities and she requested an intro to your investor Marcus R."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-section">
+    <div class="stats-inner">
+      <div class="stat-block">
+        <div class="stat-num">2s</div>
+        <div class="stat-label">Average Connection Time</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">iOS</div>
+        <div class="stat-label">Available Now · Free</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Connections You Can Make</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLOR BAR -->
+  <div class="color-bar">
+    <div class="color-bar-seg" style="background:#f5ab62;"></div>
+    <div class="color-bar-seg" style="background:#7b9874;"></div>
+    <div class="color-bar-seg" style="background:#c3d8d1;"></div>
+    <div class="color-bar-seg" style="background:#024466;"></div>
+    <div class="color-bar-seg" style="background:#fdf4e7; border-top:1px solid #e4ddd0;"></div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-eyebrow">Available Now · Free to Download</div>
+      <h2 class="cta-title">
+        Your next great<br>connection is one<br><em>scan away.</em>
+      </h2>
+      <p class="cta-body">
+        Stop losing business cards, forgetting names, and letting great conversations fade. Download Subtex and start building relationships that actually stick.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://apps.apple.com/us/app/anno-meaningful-networking/id6758132245" class="store-badge">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.19 1.28-2.17 3.82.03 3.02 2.65 4.03 2.68 4.04l-.06.21zm-5.25-17.43c.65-.79 1.72-1.39 2.61-1.43.09 1.1-.32 2.19-.93 2.98-.61.8-1.63 1.43-2.6 1.36-.1-1.07.35-2.16.92-2.91z"/>
+          </svg>
+          <div class="store-badge-text">
+            <div class="store-line1">Download on the</div>
+            <div class="store-line2">App Store</div>
+          </div>
+        </a>
+      </div>
+      <div class="cta-note">Free · iOS · No account required to browse</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Subtex<span>.</span></div>
+          <div class="footer-tagline">Meaningful Connections</div>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:hello@subtex.app">Contact</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="https://apps.apple.com/us/app/anno-meaningful-networking/id6758132245">App Store</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2025 Subtex. All rights reserved.</div>
+        <a href="mailto:hello@subtex.app" class="footer-email">hello@subtex.app</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
