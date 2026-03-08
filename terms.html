@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms &amp; Conditions — Subtex</title>
+  <meta name="description" content="Subtex Terms and Conditions — the rules and guidelines governing your use of the Subtex app and services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --twilight:   #024466;
+      --twilight-d: #1a4366;
+      --lionsmane:  #fdf4e7;
+      --celeste:    #c3d8d1;
+      --herb:       #7b9874;
+      --marigold:   #f5ab62;
+      --body-text:  #3a5a6e;
+      --muted:      #a09585;
+      --divider:    #e4ddd0;
+      --bg:         #f0ebe0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      background-color: var(--lionsmane);
+      color: var(--body-text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 40px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(2, 68, 102, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--marigold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--celeste);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .nav-cta {
+      background-color: var(--marigold) !important;
+      color: var(--twilight) !important;
+      padding: 10px 22px;
+      border-radius: 3px;
+      font-weight: 700 !important;
+    }
+
+    .nav-cta:hover { background-color: #f0a050 !important; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background-color: var(--twilight);
+      padding: 120px 40px 72px;
+    }
+
+    .page-hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .page-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--marigold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .page-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--marigold);
+    }
+
+    .page-title {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .page-meta {
+      font-size: 13px;
+      color: var(--celeste);
+      opacity: 0.6;
+    }
+
+    /* ── COLOR BAR ── */
+    .color-bar { height: 5px; display: flex; }
+    .color-bar-seg { flex: 1; }
+
+    /* ── CONTENT ── */
+    .content-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px 40px 100px;
+    }
+
+    /* TOC */
+    .toc {
+      background-color: var(--bg);
+      border-left: 3px solid var(--marigold);
+      border-radius: 0 8px 8px 0;
+      padding: 28px 32px;
+      margin-bottom: 60px;
+    }
+
+    .toc-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--twilight);
+      margin-bottom: 16px;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toc-list a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--body-text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+
+    .toc-list a:hover { color: var(--twilight); }
+
+    .toc-list a::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 1px;
+      background-color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    /* Sections */
+    .policy-section {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .policy-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .policy-section-num {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--herb);
+      margin-bottom: 10px;
+    }
+
+    .policy-section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--twilight);
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    .policy-section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--twilight);
+      letter-spacing: -0.01em;
+      margin: 28px 0 12px;
+      padding-top: 28px;
+      border-top: 1px solid var(--divider);
+    }
+
+    .policy-section p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--body-text);
+      margin-bottom: 16px;
+    }
+
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    .policy-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .policy-section ul li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--body-text);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .policy-section ul li::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: var(--marigold);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .policy-section ul li div strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--twilight);
+      margin-bottom: 4px;
+    }
+
+    .policy-section ul li div p {
+      margin-bottom: 0;
+      font-size: 13px;
+    }
+
+    .policy-section a {
+      color: var(--twilight);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .policy-section a:hover { color: var(--herb); }
+
+    .policy-subsection-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .highlight-box {
+      background-color: var(--bg);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin: 20px 0;
+      border-left: 3px solid var(--celeste);
+    }
+
+    .highlight-box p { margin-bottom: 0; font-size: 13px; }
+
+    .highlight-box.warning { border-left-color: var(--marigold); }
+
+    .lettered-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .lettered-list li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--body-text);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .lettered-list li .ltr {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--marigold);
+      background: rgba(245,171,98,0.12);
+      border-radius: 3px;
+      padding: 2px 7px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      letter-spacing: 0.04em;
+    }
+
+    .lettered-list li strong { color: var(--twilight); }
+
+    /* ── FOOTER ── */
+    footer {
+      background-color: var(--twilight);
+      padding: 48px 40px 32px;
+    }
+
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(195,216,209,0.1);
+      margin-bottom: 28px;
+    }
+
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .footer-logo span { color: var(--marigold); }
+
+    .footer-tagline {
+      font-size: 12px;
+      color: var(--celeste);
+      opacity: 0.6;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--celeste);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover { opacity: 1; }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy { font-size: 11px; color: rgba(195,216,209,0.35); }
+
+    .footer-email {
+      font-size: 11px;
+      color: var(--herb);
+      text-decoration: none;
+    }
+
+    .footer-email:hover { color: var(--celeste); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links li:not(:last-child) { display: none; }
+      .page-hero { padding: 100px 24px 56px; }
+      .content-wrap { padding: 48px 24px 72px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Subtex<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#how">How It Works</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="https://apps.apple.com/us/app/anno-meaningful-networking/id6758132245" class="nav-cta">Get the App</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Legal</div>
+      <h1 class="page-title">Terms &amp; Conditions</h1>
+      <p class="page-meta">Last updated: March 8, 2026</p>
+    </div>
+  </div>
+
+  <!-- COLOR BAR -->
+  <div class="color-bar">
+    <div class="color-bar-seg" style="background:#024466;"></div>
+    <div class="color-bar-seg" style="background:#c3d8d1;"></div>
+    <div class="color-bar-seg" style="background:#7b9874;"></div>
+    <div class="color-bar-seg" style="background:#f5ab62;"></div>
+    <div class="color-bar-seg" style="background:#fdf4e7; border-top:1px solid #e4ddd0;"></div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content-wrap">
+
+    <!-- Intro -->
+    <div class="policy-section">
+      <p>
+        These Terms and Conditions ("Terms") govern your access to and use of the Subtex mobile application and any related services (collectively, the "Service") provided by Subtex ("we," "us," or "our"). By downloading, installing, or using the Service, you agree to be bound by these Terms.
+      </p>
+      <p>
+        Please read these Terms carefully before using the Service. If you do not agree with any part of these Terms, you must not use the Service.
+      </p>
+      <div class="highlight-box warning">
+        <p>
+          <strong>Important:</strong> These Terms contain provisions that limit our liability and require individual arbitration of disputes. Please review Sections 10 and 11 carefully.
+        </p>
+      </div>
+    </div>
+
+    <!-- TOC -->
+    <div class="toc">
+      <div class="toc-title">Contents</div>
+      <ol class="toc-list">
+        <li><a href="#eligibility">Eligibility &amp; Account Registration</a></li>
+        <li><a href="#permitted-use">Permitted Use of the Service</a></li>
+        <li><a href="#prohibited-use">Prohibited Conduct</a></li>
+        <li><a href="#user-content">User Content</a></li>
+        <li><a href="#ip">Intellectual Property</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#third-party">Third-Party Services</a></li>
+        <li><a href="#disclaimers">Disclaimers</a></li>
+        <li><a href="#liability">Limitation of Liability</a></li>
+        <li><a href="#indemnification">Indemnification</a></li>
+        <li><a href="#disputes">Disputes &amp; Governing Law</a></li>
+        <li><a href="#termination">Termination</a></li>
+        <li><a href="#changes">Changes to These Terms</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <!-- 1. Eligibility -->
+    <div class="policy-section" id="eligibility">
+      <div class="policy-section-num">01</div>
+      <h2>Eligibility &amp; Account Registration</h2>
+      <p>
+        You must be at least 13 years of age (or the minimum age required by applicable law in your jurisdiction) to use the Service. By using the Service, you represent and warrant that you meet this age requirement and that all information you provide to us is accurate and complete.
+      </p>
+      <p>
+        You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You agree to notify us immediately at <a href="mailto:feedback@getsubtex.com">feedback@getsubtex.com</a> if you suspect any unauthorized use of your account.
+      </p>
+      <p>
+        We reserve the right to refuse registration or cancel accounts at our sole discretion.
+      </p>
+    </div>
+
+    <!-- 2. Permitted Use -->
+    <div class="policy-section" id="permitted-use">
+      <div class="policy-section-num">02</div>
+      <h2>Permitted Use of the Service</h2>
+      <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to:</p>
+      <ul>
+        <li>Download and install the Subtex application on devices you own or control</li>
+        <li>Access and use the Service for your personal, non-commercial networking purposes</li>
+        <li>Exchange contact information and profile data with other users who consent to such exchanges</li>
+        <li>Create, store, and manage notes and tags associated with your connections</li>
+        <li>Use AI-generated summaries and features as made available within the Service</li>
+      </ul>
+      <p>
+        This license does not include any right to resell, sublicense, or commercially exploit the Service or its content in any manner.
+      </p>
+    </div>
+
+    <!-- 3. Prohibited Use -->
+    <div class="policy-section" id="prohibited-use">
+      <div class="policy-section-num">03</div>
+      <h2>Prohibited Conduct</h2>
+      <p>You agree not to engage in any of the following when using the Service:</p>
+      <ul>
+        <li>Violating any applicable local, national, or international law or regulation</li>
+        <li>Impersonating any person or entity, or falsely representing your affiliation with any person or entity</li>
+        <li>Uploading, transmitting, or sharing content that is unlawful, harmful, threatening, abusive, harassing, defamatory, obscene, or otherwise objectionable</li>
+        <li>Scraping, crawling, or otherwise harvesting data from the Service without our express written consent</li>
+        <li>Attempting to gain unauthorized access to any part of the Service, other user accounts, or related systems</li>
+        <li>Introducing viruses, malware, or other harmful code into the Service</li>
+        <li>Using the Service to send unsolicited communications (spam) to other users</li>
+        <li>Reverse engineering, decompiling, or disassembling any portion of the Service</li>
+        <li>Using automated scripts, bots, or other tools to interact with the Service without our written permission</li>
+        <li>Interfering with or disrupting the integrity or performance of the Service or its infrastructure</li>
+      </ul>
+      <p>
+        We reserve the right to investigate and take appropriate action against any violations, including suspending or terminating accounts and reporting conduct to law enforcement authorities.
+      </p>
+    </div>
+
+    <!-- 4. User Content -->
+    <div class="policy-section" id="user-content">
+      <div class="policy-section-num">04</div>
+      <h2>User Content</h2>
+
+      <span class="policy-subsection-label">4.1 — Ownership</span>
+      <p>
+        You retain ownership of any content you create or submit through the Service, including your profile information, notes, and tags ("User Content"). By submitting User Content, you grant Subtex a worldwide, non-exclusive, royalty-free, sublicensable license to use, store, process, display, and distribute your User Content solely for the purpose of operating and improving the Service.
+      </p>
+
+      <h3>4.2 — Your Responsibilities</h3>
+      <p>You are solely responsible for your User Content and the consequences of sharing it. You represent and warrant that:</p>
+      <ul>
+        <li>You own or have the necessary rights to submit your User Content</li>
+        <li>Your User Content does not infringe the intellectual property, privacy, or other rights of any third party</li>
+        <li>Your User Content complies with these Terms and all applicable laws</li>
+      </ul>
+
+      <h3>4.3 — Content Moderation</h3>
+      <p>
+        We reserve the right, but not the obligation, to review, monitor, and remove User Content at our sole discretion and without prior notice if we determine it violates these Terms or is otherwise objectionable. We are not liable for any failure to remove, or any delay in removing, harmful or objectionable content.
+      </p>
+    </div>
+
+    <!-- 5. IP -->
+    <div class="policy-section" id="ip">
+      <div class="policy-section-num">05</div>
+      <h2>Intellectual Property</h2>
+      <p>
+        The Service and all of its original content, features, and functionality — including but not limited to the Subtex name, logo, design, text, graphics, and software — are and will remain the exclusive property of Subtex and its licensors. They are protected by copyright, trademark, and other intellectual property laws.
+      </p>
+      <p>
+        Nothing in these Terms grants you any right to use the Subtex name, logo, or other trademarks without our prior written consent.
+      </p>
+      <p>
+        If you believe any content on the Service infringes your intellectual property rights, please contact us at <a href="mailto:feedback@getsubtex.com">feedback@getsubtex.com</a> with a detailed description of your claim.
+      </p>
+    </div>
+
+    <!-- 6. Privacy -->
+    <div class="policy-section" id="privacy">
+      <div class="policy-section-num">06</div>
+      <h2>Privacy</h2>
+      <p>
+        Your use of the Service is also governed by our <a href="privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference. By using the Service, you agree to the collection, use, and sharing of your information as described in the Privacy Policy.
+      </p>
+    </div>
+
+    <!-- 7. Third-Party Services -->
+    <div class="policy-section" id="third-party">
+      <div class="policy-section-num">07</div>
+      <h2>Third-Party Services</h2>
+      <p>
+        The Service may integrate with or contain links to third-party websites, services, or applications that are not owned or controlled by Subtex. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party services.
+      </p>
+      <p>
+        Your interactions with third-party services are governed by those parties' own terms and privacy policies. We encourage you to review them before engaging with any third-party service.
+      </p>
+      <p>
+        The Service is available through the Apple App Store. Your use is also subject to Apple's <a href="https://www.apple.com/legal/internet-services/itunes/us/terms.html" target="_blank" rel="noopener">App Store Terms of Service</a>.
+      </p>
+    </div>
+
+    <!-- 8. Disclaimers -->
+    <div class="policy-section" id="disclaimers">
+      <div class="policy-section-num">08</div>
+      <h2>Disclaimers</h2>
+      <div class="highlight-box warning">
+        <p>
+          The Service is provided on an <strong>"as is"</strong> and <strong>"as available"</strong> basis without warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.
+        </p>
+      </div>
+      <p>
+        We do not warrant that the Service will be uninterrupted, error-free, secure, or free of viruses or other harmful components. We do not warrant the accuracy, completeness, or reliability of any content obtained through the Service.
+      </p>
+      <p>
+        AI-generated summaries and insights provided within the Service are for informational purposes only. They may contain errors and should not be relied upon as professional advice of any kind.
+      </p>
+      <p>
+        Some jurisdictions do not allow the exclusion of implied warranties, so the above exclusions may not apply to you.
+      </p>
+    </div>
+
+    <!-- 9. Limitation of Liability -->
+    <div class="policy-section" id="liability">
+      <div class="policy-section-num">09</div>
+      <h2>Limitation of Liability</h2>
+      <p>
+        To the fullest extent permitted by applicable law, Subtex and its officers, directors, employees, agents, and licensors shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, goodwill, or other intangible losses, arising out of or in connection with:
+      </p>
+      <ul>
+        <li>Your access to or use of (or inability to access or use) the Service</li>
+        <li>Any conduct or content of any third party on the Service</li>
+        <li>Any content obtained from the Service</li>
+        <li>Unauthorized access, use, or alteration of your transmissions or content</li>
+      </ul>
+      <p>
+        In no event shall our total aggregate liability to you for all claims arising out of or relating to these Terms or the Service exceed the greater of (a) the amount you paid us in the twelve months prior to the claim, or (b) one hundred U.S. dollars (USD $100).
+      </p>
+      <p>
+        Some jurisdictions do not allow the limitation or exclusion of liability for incidental or consequential damages, so the above limitations may not apply to you.
+      </p>
+    </div>
+
+    <!-- 10. Indemnification -->
+    <div class="policy-section" id="indemnification">
+      <div class="policy-section-num">10</div>
+      <h2>Indemnification</h2>
+      <p>
+        You agree to defend, indemnify, and hold harmless Subtex and its officers, directors, employees, agents, and licensors from and against any claims, liabilities, damages, judgments, awards, losses, costs, or expenses (including reasonable attorneys' fees) arising out of or relating to:
+      </p>
+      <ul>
+        <li>Your use of the Service in violation of these Terms</li>
+        <li>Your User Content</li>
+        <li>Your violation of any third-party rights, including intellectual property or privacy rights</li>
+        <li>Any claim that your User Content caused damage to a third party</li>
+      </ul>
+    </div>
+
+    <!-- 11. Disputes -->
+    <div class="policy-section" id="disputes">
+      <div class="policy-section-num">11</div>
+      <h2>Disputes &amp; Governing Law</h2>
+
+      <span class="policy-subsection-label">11.1 — Governing Law</span>
+      <p>
+        These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law provisions.
+      </p>
+
+      <h3>11.2 — Informal Resolution</h3>
+      <p>
+        Before filing any formal dispute, you agree to first contact us at <a href="mailto:feedback@getsubtex.com">feedback@getsubtex.com</a> and attempt to resolve the issue informally. We will try to resolve the dispute within 30 days of your notice.
+      </p>
+
+      <h3>11.3 — Arbitration</h3>
+      <p>
+        If a dispute cannot be resolved informally, you and Subtex agree to resolve any claim, dispute, or controversy arising out of or relating to these Terms or the Service through binding individual arbitration, rather than in court. The arbitration shall be conducted by a mutually agreed-upon arbitrator under the rules of the American Arbitration Association (AAA).
+      </p>
+      <p>
+        <strong>You and Subtex agree to bring claims only in your individual capacity and not as part of any class action or representative proceeding.</strong>
+      </p>
+
+      <h3>11.4 — Exceptions</h3>
+      <p>
+        Either party may seek emergency injunctive or other equitable relief in a court of competent jurisdiction to prevent the actual or threatened infringement, misappropriation, or violation of intellectual property rights or confidential information.
+      </p>
+    </div>
+
+    <!-- 12. Termination -->
+    <div class="policy-section" id="termination">
+      <div class="policy-section-num">12</div>
+      <h2>Termination</h2>
+      <p>
+        We may suspend or terminate your access to the Service at any time, with or without notice and with or without cause, including if we reasonably believe you have violated these Terms.
+      </p>
+      <p>
+        You may terminate your account at any time by deleting it within the app under <strong>Settings → Account → Delete Account</strong>.
+      </p>
+      <p>
+        Upon termination, your license to use the Service will immediately cease. Sections of these Terms that by their nature should survive termination — including ownership provisions, disclaimers, indemnification, and limitations of liability — shall survive.
+      </p>
+    </div>
+
+    <!-- 13. Changes -->
+    <div class="policy-section" id="changes">
+      <div class="policy-section-num">13</div>
+      <h2>Changes to These Terms</h2>
+      <p>
+        We reserve the right to modify these Terms at any time. When we make material changes, we will update the "Last updated" date at the top of this page and, where appropriate, notify you via the app or email.
+      </p>
+      <p>
+        Your continued use of the Service after any changes constitutes your acceptance of the revised Terms. If you do not agree to the updated Terms, you must stop using the Service.
+      </p>
+    </div>
+
+    <!-- 14. Contact -->
+    <div class="policy-section" id="contact">
+      <div class="policy-section-num">14</div>
+      <h2>Contact Us</h2>
+      <p>
+        If you have any questions about these Terms, please reach out:
+      </p>
+      <div class="highlight-box">
+        <p>
+          <strong>Subtex</strong><br>
+          Email: <a href="mailto:feedback@getsubtex.com">feedback@getsubtex.com</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Subtex<span>.</span></div>
+          <div class="footer-tagline">Meaningful Connections</div>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:feedback@getsubtex.com">Contact</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="https://apps.apple.com/us/app/anno-meaningful-networking/id6758132245">App Store</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2025 Subtex. All rights reserved.</div>
+        <a href="mailto:feedback@getsubtex.com" class="footer-email">feedback@getsubtex.com</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
