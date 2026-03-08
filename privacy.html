@@ -274,6 +274,61 @@
       font-size: 13px;
     }
 
+    .policy-section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--twilight);
+      letter-spacing: -0.01em;
+      margin: 28px 0 12px;
+      padding-top: 28px;
+      border-top: 1px solid var(--divider);
+    }
+
+    .policy-section h3:first-of-type { margin-top: 20px; }
+
+    .policy-subsection-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .lettered-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .lettered-list li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--body-text);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .lettered-list li .ltr {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--marigold);
+      background: rgba(245,171,98,0.12);
+      border-radius: 3px;
+      padding: 2px 7px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      letter-spacing: 0.04em;
+    }
+
+    .lettered-list li strong {
+      color: var(--twilight);
+    }
+
     .policy-section a {
       color: var(--twilight);
       font-weight: 600;
@@ -465,19 +520,41 @@
     <div class="policy-section" id="how-we-use">
       <div class="policy-section-num">02</div>
       <h2>How We Use Your Information</h2>
-      <p>We use the information we collect to:</p>
+      <span class="policy-subsection-label">2.1 — Processing Purposes</span>
+      <p>We process collected information for the following purposes:</p>
       <ul>
-        <li>Provide, operate, and improve the Subtex Service</li>
-        <li>Facilitate contact exchanges between users</li>
-        <li>Generate AI-powered summaries and insights about your connections (processed on your behalf)</li>
-        <li>Send you service-related communications, such as updates or security notices</li>
-        <li>Analyze usage trends to improve features and performance</li>
-        <li>Detect, prevent, and address technical issues or misuse</li>
-        <li>Comply with legal obligations</li>
+        <li>Account creation, authentication, and maintenance</li>
+        <li>Provision of Application features and functionality</li>
+        <li>Delivery of personalized content and notifications</li>
+        <li>Application performance optimization and error resolution</li>
+        <li>Usage pattern analysis and service improvement</li>
+        <li>Security monitoring and fraud prevention</li>
       </ul>
       <p>
         We do <strong>not</strong> use your data to serve third-party advertisements, and we do <strong>not</strong> sell your personal information to any third party.
       </p>
+
+      <h3>2.2 — Access to User Content</h3>
+      <p>Authorized Subtex personnel may access User Content and associated account information when reasonably necessary for:</p>
+      <ol class="lettered-list">
+        <li><span class="ltr">a</span><div><strong>Service Provision:</strong> Enabling social features, displaying User Content to connected contacts, and facilitating user interactions.</div></li>
+        <li><span class="ltr">b</span><div><strong>Technical Support:</strong> Providing customer assistance, troubleshooting technical issues, and responding to user inquiries.</div></li>
+        <li><span class="ltr">c</span><div><strong>Content Moderation:</strong> Enforcing Terms of Service, preventing abuse, detecting policy violations, and maintaining community safety.</div></li>
+        <li><span class="ltr">d</span><div><strong>Legal Compliance:</strong> Complying with applicable laws, regulations, legal processes, or governmental requests.</div></li>
+        <li><span class="ltr">e</span><div><strong>Service Enhancement:</strong> Analyzing usage patterns, developing features, and improving Application functionality.</div></li>
+        <li><span class="ltr">f</span><div><strong>Security Operations:</strong> Protecting Application integrity and preventing fraudulent, abusive, or illegal activity.</div></li>
+      </ol>
+      <p>All personnel with access to User Content are subject to strict confidentiality obligations. Users acknowledge that the Company cannot guarantee absolute privacy or security of transmitted or stored information.</p>
+
+      <h3>2.3 — Content Moderation Rights</h3>
+      <p>Subtex reserves the right, without obligation, to:</p>
+      <ul>
+        <li>Monitor, screen, review, edit, or remove any User Content at any time without prior notice</li>
+        <li>Investigate potential violations of our Terms of Service or this Policy</li>
+        <li>Impose sanctions against Users who violate our policies, including content removal, account suspension, or termination</li>
+        <li>Disclose User Content to law enforcement or third parties when required by law or necessary to protect our rights, property, or safety</li>
+      </ul>
+      <p>Users may report policy-violating content through designated reporting mechanisms. Subtex reviews reported content at its sole discretion and makes no representations regarding the detection or removal of objectionable material.</p>
     </div>
 
     <!-- 3. Sharing -->
