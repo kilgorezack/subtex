@@ -171,6 +171,39 @@
       background-color: transparent !important;
     }
 
+    /* ── CUSTOM STAR RATING ── */
+    .custom-star-rating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      gap: 4px;
+    }
+
+    .custom-star-rating input[type="radio"] {
+      display: none;
+    }
+
+    .custom-star-rating label {
+      font-size: 36px;
+      color: #d4c9b8;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.15s;
+      padding: 2px;
+    }
+
+    /* Fill stars from selected/hovered leftward (visually rightward due to row-reverse) */
+    .custom-star-rating input[type="radio"]:checked ~ label,
+    .custom-star-rating label:hover,
+    .custom-star-rating label:hover ~ label {
+      color: var(--marigold);
+    }
+
+    .custom-star-rating input[type="radio"]:checked ~ label:hover,
+    .custom-star-rating input[type="radio"]:checked ~ label:hover ~ label {
+      color: var(--marigold);
+    }
+
     /* ── FOOTER ── */
     footer {
       background-color: var(--twilight);
@@ -309,45 +342,6 @@
 	JotForm.isFullSource = true;
 	JotForm.init(function(){
 	/*INIT-START*/
-    $('input_4').rating({stars:'5',
-    inputClassName:'form-textbox validate[required]',
-    imagePath: 'https://cdn.jotfor.ms/assets/v3/images/stars_v2.png',
-    cleanFirst:true, value:''});
-$('input_4').setAttribute('role','radiogroup');
-$('input_4').setAttribute('aria-labelledby','label_4');
-    Array.from($('input_4').children).map(function(e, i){
-      if(i === 0) e.setAttribute('tabindex', 0);
-      else e.setAttribute('tabindex', -1);
-      e.setAttribute('aria-label', i + 1 === 1 ? '1 star' : (i + 1) + ' stars');
-      e.setAttribute('role','radio');
-      e.setAttribute('aria-checked','false');
-      e.classList.add('form-star-rating-star', 'Stars');
-      e.onkeydown = function(k){
-        var stars = Array.from($('input_4').children).slice(0, 5);
-        var currentIndex = stars.indexOf(e);
-        var nextIndex = -1;
-        if(k.keyCode == 39 || k.keyCode == 40) {
-          k.preventDefault();
-          nextIndex = currentIndex < stars.length - 1 ? currentIndex + 1 : 0;
-        }
-        else if(k.keyCode == 37 || k.keyCode == 38) {
-          k.preventDefault();
-          nextIndex = currentIndex > 0 ? currentIndex - 1 : stars.length - 1;
-        }
-        if(nextIndex !== -1) {
-          stars[nextIndex].focus();
-          stars[nextIndex].click();
-        }
-        stars.forEach(star => {
-          if(star.getAttribute('aria-checked') === 'true') {
-            star.setAttribute('tabindex', 0);
-          }
-          else {
-            star.setAttribute('tabindex', -1);
-          }
-        });
-      };
-    });
 if (window.JotForm && JotForm.accessible) $('input_5').setAttribute('tabindex',0);
 if (window.JotForm && JotForm.accessible) $('input_6').setAttribute('tabindex',0);
 if (window.JotForm && JotForm.accessible) $('input_7').setAttribute('tabindex',0);
@@ -411,16 +405,19 @@ li[data-type="control_button"] .form-submit-button { color: #2c3345; }
               </div>
             </li>
             <li class="form-line jf-required" data-type="control_rating" id="id_4">
-              <label class="form-label form-label-top form-label-auto" id="label_4" for="input_4" aria-hidden="false"> How satisfied are you with the current version of the app?<span class="form-required">*</span> </label>
+              <label class="form-label form-label-top form-label-auto" id="label_4" aria-hidden="false"> How satisfied are you with the current version of the app?<span class="form-required">*</span> </label>
               <div id="cid_4" class="form-input-wide jf-required" data-layout="full">
-                <div id="input_4" name="q4_q4_rating2" data-component="rating" data-version="v2">
-                  <select name="q4_q4_rating2" aria-label="How satisfied are you with the current version of the app?">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
+                <div class="custom-star-rating" role="radiogroup" aria-labelledby="label_4">
+                  <input type="radio" id="star5" name="q4_q4_rating2" value="5" required />
+                  <label for="star5" title="5 stars">★</label>
+                  <input type="radio" id="star4" name="q4_q4_rating2" value="4" />
+                  <label for="star4" title="4 stars">★</label>
+                  <input type="radio" id="star3" name="q4_q4_rating2" value="3" />
+                  <label for="star3" title="3 stars">★</label>
+                  <input type="radio" id="star2" name="q4_q4_rating2" value="2" />
+                  <label for="star2" title="2 stars">★</label>
+                  <input type="radio" id="star1" name="q4_q4_rating2" value="1" />
+                  <label for="star1" title="1 star">★</label>
                 </div>
               </div>
             </li>
