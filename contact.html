@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-itunes-app" content="app-id=6758132245, app-argument=https://apps.apple.com/us/app/subtex/id6758132245?itscg=30200&itsct=apps_box_link&mttnsubad=6758132245">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC9HWR08BE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZC9HWR08BE');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vstu3ehwp5");
+  </script>
+  <title>Contact — Subtex</title>
+  <meta name="description" content="Get in touch with the Subtex team. We'd love to hear from you.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --twilight:   #024466;
+      --twilight-d: #1a4366;
+      --lionsmane:  #fdf4e7;
+      --celeste:    #c3d8d1;
+      --herb:       #7b9874;
+      --marigold:   #f5ab62;
+      --body-text:  #3a5a6e;
+      --muted:      #a09585;
+      --divider:    #e4ddd0;
+      --bg:         #f0ebe0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      background-color: var(--lionsmane);
+      color: var(--body-text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 40px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(2, 68, 102, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--marigold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--celeste);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .nav-cta {
+      background-color: var(--marigold) !important;
+      color: var(--twilight) !important;
+      padding: 10px 22px;
+      border-radius: 3px;
+      font-weight: 700 !important;
+    }
+
+    .nav-cta:hover { background-color: #f0a050 !important; }
+
+    .nav-cta-secondary {
+      background-color: transparent !important;
+      color: var(--celeste) !important;
+      padding: 10px 22px;
+      border-radius: 3px;
+      border: 2px solid var(--celeste);
+      font-weight: 700 !important;
+    }
+
+    .nav-cta-secondary:hover { background-color: rgba(195,216,209,0.15) !important; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background-color: var(--twilight);
+      padding: 120px 40px 72px;
+    }
+
+    .page-hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .page-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--marigold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .page-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--marigold);
+    }
+
+    .page-title {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .page-sub {
+      font-size: 15px;
+      color: var(--celeste);
+      line-height: 1.7;
+      opacity: 0.8;
+      max-width: 480px;
+    }
+
+    /* ── COLOR BAR ── */
+    .color-bar { height: 5px; display: flex; }
+    .color-bar-seg { flex: 1; }
+
+    /* ── FORM SECTION ── */
+    .form-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 72px 40px 100px;
+    }
+
+    .form-container {
+      background-color: #fff;
+      border-radius: 12px;
+      border: 1px solid var(--divider);
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(2, 68, 102, 0.06);
+      padding: 48px 40px;
+    }
+
+    /* HubSpot form overrides */
+    .hs-form-frame {
+      width: 100%;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background-color: var(--twilight);
+      padding: 48px 40px 32px;
+    }
+
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(195,216,209,0.1);
+      margin-bottom: 28px;
+    }
+
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .footer-logo span { color: var(--marigold); }
+
+    .footer-tagline {
+      font-size: 12px;
+      color: var(--celeste);
+      opacity: 0.6;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--celeste);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover { opacity: 1; }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy { font-size: 11px; color: rgba(195,216,209,0.35); }
+
+    .footer-email {
+      font-size: 11px;
+      color: var(--herb);
+      text-decoration: none;
+    }
+
+    .footer-email:hover { color: var(--celeste); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links li:not(:last-child) { display: none; }
+      .page-hero { padding: 100px 24px 56px; }
+      .form-wrap { padding: 48px 24px 72px; }
+      .form-container { padding: 32px 24px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Subtex<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#how">How It Works</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="https://apps.apple.com/us/app/anno-meaningful-networking/id6758132245" class="nav-cta">Get the App</a></li>
+      <li><a href="https://dashboard.getsubtex.com/" class="nav-cta-secondary">Admin Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Get in Touch</div>
+      <h1 class="page-title">Contact Us</h1>
+      <p class="page-sub">Have a question, idea, or just want to say hello? Fill out the form below and we'll get back to you.</p>
+    </div>
+  </div>
+
+  <!-- COLOR BAR -->
+  <div class="color-bar">
+    <div class="color-bar-seg" style="background:#024466;"></div>
+    <div class="color-bar-seg" style="background:#c3d8d1;"></div>
+    <div class="color-bar-seg" style="background:#7b9874;"></div>
+    <div class="color-bar-seg" style="background:#f5ab62;"></div>
+    <div class="color-bar-seg" style="background:#fdf4e7; border-top:1px solid #e4ddd0;"></div>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-wrap">
+    <div class="form-container">
+      <script src="https://js-na2.hsforms.net/forms/embed/245898395.js" defer></script>
+      <div class="hs-form-frame" data-region="na2" data-form-id="b655fb76-5d6e-4722-83cc-c15bd04db7da" data-portal-id="245898395"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Subtex<span>.</span></div>
+          <div class="footer-tagline">Meaningful Connections</div>
+        </div>
+        <div class="footer-links">
+          <a href="feedback.html">Feedback</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="https://apps.apple.com/us/app/anno-meaningful-networking/id6758132245">App Store</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 GetSubtex LLC. All rights reserved.</div>
+        <a href="mailto:feedback@getsubtex.com" class="footer-email">feedback@getsubtex.com</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
