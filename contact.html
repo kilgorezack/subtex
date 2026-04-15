@@ -23,6 +23,16 @@
   </script>
   <title>Contact — Subtex</title>
   <meta name="description" content="Get in touch with the Subtex team. We'd love to hear from you.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Subtex">
+  <meta property="og:title" content="Contact — Subtex">
+  <meta property="og:description" content="Get in touch with the Subtex team. We'd love to hear from you.">
+  <meta property="og:url" content="https://getsubtex.com/contact.html">
+  <meta property="og:image" content="https://getsubtex.com/images/hero-mockup.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact — Subtex">
+  <meta name="twitter:description" content="Get in touch with the Subtex team. We'd love to hear from you.">
+  <meta name="twitter:image" content="https://getsubtex.com/images/hero-mockup.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -546,6 +556,30 @@
 
     .footer-email:hover { color: var(--celeste); }
 
+
+    /* ── HAMBURGER ── */
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .contact-section {
@@ -559,7 +593,27 @@
 
     @media (max-width: 640px) {
       nav { padding: 0 24px; }
-      .nav-links li:not(:last-child) { display: none; }
+
+      .nav-burger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0; right: 0;
+        background-color: rgba(2,68,102,0.98);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 0 16px;
+        border-top: 1px solid rgba(195,216,209,0.12);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 13px 24px; border-bottom: 1px solid rgba(195,216,209,0.08); }
+      .nav-links li:last-child a { border-bottom: none; }
+      .nav-cta { margin: 0 !important; border-radius: 0 !important; padding: 13px 24px !important; }
+      .nav-cta-secondary { margin: 0 !important; border-radius: 0 !important; border: none !important; border-top: 1px solid rgba(195,216,209,0.12) !important; padding: 13px 24px !important; }
       .page-hero { padding: 108px 24px 64px; }
       .page-hero::after { display: none; }
       .contact-section { padding: 48px 24px 72px; }
@@ -583,7 +637,9 @@
       <li><a href="contact.html">Contact</a></li>
       <li><a href="https://apps.apple.com/us/app/anno-meaningful-networking/id6758132245" class="nav-cta">Get the App</a></li>
       <li><a href="https://dashboard.getsubtex.com/" class="nav-cta-secondary">Admin</a></li>
-    </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -818,5 +874,23 @@
     </div>
   </footer>
 
+  <script>
+  (function() {
+    var burger = document.getElementById('nav-burger');
+    var links  = document.querySelector('.nav-links');
+    burger.addEventListener('click', function() {
+      var open = links.classList.toggle('open');
+      burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('nav')) {
+        links.classList.remove('open');
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+  </script>
 </body>
 </html>

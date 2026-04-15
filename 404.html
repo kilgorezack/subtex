@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>Page Not Found — Subtex</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --twilight:  #024466;
+      --lionsmane: #fdf4e7;
+      --celeste:   #c3d8d1;
+      --herb:      #7b9874;
+      --marigold:  #f5ab62;
+      --body-text: #3a5a6e;
+      --divider:   #e4ddd0;
+    }
+
+    body {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      background-color: var(--twilight);
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    nav {
+      padding: 0 40px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(195,216,209,0.1);
+    }
+
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--marigold); }
+
+    .nav-home {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--celeste);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .nav-home:hover { opacity: 1; }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .error-inner { max-width: 520px; }
+
+    .error-code {
+      font-size: clamp(80px, 18vw, 140px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: rgba(195,216,209,0.12);
+      margin-bottom: -16px;
+      user-select: none;
+    }
+
+    .error-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--marigold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .error-eyebrow::before,
+    .error-eyebrow::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--marigold);
+    }
+
+    .error-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .error-sub {
+      font-size: 15px;
+      color: var(--celeste);
+      opacity: 0.75;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: var(--marigold);
+      color: var(--twilight);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      padding: 13px 32px;
+      transition: background-color 0.2s;
+    }
+
+    .btn-primary:hover { background-color: #f0a050; }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--celeste);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid rgba(195,216,209,0.3);
+      border-radius: 4px;
+      padding: 13px 32px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--celeste); color: #fff; }
+
+    /* ── COLOR BAR ── */
+    .color-bar { height: 5px; display: flex; }
+    .color-bar-seg { flex: 1; }
+
+    @media (max-width: 480px) {
+      nav { padding: 0 24px; }
+      main { padding: 48px 24px; }
+      .error-actions { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">Subtex<span>.</span></a>
+    <a href="/" class="nav-home">Back to Home</a>
+  </nav>
+
+  <main>
+    <div class="error-inner">
+      <div class="error-code">404</div>
+      <div class="error-eyebrow">Page Not Found</div>
+      <h1 class="error-title">This page doesn't exist.</h1>
+      <p class="error-sub">The link you followed may be broken, or the page may have been moved or removed.</p>
+      <div class="error-actions">
+        <a href="/" class="btn-primary">Go to Homepage</a>
+        <a href="/contact.html" class="btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </main>
+
+  <div class="color-bar">
+    <div class="color-bar-seg" style="background:#024466; opacity:0.4;"></div>
+    <div class="color-bar-seg" style="background:#c3d8d1; opacity:0.4;"></div>
+    <div class="color-bar-seg" style="background:#7b9874; opacity:0.4;"></div>
+    <div class="color-bar-seg" style="background:#f5ab62; opacity:0.4;"></div>
+    <div class="color-bar-seg" style="background:rgba(255,255,255,0.08);"></div>
+  </div>
+
+</body>
+</html>
