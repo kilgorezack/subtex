@@ -185,11 +185,112 @@
       padding: 48px 40px;
     }
 
-    /* HubSpot form overrides */
-    .hs-form-frame {
+    /* ── CUSTOM FORM ── */
+    .contact-form { display: flex; flex-direction: column; gap: 20px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+
+    .form-field label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--twilight);
+    }
+
+    .form-field label .req { color: var(--marigold); margin-left: 2px; }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--twilight);
+      background-color: #fff;
+      border: 1.5px solid var(--divider);
+      border-radius: 4px;
+      padding: 11px 14px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
       width: 100%;
     }
 
+    .form-field input:focus,
+    .form-field textarea:focus,
+    .form-field select:focus {
+      border-color: var(--twilight);
+      box-shadow: 0 0 0 3px rgba(2,68,102,0.08);
+    }
+
+    .form-field input.error,
+    .form-field textarea.error {
+      border-color: #e05252;
+    }
+
+    .form-field textarea { resize: vertical; min-height: 120px; }
+
+    .phone-row { display: flex; gap: 8px; }
+
+    .phone-row select {
+      width: 110px;
+      flex-shrink: 0;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23024466'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 28px;
+      cursor: pointer;
+    }
+
+    .phone-row input { flex: 1; }
+
+    .form-submit-btn {
+      align-self: flex-end;
+      background-color: var(--marigold);
+      color: var(--twilight);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 4px;
+      padding: 13px 32px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.15s;
+    }
+
+    .form-submit-btn:hover { background-color: #f0a050; }
+    .form-submit-btn:active { transform: scale(0.98); }
+    .form-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .form-message {
+      display: none;
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .form-message.success {
+      display: block;
+      background-color: #eaf5f0;
+      color: #2a6e4e;
+      border: 1px solid #b2ddc8;
+    }
+
+    .form-message.error {
+      display: block;
+      background-color: #fdf0f0;
+      color: #a33232;
+      border: 1px solid #f0c0c0;
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -305,10 +406,128 @@
   <!-- FORM -->
   <div class="form-wrap">
     <div class="form-container">
-      <script src="https://js-na2.hsforms.net/forms/embed/245898395.js" defer></script>
-      <div class="hs-form-frame" data-region="na2" data-form-id="b655fb76-5d6e-4722-83cc-c15bd04db7da" data-portal-id="245898395"></div>
+      <div id="form-message" class="form-message" role="alert"></div>
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" autocomplete="given-name" placeholder="Jane">
+          </div>
+          <div class="form-field">
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" autocomplete="family-name" placeholder="Smith">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="email">Email<span class="req">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="jane@example.com" required>
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone Number</label>
+          <div class="phone-row">
+            <select id="phone-country" aria-label="Country code">
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+64">🇳🇿 +64</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+34">🇪🇸 +34</option>
+              <option value="+39">🇮🇹 +39</option>
+              <option value="+55">🇧🇷 +55</option>
+              <option value="+52">🇲🇽 +52</option>
+              <option value="+91">🇮🇳 +91</option>
+              <option value="+81">🇯🇵 +81</option>
+              <option value="+82">🇰🇷 +82</option>
+              <option value="+86">🇨🇳 +86</option>
+              <option value="+65">🇸🇬 +65</option>
+              <option value="+971">🇦🇪 +971</option>
+            </select>
+            <input type="tel" id="phone" name="phone" autocomplete="tel-national" placeholder="(555) 000-0000">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" name="company" autocomplete="organization" placeholder="Acme Corp">
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="How can we help?"></textarea>
+        </div>
+        <button type="submit" class="form-submit-btn" id="submit-btn">Submit</button>
+      </form>
     </div>
   </div>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email');
+      const msgEl = document.getElementById('form-message');
+      const btn = document.getElementById('submit-btn');
+
+      // Clear previous state
+      email.classList.remove('error');
+      msgEl.className = 'form-message';
+      msgEl.textContent = '';
+
+      if (!email.value.trim()) {
+        email.classList.add('error');
+        email.focus();
+        msgEl.className = 'form-message error';
+        msgEl.textContent = 'Email is required.';
+        return;
+      }
+
+      const countryCode = document.getElementById('phone-country').value;
+      const phoneNumber = document.getElementById('phone').value.trim();
+      const fullPhone = phoneNumber ? countryCode + phoneNumber : '';
+
+      const fields = [
+        { name: 'firstname', value: document.getElementById('firstname').value.trim() },
+        { name: 'lastname',  value: document.getElementById('lastname').value.trim() },
+        { name: 'email',     value: email.value.trim() },
+        { name: 'phone',     value: fullPhone },
+        { name: 'company',   value: document.getElementById('company').value.trim() },
+        { name: 'message',   value: document.getElementById('message').value.trim() },
+      ].filter(f => f.value);
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      try {
+        const res = await fetch(
+          'https://api.hsforms.com/submissions/v3/integration/submit/245898395/b655fb76-5d6e-4722-83cc-c15bd04db7da',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              fields,
+              context: {
+                pageUri: window.location.href,
+                pageName: document.title,
+              },
+            }),
+          }
+        );
+
+        if (res.ok) {
+          document.getElementById('contact-form').style.display = 'none';
+          msgEl.className = 'form-message success';
+          msgEl.textContent = "Thanks for reaching out! We'll get back to you shortly.";
+        } else {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data.message || 'Submission failed');
+        }
+      } catch (err) {
+        msgEl.className = 'form-message error';
+        msgEl.textContent = 'Something went wrong. Please try again or email us at feedback@getsubtex.com.';
+        btn.disabled = false;
+        btn.textContent = 'Submit';
+      }
+    });
+  </script>
 
   <!-- FOOTER -->
   <footer>
