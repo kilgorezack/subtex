@@ -49,30 +49,109 @@
       <div class="container">
         <h2>Current Status by Service</h2>
         <div class="components-container one-column">
+
           <div class="component-container">
-            <span class="name">Subtex iOS App</span>
-            <span class="component-status operational">Operational</span>
+            <div class="component-inner-container">
+              <span class="name">Subtex iOS App</span>
+              <span class="component-status operational">Operational</span>
+            </div>
+            <div class="availability-time-line-container">
+              <div class="availability-time-line">
+                <div class="bars" data-component="ios"></div>
+                <div class="availability-stats">
+                  <span class="date">90 days ago</span>
+                  <span class="percentage">99.99 % uptime</span>
+                  <span class="date">Today</span>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div class="component-container">
-            <span class="name">API</span>
-            <span class="component-status operational">Operational</span>
+            <div class="component-inner-container">
+              <span class="name">API</span>
+              <span class="component-status operational">Operational</span>
+            </div>
+            <div class="availability-time-line-container">
+              <div class="availability-time-line">
+                <div class="bars" data-component="api"></div>
+                <div class="availability-stats">
+                  <span class="date">90 days ago</span>
+                  <span class="percentage">99.97 % uptime</span>
+                  <span class="date">Today</span>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div class="component-container">
-            <span class="name">QR Profile Exchange</span>
-            <span class="component-status operational">Operational</span>
+            <div class="component-inner-container">
+              <span class="name">QR Profile Exchange</span>
+              <span class="component-status operational">Operational</span>
+            </div>
+            <div class="availability-time-line-container">
+              <div class="availability-time-line">
+                <div class="bars" data-component="qr"></div>
+                <div class="availability-stats">
+                  <span class="date">90 days ago</span>
+                  <span class="percentage">100.00 % uptime</span>
+                  <span class="date">Today</span>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div class="component-container">
-            <span class="name">AI Summaries</span>
-            <span class="component-status degraded_performance">Degraded</span>
+            <div class="component-inner-container">
+              <span class="name">AI Summaries</span>
+              <span class="component-status degraded_performance">Degraded</span>
+            </div>
+            <div class="availability-time-line-container">
+              <div class="availability-time-line">
+                <div class="bars" data-component="ai"></div>
+                <div class="availability-stats">
+                  <span class="date">90 days ago</span>
+                  <span class="percentage">98.42 % uptime</span>
+                  <span class="date">Today</span>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div class="component-container">
-            <span class="name">Admin Dashboard</span>
-            <span class="component-status operational">Operational</span>
+            <div class="component-inner-container">
+              <span class="name">Admin Dashboard</span>
+              <span class="component-status operational">Operational</span>
+            </div>
+            <div class="availability-time-line-container">
+              <div class="availability-time-line">
+                <div class="bars" data-component="admin"></div>
+                <div class="availability-stats">
+                  <span class="date">90 days ago</span>
+                  <span class="percentage">99.95 % uptime</span>
+                  <span class="date">Today</span>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div class="component-container">
-            <span class="name">Push Notifications</span>
-            <span class="component-status under_maintenance">Maintenance</span>
+            <div class="component-inner-container">
+              <span class="name">Push Notifications</span>
+              <span class="component-status under_maintenance">Maintenance</span>
+            </div>
+            <div class="availability-time-line-container">
+              <div class="availability-time-line">
+                <div class="bars" data-component="push"></div>
+                <div class="availability-stats">
+                  <span class="date">90 days ago</span>
+                  <span class="percentage">99.88 % uptime</span>
+                  <span class="date">Today</span>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -165,5 +244,36 @@
     </div>
   </footer>
 
+  <script>
+    // Preview-only: generate 90 daily bars per component to mock the meter
+    (function () {
+      var patterns = {
+        ios:   { bad: [], degraded: [12, 13] },
+        api:   { bad: [42], degraded: [41, 43, 70] },
+        qr:    { bad: [], degraded: [] },
+        ai:    { bad: [3, 4], degraded: [2, 5, 6, 7, 20, 21] },
+        admin: { bad: [], degraded: [55] },
+        push:  { bad: [], degraded: [], maintenance: [0, 1] }
+      };
+      document.querySelectorAll('.bars[data-component]').forEach(function (host) {
+        var key = host.dataset.component;
+        var p = patterns[key] || {};
+        var frag = document.createDocumentFragment();
+        for (var i = 89; i >= 0; i--) {
+          var day = document.createElement('div');
+          day.className = 'day';
+          var bar = document.createElement('div');
+          bar.className = 'bar green';
+          if ((p.bad || []).includes(i))         bar.className = 'bar red';
+          else if ((p.degraded || []).includes(i)) bar.className = 'bar yellow';
+          else if ((p.maintenance || []).includes(i)) bar.className = 'bar blue';
+          day.title = i === 0 ? 'Today' : i + ' days ago';
+          day.appendChild(bar);
+          frag.appendChild(day);
+        }
+        host.appendChild(frag);
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -9,15 +9,17 @@ the result before pasting anything into the admin.
 
 ## Install on Statuspage
 
-In the Statuspage admin, go to **Your page → Customization** and paste each
-file into its matching slot:
+Statuspage exposes three customization slots. Paste each file into its match:
 
 | File | Statuspage slot |
 |---|---|
-| `head-code.html`   | Customization → **Head Code** |
-| `page-header.html` | Customization → **Page Header** |
+| `page-header.html` | Customization → **Page Header HTML** |
 | `custom.css`       | Customization → **CSS** |
-| `page-footer.html` | Customization → **Page Footer** |
+| `page-footer.html` | Customization → **Page Footer HTML** |
+
+There is no separate "Head Code" slot — the `<link>` / `<meta>` tags for the
+font and favicon live at the top of `page-header.html` and work fine from
+there.
 
 Save and reload the public status page.
 
@@ -29,6 +31,9 @@ Save and reload the public status page.
   stripe whose color reflects the current status (green/yellow/orange/red/blue).
 - Component status chips reuse the brand palette (herb = operational,
   marigold = degraded, red = major outage, twilight = maintenance).
+- The 90-day per-component uptime meters and overall uptime summary are
+  preserved and restyled — never hidden. Bar colors map to the same
+  palette as the status chips.
 - Statuspage's default "Powered by" footer is kept but muted, since the
   brand footer is rendered above it via the Page Footer slot.
 - If Statuspage changes its DOM, only `custom.css` needs adjusting — the

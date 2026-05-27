@@ -205,12 +205,10 @@ h2, h3, .actual-title, .incidents-list h4, .components-section h2 {
 }
 
 /* ── COMPONENTS LIST ──────────────────────────────────────────────────── */
-.components-container,
-.component-inner-container {
+.components-container {
   background-color: var(--lionsmane) !important;
   border-radius: 8px !important;
   border: 1px solid var(--divider) !important;
-  overflow: hidden;
 }
 
 .component-container {
@@ -221,6 +219,13 @@ h2, h3, .actual-title, .incidents-list h4, .components-section h2 {
 }
 .component-container:last-child { border-bottom: none !important; }
 .component-container:hover { background-color: rgba(195,216,209,0.12) !important; }
+
+/* the row that holds the name + status pill */
+.component-inner-container {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
 
 .component-inner-container .name,
 .component-container .name {
@@ -335,7 +340,115 @@ h2, h3, .actual-title, .incidents-list h4, .components-section h2 {
   margin-bottom: 16px;
 }
 
-/* ── HISTORY / UPTIME ─────────────────────────────────────────────────── */
+/* ── PER-COMPONENT 90-DAY UPTIME METER ────────────────────────────────── */
+/* This is the bar chart that renders under each component row, with a
+   percentage on the right and "90 days ago / Today" labels underneath.
+   We restyle the bars + labels — never hide them. */
+
+.availability-time-line-container,
+.component-container .availability-time-line-container {
+  margin-top: 14px !important;
+  padding: 0 !important;
+}
+
+.availability-time-line {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* the row of 90 daily bars */
+.availability-time-line .bars,
+.availability-time-line-container .bars {
+  display: flex !important;
+  gap: 2px;
+  height: 34px;
+  align-items: stretch;
+}
+
+/* each day cell */
+.availability-time-line .day,
+.availability-time-line .bar-day,
+.availability-time-line-container .day {
+  flex: 1 1 0;
+  min-width: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* the colored bar inside each day — covers div-based and svg-rect-based variants */
+.availability-time-line .bar,
+.availability-time-line rect,
+.availability-time-line .uptime-bar {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 2px !important;
+  background-color: var(--herb) !important;
+  fill: var(--herb) !important;
+  transition: filter 0.15s, transform 0.15s;
+}
+.availability-time-line .day:hover .bar,
+.availability-time-line .bar:hover {
+  filter: brightness(1.15);
+  transform: scaleY(1.04);
+}
+
+/* status color modifiers for individual day bars */
+.availability-time-line .bar.green,
+.availability-time-line .day.operational .bar,
+.availability-time-line rect.green { background-color: var(--herb) !important; fill: var(--herb) !important; }
+
+.availability-time-line .bar.yellow,
+.availability-time-line .day.degraded_performance .bar,
+.availability-time-line rect.yellow { background-color: var(--marigold) !important; fill: var(--marigold) !important; }
+
+.availability-time-line .bar.orange,
+.availability-time-line .day.partial_outage .bar,
+.availability-time-line rect.orange { background-color: var(--marigold-d) !important; fill: var(--marigold-d) !important; }
+
+.availability-time-line .bar.red,
+.availability-time-line .day.major_outage .bar,
+.availability-time-line rect.red { background-color: var(--status-red) !important; fill: var(--status-red) !important; }
+
+.availability-time-line .bar.blue,
+.availability-time-line .day.under_maintenance .bar,
+.availability-time-line rect.blue { background-color: var(--celeste) !important; fill: var(--celeste) !important; }
+
+/* the labels row under the bars: "90 days ago — XX.XX % uptime — Today" */
+.availability-time-line .availability-stats {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: var(--muted) !important;
+  padding-top: 2px;
+}
+.availability-time-line .availability-stats .date { color: var(--muted) !important; }
+.availability-time-line .availability-stats .percentage,
+.availability-time-line .uptime {
+  color: var(--twilight) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+}
+
+/* the connecting line/dot indicators some Statuspage themes draw under bars */
+.availability-time-line .availability-time-line-graphic { background-color: var(--divider) !important; }
+
+/* hover tooltip on a day */
+.availability-time-line .tooltip,
+.availability-time-line .day-tooltip {
+  background-color: var(--twilight) !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  padding: 6px 10px !important;
+}
+
+/* legacy class names some pages still use */
 .uptime-day {
   background-color: var(--herb) !important;
   border-radius: 2px;
@@ -343,6 +456,15 @@ h2, h3, .actual-title, .incidents-list h4, .components-section h2 {
 .uptime-day.outage, .uptime-day.major-outage { background-color: var(--status-red) !important; }
 .uptime-day.degraded, .uptime-day.partial-outage { background-color: var(--marigold) !important; }
 .uptime-day.maintenance { background-color: var(--celeste) !important; }
+
+/* overall page-wide uptime summary block, if shown */
+.uptime-90-day-chart,
+.overall-status-uptime {
+  background-color: var(--lionsmane) !important;
+  border: 1px solid var(--divider) !important;
+  border-radius: 8px !important;
+  padding: 20px 24px !important;
+}
 
 /* ── BUTTONS ──────────────────────────────────────────────────────────── */
 .btn,
