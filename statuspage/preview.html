@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subtex Status — Preview</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="custom.css">
+  <style>
+    /* Preview-only: emulate Statuspage's outer chrome */
+    body { margin: 0; }
+    .layout-content { padding-bottom: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- === PAGE HEADER (matches page-header.html) ============================ -->
+  <nav class="sx-nav">
+    <a href="https://getsubtex.com/" class="sx-nav-logo">Subtex<span>.</span></a>
+    <ul class="sx-nav-links">
+      <li><a href="https://getsubtex.com/#how">How It Works</a></li>
+      <li><a href="https://getsubtex.com/#features">Features</a></li>
+      <li><a href="https://getsubtex.com/contact.html">Contact</a></li>
+      <li><a href="#" class="sx-nav-cta">Get the App</a></li>
+    </ul>
+  </nav>
+  <div class="sx-color-bar">
+    <div style="background:#024466;"></div>
+    <div style="background:#c3d8d1;"></div>
+    <div style="background:#7b9874;"></div>
+    <div style="background:#f5ab62;"></div>
+    <div style="background:#fdf4e7; border-top:1px solid #e4ddd0;"></div>
+  </div>
+
+  <!-- === STATUSPAGE BODY (emulated) ======================================== -->
+  <div class="layout-content status">
+
+    <!-- big status banner -->
+    <div class="page-status status-green">
+      <span class="status font-large">All Systems Operational</span>
+      <div class="last-updated-stamp">Updated 2 minutes ago</div>
+    </div>
+
+    <!-- components -->
+    <div class="components-section font-regular">
+      <div class="container">
+        <h2>Current Status by Service</h2>
+        <div class="components-container one-column">
+          <div class="component-container">
+            <span class="name">Subtex iOS App</span>
+            <span class="component-status operational">Operational</span>
+          </div>
+          <div class="component-container">
+            <span class="name">API</span>
+            <span class="component-status operational">Operational</span>
+          </div>
+          <div class="component-container">
+            <span class="name">QR Profile Exchange</span>
+            <span class="component-status operational">Operational</span>
+          </div>
+          <div class="component-container">
+            <span class="name">AI Summaries</span>
+            <span class="component-status degraded_performance">Degraded</span>
+          </div>
+          <div class="component-container">
+            <span class="name">Admin Dashboard</span>
+            <span class="component-status operational">Operational</span>
+          </div>
+          <div class="component-container">
+            <span class="name">Push Notifications</span>
+            <span class="component-status under_maintenance">Maintenance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- incidents -->
+    <div class="incidents">
+      <div class="container">
+        <h2>Incident History</h2>
+
+        <div class="incident-history">
+          <div class="incident-name">
+            <a href="#">AI Summaries running slower than usual</a>
+          </div>
+          <div class="update-timestamp">May 26, 2026 · 14:22 UTC</div>
+          <div class="incident-updates">
+            <div class="update">
+              <div class="update-title">Monitoring</div>
+              <div class="update-body">
+                <p>We've deployed a fix that has reduced summary generation latency. We're monitoring the results.</p>
+              </div>
+              <div class="update-timestamp">14:48 UTC</div>
+            </div>
+            <div class="update">
+              <div class="update-title">Identified</div>
+              <div class="update-body">
+                <p>The issue has been identified as upstream provider capacity. A workaround is being deployed.</p>
+              </div>
+              <div class="update-timestamp">14:31 UTC</div>
+            </div>
+            <div class="update">
+              <div class="update-title">Investigating</div>
+              <div class="update-body">
+                <p>We're investigating reports of slower-than-usual AI summary generation for new connections.</p>
+              </div>
+              <div class="update-timestamp">14:22 UTC</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:32px;">
+          <a href="#" class="btn">Subscribe to Updates</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- history / uptime -->
+    <div class="history">
+      <div class="container">
+        <h2>Past 90 Days</h2>
+        <p style="font-size:14px; color:var(--body-text); margin-bottom:16px;">
+          99.98% uptime across all services over the last 90 days.
+        </p>
+      </div>
+    </div>
+
+    <div class="layout-footer">
+      Powered by Statuspage
+    </div>
+  </div>
+
+  <!-- === PAGE FOOTER (matches page-footer.html) ============================ -->
+  <div class="sx-color-bar">
+    <div style="background:#f5ab62;"></div>
+    <div style="background:#7b9874;"></div>
+    <div style="background:#c3d8d1;"></div>
+    <div style="background:#024466;"></div>
+    <div style="background:#fdf4e7; border-top:1px solid #e4ddd0;"></div>
+  </div>
+
+  <footer class="sx-footer">
+    <div class="sx-footer-inner">
+      <div class="sx-footer-top">
+        <div>
+          <div class="sx-footer-logo">Subtex<span>.</span></div>
+          <div class="sx-footer-tagline">Meaningful Connections</div>
+        </div>
+        <div class="sx-footer-links">
+          <a href="https://getsubtex.com/">Home</a>
+          <a href="https://getsubtex.com/feedback.html">Feedback</a>
+          <a href="https://getsubtex.com/contact.html">Contact</a>
+          <a href="https://getsubtex.com/privacy.html">Privacy</a>
+          <a href="https://getsubtex.com/terms.html">Terms</a>
+          <a href="#">App Store</a>
+        </div>
+      </div>
+      <div class="sx-footer-bottom">
+        <div class="sx-footer-copy">© 2026 GetSubtex LLC. All rights reserved.</div>
+        <a href="mailto:feedback@getsubtex.com" class="sx-footer-email">feedback@getsubtex.com</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
