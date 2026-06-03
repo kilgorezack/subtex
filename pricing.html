@@ -336,6 +336,15 @@
 
     .plan-amount.sm { font-size: 34px; }
 
+    .plan-strike {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: line-through;
+      text-decoration-color: rgba(160,149,133,0.7);
+    }
+    .plan-strike[hidden] { display: none; }
+
     .plan-period {
       font-size: 14px;
       font-weight: 600;
@@ -642,7 +651,7 @@
     <div class="billing-toggle">
       <span class="billing-label active" id="label-monthly">Monthly</span>
       <button class="switch" id="billing-switch" role="switch" aria-checked="false" aria-label="Toggle annual billing"></button>
-      <span class="billing-label" id="label-annual">Annual<span class="billing-save">Save 17%</span></span>
+      <span class="billing-label" id="label-annual">Annual<span class="billing-save">2 months free</span></span>
     </div>
 
     <div class="pricing-grid">
@@ -683,6 +692,7 @@
           <div class="plan-price">
             <span class="plan-amount" id="price-amount">$9.99</span>
             <span class="plan-period" id="price-period">/ month</span>
+            <span class="plan-strike" id="price-strike" hidden>$119.88</span>
           </div>
           <div class="plan-subprice" id="price-subprice">Billed monthly</div>
         </div>
@@ -786,6 +796,7 @@
     var amount   = document.getElementById('price-amount');
     var period   = document.getElementById('price-period');
     var subprice = document.getElementById('price-subprice');
+    var strike   = document.getElementById('price-strike');
     var lblM     = document.getElementById('label-monthly');
     var lblA     = document.getElementById('label-annual');
 
@@ -798,10 +809,12 @@
         amount.textContent   = '$99';
         period.textContent   = '/ year';
         subprice.textContent = 'Just $8.25/mo — billed annually';
+        strike.hidden = false;
       } else {
         amount.textContent   = '$9.99';
         period.textContent   = '/ month';
         subprice.textContent = 'Billed monthly';
+        strike.hidden = true;
       }
     }
 
