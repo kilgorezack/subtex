@@ -257,6 +257,9 @@
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      /* 8 shared row tracks — one per row of a card — so every card's
+         rows (incl. the description and CTA) line up at any width */
+      grid-template-rows: repeat(8, auto);
       gap: 22px;
       align-items: stretch;
     }
@@ -266,8 +269,9 @@
       border: 1px solid var(--divider);
       border-radius: 14px;
       padding: 36px 30px;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-row: span 8;
+      grid-template-rows: subgrid;
       box-shadow: 0 2px 16px rgba(2,68,102,0.04);
     }
 
@@ -279,6 +283,7 @@
 
     .plan-badge {
       align-self: flex-start;
+      justify-self: start;
       font-size: 10px;
       font-weight: 800;
       letter-spacing: 0.12em;
@@ -549,11 +554,17 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 980px) {
       .pricing-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         max-width: 440px;
         margin: 0 auto;
       }
-      .plan.featured { order: -1; }
+      /* Drop subgrid when stacked; keep DOM order Free → One → Enterprise */
+      .plan {
+        display: flex;
+        flex-direction: column;
+        grid-row: auto;
+      }
     }
 
     @media (max-width: 768px) {
@@ -581,7 +592,7 @@
       .nav-cta-secondary { margin: 0 !important; border-radius: 0 !important; border: none !important; border-top: 1px solid rgba(195,216,209,0.12) !important; padding: 13px 24px !important; }
       .page-hero { padding: 100px 24px 56px; }
       .pricing-wrap { padding: 48px 24px 32px; }
-      .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
+      .pricing-grid { gap: 20px; }
       .pricing-foot { padding: 8px 24px 72px; }
       .footer-top { flex-direction: column; gap: 24px; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
