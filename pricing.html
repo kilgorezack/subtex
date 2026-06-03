@@ -184,7 +184,7 @@
 
     /* ── PRICING ── */
     .pricing-wrap {
-      max-width: 980px;
+      max-width: 1160px;
       margin: 0 auto;
       padding: 64px 40px 40px;
     }
@@ -256,8 +256,8 @@
     /* Cards */
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
       align-items: stretch;
     }
 
@@ -265,7 +265,7 @@
       background: #fff;
       border: 1px solid var(--divider);
       border-radius: 14px;
-      padding: 40px 36px;
+      padding: 36px 30px;
       display: flex;
       flex-direction: column;
       box-shadow: 0 2px 16px rgba(2,68,102,0.04);
@@ -273,7 +273,8 @@
 
     .plan.featured {
       border: 2px solid var(--marigold);
-      box-shadow: 0 12px 40px rgba(2,68,102,0.1);
+      box-shadow: 0 14px 44px rgba(2,68,102,0.12);
+      z-index: 1;
     }
 
     .plan-badge {
@@ -301,8 +302,16 @@
       font-size: 13px;
       line-height: 1.6;
       color: var(--body-text);
-      margin-bottom: 28px;
-      min-height: 42px;
+      margin-bottom: 24px;
+      min-height: 60px;
+    }
+
+    /* Fixed-height price block keeps every card's CTA on the same line */
+    .plan-pricing {
+      min-height: 84px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
 
     .plan-price {
@@ -319,6 +328,8 @@
       letter-spacing: -0.03em;
       line-height: 1;
     }
+
+    .plan-amount.sm { font-size: 34px; }
 
     .plan-period {
       font-size: 14px;
@@ -395,13 +406,16 @@
     }
 
     .plan-features li {
-      font-size: 13.5px;
+      font-size: 13px;
       line-height: 1.5;
       color: var(--body-text);
       display: flex;
       gap: 11px;
       align-items: flex-start;
     }
+
+    /* Single flex child so words inside aren't pushed apart by the row gap */
+    .plan-features .feat-text { flex: 1; }
 
     .plan-features li::before {
       content: '';
@@ -533,6 +547,15 @@
     .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 980px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+      .plan.featured { order: -1; }
+    }
+
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
 
@@ -613,30 +636,58 @@
 
     <div class="pricing-grid">
 
+      <!-- Free -->
+      <div class="plan">
+        <span class="plan-badge" style="background:var(--divider);color:var(--muted);">Free</span>
+        <div class="plan-name">Subtex</div>
+        <p class="plan-desc">Start building better connections — no credit card, no commitment.</p>
+
+        <div class="plan-pricing">
+          <div class="plan-price">
+            <span class="plan-amount">$0</span>
+            <span class="plan-period">forever</span>
+          </div>
+          <div class="plan-subprice">Free on the App Store</div>
+        </div>
+
+        <a href="https://apps.apple.com/us/app/subtex/id6764664936" class="plan-cta outline">Download Free</a>
+        <div class="plan-note">No credit card required</div>
+
+        <div class="plan-features-label">What's included</div>
+        <ul class="plan-features">
+          <li><span class="feat-text"><strong>1</strong> personal profile</span></li>
+          <li><span class="feat-text">Collect up to <strong>50 cards</strong></span></li>
+          <li><span class="feat-text">Notes with a character limit</span></li>
+          <li><span class="feat-text">QR code exchange &amp; profile swap</span></li>
+        </ul>
+      </div>
+
       <!-- Subtex One -->
       <div class="plan featured">
         <span class="plan-badge">Most Popular</span>
         <div class="plan-name">Subtex One</div>
         <p class="plan-desc">Everything you need to capture, remember, and follow up on every connection you make.</p>
 
-        <div class="plan-price">
-          <span class="plan-amount" id="price-amount">$9.99</span>
-          <span class="plan-period" id="price-period">/ month</span>
+        <div class="plan-pricing">
+          <div class="plan-price">
+            <span class="plan-amount" id="price-amount">$9.99</span>
+            <span class="plan-period" id="price-period">/ month</span>
+          </div>
+          <div class="plan-subprice" id="price-subprice">Billed monthly</div>
         </div>
-        <div class="plan-subprice" id="price-subprice">Billed monthly</div>
 
         <a href="https://apps.apple.com/us/app/subtex/id6764664936" class="plan-cta primary">Get Subtex One</a>
         <div class="plan-note">In-app purchase &middot; subscribe in the Subtex app</div>
 
-        <div class="plan-features-label">What's included</div>
+        <div class="plan-features-label">Everything in Free, plus</div>
         <ul class="plan-features">
-          <li><strong>Unlimited</strong> personal profiles</li>
-          <li><strong>Unlimited</strong> card collection</li>
-          <li>Notes with <strong>no character limit</strong></li>
-          <li><strong>AI summaries</strong> on demand</li>
-          <li>Connect card profiles across events</li>
-          <li>Personal event insights</li>
-          <li>Priority support</li>
+          <li><span class="feat-text"><strong>Unlimited</strong> personal profiles</span></li>
+          <li><span class="feat-text"><strong>Unlimited</strong> card collection</span></li>
+          <li><span class="feat-text">Notes with <strong>no character limit</strong></span></li>
+          <li><span class="feat-text"><strong>AI summaries</strong> on demand</span></li>
+          <li><span class="feat-text">Connect card profiles across events</span></li>
+          <li><span class="feat-text">Personal event insights</span></li>
+          <li><span class="feat-text">Priority support</span></li>
         </ul>
       </div>
 
@@ -646,21 +697,25 @@
         <div class="plan-name">Enterprise</div>
         <p class="plan-desc">Admin tools, team licenses, and org-wide insights for companies networking at scale.</p>
 
-        <div class="plan-enterprise-price">Let's talk</div>
-        <div class="plan-subprice">Custom pricing for your team</div>
+        <div class="plan-pricing">
+          <div class="plan-price">
+            <span class="plan-amount sm">Let's talk</span>
+          </div>
+          <div class="plan-subprice">Custom pricing for your team</div>
+        </div>
 
         <a href="contact.html" class="plan-cta outline">Contact Us</a>
         <div class="plan-note">Billed on the web &middot; tailored to your organization</div>
 
         <div class="plan-features-label">Everything in Subtex One, plus</div>
         <ul class="plan-features">
-          <li><strong>Team member management</strong> &amp; admin-invited seats</li>
-          <li>Event creation &amp; attendee invitations</li>
-          <li>Admin-managed attendee &amp; meeting briefs</li>
-          <li>Full event insights for the team</li>
-          <li>Org-level <strong>usage reporting &amp; insights</strong></li>
-          <li>Admin portal &amp; team license</li>
-          <li>Dedicated onboarding &amp; support</li>
+          <li><span class="feat-text"><strong>Team management</strong> &amp; admin-invited seats</span></li>
+          <li><span class="feat-text">Event creation &amp; attendee invitations</span></li>
+          <li><span class="feat-text">Admin-managed attendee &amp; meeting briefs</span></li>
+          <li><span class="feat-text">Full event insights for the team</span></li>
+          <li><span class="feat-text">Org-level <strong>usage reporting</strong></span></li>
+          <li><span class="feat-text">Admin portal &amp; team license</span></li>
+          <li><span class="feat-text">Dedicated onboarding &amp; support</span></li>
         </ul>
       </div>
 
