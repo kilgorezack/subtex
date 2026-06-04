@@ -31,4 +31,10 @@
     <priority>0.4</priority>
   </url>
 
+  <url>
+    <loc>https://getsubtex.com/eula.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
 </urlset>

@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="apple-itunes-app" content="app-id=6764664936, app-argument=https://apps.apple.com/us/app/subtex/id6764664936?itscg=30200&itsct=apps_box_link&mttnsubad=6764664936">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC9HWR08BE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZC9HWR08BE');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vstu3ehwp5");
+  </script>
+  <title>End User License Agreement — Subtex</title>
+  <meta name="description" content="Subtex End User License Agreement (EULA) — the license terms governing your download and use of the Subtex application.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Subtex">
+  <meta property="og:title" content="End User License Agreement — Subtex">
+  <meta property="og:description" content="Subtex End User License Agreement (EULA) — the license terms governing your download and use of the Subtex application.">
+  <meta property="og:url" content="https://getsubtex.com/eula.html">
+  <meta property="og:image" content="https://getsubtex.com/images/hero-mockup.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="End User License Agreement — Subtex">
+  <meta name="twitter:description" content="Subtex End User License Agreement (EULA) — the license terms governing your download and use of the Subtex application.">
+  <meta name="twitter:image" content="https://getsubtex.com/images/hero-mockup.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --twilight:   #024466;
+      --twilight-d: #1a4366;
+      --lionsmane:  #fdf4e7;
+      --celeste:    #c3d8d1;
+      --herb:       #7b9874;
+      --marigold:   #f5ab62;
+      --body-text:  #3a5a6e;
+      --muted:      #a09585;
+      --divider:    #e4ddd0;
+      --bg:         #f0ebe0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      background-color: var(--lionsmane);
+      color: var(--body-text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 40px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(2, 68, 102, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--marigold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--celeste);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .nav-cta {
+      background-color: var(--marigold) !important;
+      color: var(--twilight) !important;
+      padding: 10px 22px;
+      border-radius: 3px;
+      font-weight: 700 !important;
+    }
+
+    .nav-cta:hover { background-color: #f0a050 !important; }
+
+    .nav-cta-secondary {
+      background-color: transparent !important;
+      color: var(--celeste) !important;
+      padding: 10px 22px;
+      border-radius: 3px;
+      border: 2px solid var(--celeste);
+      font-weight: 700 !important;
+    }
+
+    .nav-cta-secondary:hover { background-color: rgba(195,216,209,0.15) !important; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background-color: var(--twilight);
+      padding: 120px 40px 72px;
+    }
+
+    .page-hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .page-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--marigold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .page-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--marigold);
+    }
+
+    .page-title {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .page-meta {
+      font-size: 13px;
+      color: var(--celeste);
+      opacity: 0.6;
+    }
+
+    /* ── COLOR BAR ── */
+    .color-bar { height: 5px; display: flex; }
+    .color-bar-seg { flex: 1; }
+
+    /* ── CONTENT ── */
+    .content-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px 40px 100px;
+    }
+
+    /* TOC */
+    .toc {
+      background-color: var(--bg);
+      border-left: 3px solid var(--marigold);
+      border-radius: 0 8px 8px 0;
+      padding: 28px 32px;
+      margin-bottom: 60px;
+    }
+
+    .toc-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--twilight);
+      margin-bottom: 16px;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toc-list a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--body-text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+
+    .toc-list a:hover { color: var(--twilight); }
+
+    .toc-list a::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 1px;
+      background-color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    /* Sections */
+    .policy-section {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .policy-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .policy-section-num {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--herb);
+      margin-bottom: 10px;
+    }
+
+    .policy-section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--twilight);
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    .policy-section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--twilight);
+      letter-spacing: -0.01em;
+      margin: 28px 0 12px;
+      padding-top: 28px;
+      border-top: 1px solid var(--divider);
+    }
+
+    .policy-section p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--body-text);
+      margin-bottom: 16px;
+    }
+
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    .policy-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .policy-section ul li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--body-text);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .policy-section ul li::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: var(--marigold);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .policy-section ul li div strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--twilight);
+      margin-bottom: 4px;
+    }
+
+    .policy-section ul li div p {
+      margin-bottom: 0;
+      font-size: 13px;
+    }
+
+    .policy-section a {
+      color: var(--twilight);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .policy-section a:hover { color: var(--herb); }
+
+    .policy-subsection-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .highlight-box {
+      background-color: var(--bg);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin: 20px 0;
+      border-left: 3px solid var(--celeste);
+    }
+
+    .highlight-box p { margin-bottom: 0; font-size: 13px; }
+
+    .highlight-box.warning { border-left-color: var(--marigold); }
+
+    .legal-text {
+      font-size: 12px !important;
+      letter-spacing: 0.01em;
+      color: var(--muted) !important;
+      text-transform: uppercase;
+      line-height: 1.9 !important;
+    }
+
+    .lettered-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .lettered-list li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--body-text);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .lettered-list li .ltr {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--marigold);
+      background: rgba(245,171,98,0.12);
+      border-radius: 3px;
+      padding: 2px 7px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      letter-spacing: 0.04em;
+    }
+
+    .lettered-list li strong { color: var(--twilight); }
+
+    /* ── FOOTER ── */
+    footer {
+      background-color: var(--twilight);
+      padding: 48px 40px 32px;
+    }
+
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(195,216,209,0.1);
+      margin-bottom: 28px;
+    }
+
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .footer-logo span { color: var(--marigold); }
+
+    .footer-tagline {
+      font-size: 12px;
+      color: var(--celeste);
+      opacity: 0.6;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--celeste);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover { opacity: 1; }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy { font-size: 11px; color: rgba(195,216,209,0.35); }
+
+    .footer-email {
+      font-size: 11px;
+      color: var(--herb);
+      text-decoration: none;
+    }
+
+    .footer-email:hover { color: var(--celeste); }
+
+
+    /* ── HAMBURGER ── */
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+
+      .nav-burger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0; right: 0;
+        background-color: rgba(2,68,102,0.98);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 0 16px;
+        border-top: 1px solid rgba(195,216,209,0.12);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 13px 24px; border-bottom: 1px solid rgba(195,216,209,0.08); }
+      .nav-links li:last-child a { border-bottom: none; }
+      .nav-cta { margin: 0 !important; border-radius: 0 !important; padding: 13px 24px !important; }
+      .nav-cta-secondary { margin: 0 !important; border-radius: 0 !important; border: none !important; border-top: 1px solid rgba(195,216,209,0.12) !important; padding: 13px 24px !important; }
+      .page-hero { padding: 100px 24px 56px; }
+      .content-wrap { padding: 48px 24px 72px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Subtex<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#how">How It Works</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://apps.apple.com/us/app/subtex/id6764664936" class="nav-cta">Get the App</a></li>
+      <li><a href="https://dashboard.getsubtex.com/" class="nav-cta-secondary">Admin</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Legal</div>
+      <h1 class="page-title">End User License Agreement</h1>
+      <p class="page-meta">Last updated: March 8, 2026</p>
+    </div>
+  </div>
+
+  <!-- COLOR BAR -->
+  <div class="color-bar">
+    <div class="color-bar-seg" style="background:#024466;"></div>
+    <div class="color-bar-seg" style="background:#c3d8d1;"></div>
+    <div class="color-bar-seg" style="background:#7b9874;"></div>
+    <div class="color-bar-seg" style="background:#f5ab62;"></div>
+    <div class="color-bar-seg" style="background:#fdf4e7; border-top:1px solid #e4ddd0;"></div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content-wrap">
+
+    <!-- Intro -->
+    <div class="policy-section">
+      <p>
+        Please read this End User License Agreement ("Agreement") carefully before downloading or using Subtex ("Application"). This Agreement is between you ("End-User") and GetSubtex LLC ("Company," "we," "us," or "our").
+      </p>
+      <p>
+        By downloading or using the Application, you agree to be bound by the terms of this Agreement. If you do not agree, do not download or use the Application.
+      </p>
+      <div class="highlight-box warning">
+        <p>
+          You and the End-User acknowledge that this Agreement is concluded between you and the End-User only, and not with Apple, and that the Company, not Apple, is solely responsible for the Application and its content.
+        </p>
+      </div>
+    </div>
+
+    <!-- TOC -->
+    <div class="toc">
+      <div class="toc-title">Contents</div>
+      <ol class="toc-list">
+        <li><a href="#license">License Grant</a></li>
+        <li><a href="#restrictions">Restrictions</a></li>
+        <li><a href="#ownership">Ownership</a></li>
+        <li><a href="#accounts">User Accounts</a></li>
+        <li><a href="#content">User Content</a></li>
+        <li><a href="#subscriptions">Subscriptions &amp; In-App Purchases</a></li>
+        <li><a href="#support">Maintenance &amp; Support</a></li>
+        <li><a href="#warranty">Warranty</a></li>
+        <li><a href="#claims">Product Claims</a></li>
+        <li><a href="#ip">Intellectual Property Rights</a></li>
+        <li><a href="#compliance">Legal Compliance</a></li>
+        <li><a href="#third-party">Third-Party Terms of Agreement</a></li>
+        <li><a href="#liability">Limitation of Liability</a></li>
+        <li><a href="#termination">Termination</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#apple">Apple as Third-Party Beneficiary</a></li>
+        <li><a href="#governing-law">Governing Law</a></li>
+        <li><a href="#changes">Changes to This Agreement</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <!-- 1. License Grant -->
+    <div class="policy-section" id="license">
+      <div class="policy-section-num">01</div>
+      <h2>License Grant</h2>
+      <p>
+        The Company grants you a limited, non-exclusive, non-transferable, revocable license to use the Application on any Apple-branded device that you own or control, and as permitted by the Usage Rules set forth in the Apple Media Services Terms and Conditions. This license may extend to other accounts associated with you via Family Sharing or volume purchasing where applicable.
+      </p>
+    </div>
+
+    <!-- 2. Restrictions -->
+    <div class="policy-section" id="restrictions">
+      <div class="policy-section-num">02</div>
+      <h2>Restrictions</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Copy, modify, or distribute the Application or any portion of it</li>
+        <li>Reverse engineer, disassemble, or attempt to derive the source code of the Application</li>
+        <li>Sell, sublicense, rent, or lease the Application to any third party</li>
+        <li>Use the Application for any unlawful or unauthorized purpose</li>
+        <li>Remove or alter any proprietary notices or labels on the Application</li>
+        <li>Use the Application to transmit harmful, offensive, or illegal content</li>
+      </ul>
+    </div>
+
+    <!-- 3. Ownership -->
+    <div class="policy-section" id="ownership">
+      <div class="policy-section-num">03</div>
+      <h2>Ownership</h2>
+      <p>
+        The Application is licensed, not sold. The Company retains all rights, title, and interest in and to the Application, including all intellectual property rights. You acquire no ownership rights by downloading or using the Application.
+      </p>
+    </div>
+
+    <!-- 4. User Accounts -->
+    <div class="policy-section" id="accounts">
+      <div class="policy-section-num">04</div>
+      <h2>User Accounts</h2>
+      <p>
+        You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You agree to notify us immediately of any unauthorized use of your account. The Company is not liable for any loss resulting from unauthorized use of your account.
+      </p>
+    </div>
+
+    <!-- 5. User Content -->
+    <div class="policy-section" id="content">
+      <div class="policy-section-num">05</div>
+      <h2>User Content</h2>
+      <p>
+        You retain ownership of any content you submit through the Application, including your digital card, profile information, and notes. By submitting content, you grant the Company a limited, non-exclusive license to store and display that content solely for the purpose of operating the Application. You are solely responsible for the accuracy of your profile information and any content you share through the Application.
+      </p>
+    </div>
+
+    <!-- 6. Subscriptions -->
+    <div class="policy-section" id="subscriptions">
+      <div class="policy-section-num">06</div>
+      <h2>Subscriptions &amp; In-App Purchases</h2>
+      <p>
+        The Application offers optional paid subscriptions ("Subtex One") that unlock additional features. Subscriptions are billed through your Apple ID account. All purchases are final and non-refundable except as required by applicable law or Apple's refund policy.
+      </p>
+      <div class="highlight-box">
+        <p>
+          Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current billing period. You can manage or cancel your subscription in your Apple ID account settings.
+        </p>
+      </div>
+    </div>
+
+    <!-- 7. Maintenance and Support -->
+    <div class="policy-section" id="support">
+      <div class="policy-section-num">07</div>
+      <h2>Maintenance &amp; Support</h2>
+      <p>
+        The Company is solely responsible for providing any maintenance and support services with respect to the Application, as specified in this Agreement or as required under applicable law. You and the End-User acknowledge that Apple has no obligation whatsoever to furnish any maintenance and support services with respect to the Application.
+      </p>
+      <p>
+        For support, please contact us at <a href="mailto:feedback@getsubtex.com">feedback@getsubtex.com</a>.
+      </p>
+    </div>
+
+    <!-- 8. Warranty -->
+    <div class="policy-section" id="warranty">
+      <div class="policy-section-num">08</div>
+      <h2>Warranty</h2>
+      <p>
+        The Company is solely responsible for any product warranties, whether express or implied by law, to the extent not effectively disclaimed. In the event of any failure of the Application to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price for the Application, if any. To the maximum extent permitted by applicable law, Apple will have no other warranty obligation whatsoever with respect to the Application. Any other claims, losses, liabilities, damages, costs, or expenses attributable to any failure to conform to any warranty will be the Company's sole responsibility.
+      </p>
+      <div class="highlight-box warning">
+        <p class="legal-text">
+          The Application is provided "as is" and "as available" without warranty of any kind. To the maximum extent permitted by applicable law, the Company disclaims all warranties, express or implied, including warranties of merchantability, fitness for a particular purpose, and non-infringement.
+        </p>
+      </div>
+    </div>
+
+    <!-- 9. Product Claims -->
+    <div class="policy-section" id="claims">
+      <div class="policy-section-num">09</div>
+      <h2>Product Claims</h2>
+      <p>
+        You and the End-User acknowledge that the Company, not Apple, is responsible for addressing any claims of the End-User or any third party relating to the Application or the End-User's possession and/or use of the Application, including but not limited to:
+      </p>
+      <ul>
+        <li>Product liability claims</li>
+        <li>Any claim that the Application fails to conform to any applicable legal or regulatory requirement</li>
+        <li>Claims arising under consumer protection, privacy, or similar legislation</li>
+      </ul>
+    </div>
+
+    <!-- 10. IP Rights -->
+    <div class="policy-section" id="ip">
+      <div class="policy-section-num">10</div>
+      <h2>Intellectual Property Rights</h2>
+      <p>
+        You and the End-User acknowledge that, in the event of any third-party claim that the Application or your possession and use of the Application infringes that third party's intellectual property rights, the Company, not Apple, will be solely responsible for the investigation, defense, settlement, and discharge of any such intellectual property infringement claim.
+      </p>
+    </div>
+
+    <!-- 11. Legal Compliance -->
+    <div class="policy-section" id="compliance">
+      <div class="policy-section-num">11</div>
+      <h2>Legal Compliance</h2>
+      <p>
+        You represent and warrant that you are not located in a country subject to a U.S. Government embargo or designated by the U.S. Government as a "terrorist supporting" country, and that you are not listed on any U.S. Government list of prohibited or restricted parties.
+      </p>
+    </div>
+
+    <!-- 12. Third-Party Terms -->
+    <div class="policy-section" id="third-party">
+      <div class="policy-section-num">12</div>
+      <h2>Third-Party Terms of Agreement</h2>
+      <p>
+        When using the Application, you must comply with applicable third-party terms of agreement, including but not limited to Spotify, Apple Music, and Google Sign-In terms of service. Your use of those services is governed by their respective terms and privacy policies. The Company is not responsible for the content or practices of any third-party services.
+      </p>
+    </div>
+
+    <!-- 13. Limitation of Liability -->
+    <div class="policy-section" id="liability">
+      <div class="policy-section-num">13</div>
+      <h2>Limitation of Liability</h2>
+      <div class="highlight-box warning">
+        <p class="legal-text">
+          To the maximum extent permitted by applicable law, the Company shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the Application, even if the Company has been advised of the possibility of such damages.
+        </p>
+      </div>
+      <p>
+        In no event shall the Company's total liability exceed the amount you paid for the Application in the twelve (12) months preceding the claim.
+      </p>
+    </div>
+
+    <!-- 14. Termination -->
+    <div class="policy-section" id="termination">
+      <div class="policy-section-num">14</div>
+      <h2>Termination</h2>
+      <p>
+        This Agreement is effective until terminated. Your rights under this Agreement will terminate automatically if you fail to comply with any of its terms. Upon termination, you must cease all use of the Application and delete all copies in your possession. The Company reserves the right to suspend or terminate your account at any time, with or without cause, and with or without notice.
+      </p>
+    </div>
+
+    <!-- 15. Privacy -->
+    <div class="policy-section" id="privacy">
+      <div class="policy-section-num">15</div>
+      <h2>Privacy</h2>
+      <p>
+        Your use of the Application is subject to our <a href="privacy.html">Privacy Policy</a>. By using the Application, you consent to the collection and use of your information as described in the Privacy Policy.
+      </p>
+      <p>
+        Our <a href="terms.html">Terms of Service</a> are also available on our website.
+      </p>
+    </div>
+
+    <!-- 16. Apple as Third-Party Beneficiary -->
+    <div class="policy-section" id="apple">
+      <div class="policy-section-num">16</div>
+      <h2>Apple as Third-Party Beneficiary</h2>
+      <p>
+        You and the End-User acknowledge and agree that Apple and Apple's subsidiaries are third-party beneficiaries of this Agreement, and that upon your acceptance of the terms of this Agreement, Apple will have the right (and will be deemed to have accepted the right) to enforce this Agreement against you as a third-party beneficiary thereof.
+      </p>
+    </div>
+
+    <!-- 17. Governing Law -->
+    <div class="policy-section" id="governing-law">
+      <div class="policy-section-num">17</div>
+      <h2>Governing Law</h2>
+      <p>
+        This Agreement shall be governed by and construed in accordance with the laws of the Commonwealth of Massachusetts, without regard to its conflict of law provisions. Any disputes arising under this Agreement shall be subject to the exclusive jurisdiction of the courts located in Massachusetts.
+      </p>
+    </div>
+
+    <!-- 18. Changes -->
+    <div class="policy-section" id="changes">
+      <div class="policy-section-num">18</div>
+      <h2>Changes to This Agreement</h2>
+      <p>
+        We reserve the right to modify this Agreement at any time. We will notify you of material changes by updating the "Last Updated" date at the top of this Agreement. Your continued use of the Application after any changes constitutes your acceptance of the new terms.
+      </p>
+    </div>
+
+    <!-- 19. Contact -->
+    <div class="policy-section" id="contact">
+      <div class="policy-section-num">19</div>
+      <h2>Contact Us</h2>
+      <p>
+        If you have any questions, complaints, or claims with respect to the Application, please contact us:
+      </p>
+      <div class="highlight-box">
+        <p>
+          <strong>GetSubtex LLC</strong><br>
+          Email: <a href="mailto:feedback@getsubtex.com">feedback@getsubtex.com</a><br>
+          Website: <a href="https://www.getsubtex.com">https://www.getsubtex.com</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Subtex<span>.</span></div>
+          <div class="footer-tagline">Meaningful Connections</div>
+        </div>
+        <div class="footer-links">
+          <a href="pricing.html">Pricing</a>
+          <a href="feedback.html">Feedback</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="https://subtex.statuspage.io/">Status</a>
+          <a href="https://apps.apple.com/us/app/subtex/id6764664936">App Store</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 GetSubtex LLC. All rights reserved.</div>
+        <a href="mailto:feedback@getsubtex.com" class="footer-email">feedback@getsubtex.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    var burger = document.getElementById('nav-burger');
+    var links  = document.querySelector('.nav-links');
+    burger.addEventListener('click', function() {
+      var open = links.classList.toggle('open');
+      burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('nav')) {
+        links.classList.remove('open');
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
