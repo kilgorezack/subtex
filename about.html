@@ -391,51 +391,49 @@
     }
 
     .leader {
-      background-color: var(--bg);
-      border-radius: 14px;
-      padding: 34px 30px 30px;
-      position: relative;
+      background-color: #fff;
+      border-radius: 16px;
       overflow: hidden;
-      border-top: 3px solid var(--accent, var(--marigold));
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid var(--divider);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .leader:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 40px rgba(2,68,102,0.10);
+      transform: translateY(-6px);
+      box-shadow: 0 22px 50px rgba(2,68,102,0.14);
     }
 
-    .leader-monogram {
-      width: 60px; height: 60px;
-      border-radius: 16px;
-      background-color: var(--twilight);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      margin-bottom: 22px;
+    .leader-photo-wrap {
       position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background-color: var(--bg);
     }
 
-    .leader-monogram::after {
+    .leader-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(35%);
+      transition: transform 0.5s ease, filter 0.4s ease;
+    }
+
+    .leader:hover .leader-photo {
+      transform: scale(1.04);
+      filter: grayscale(0%);
+    }
+
+    /* accent bar that sits between photo and text */
+    .leader-photo-wrap::after {
       content: '';
       position: absolute;
-      right: -5px; bottom: -5px;
-      width: 16px; height: 16px;
-      border-radius: 50%;
+      left: 0; right: 0; bottom: 0;
+      height: 5px;
       background-color: var(--accent, var(--marigold));
-      border: 3px solid var(--bg);
     }
 
-    .leader-name {
-      font-size: 19px;
-      font-weight: 800;
-      color: var(--twilight);
-      letter-spacing: -0.01em;
-    }
+    .leader-info { padding: 26px 28px 30px; }
 
     .leader-role {
       font-size: 10px;
@@ -443,32 +441,22 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--accent, var(--marigold));
-      margin: 6px 0 16px;
+      margin-bottom: 6px;
+    }
+
+    .leader-name {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--twilight);
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
     }
 
     .leader-bio {
       font-size: 13.5px;
       line-height: 1.78;
       color: var(--body-text);
-      margin-bottom: 20px;
     }
-
-    .leader-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--twilight);
-      text-decoration: none;
-      transition: gap 0.2s, color 0.2s;
-    }
-
-    .leader-link:hover { color: var(--herb); gap: 11px; }
-
-    .leader-link svg { transition: transform 0.2s; }
 
     /* ── CTA ── */
     .cta-section {
@@ -812,32 +800,44 @@
 
         <!-- John Durocher -->
         <div class="leader" style="--accent: #f5ab62;">
-          <div class="leader-monogram">JD</div>
-          <div class="leader-name">John Durocher</div>
-          <div class="leader-role">Chief Executive Officer</div>
-          <p class="leader-bio">
-            John has spent three decades turning customer relationships into a discipline. A recognized pioneer of customer success in the cloud era, he built and scaled the practice at Salesforce as EVP of Customer Success, and today serves as Chief Operations Officer at Calix. He leads Subtex on a simple conviction: the relationship is the product.
-          </p>
+          <div class="leader-photo-wrap">
+            <img class="leader-photo" src="images/leader-john.svg" alt="John Durocher">
+          </div>
+          <div class="leader-info">
+            <div class="leader-role">Chief Executive Officer</div>
+            <div class="leader-name">John Durocher</div>
+            <p class="leader-bio">
+              John has spent three decades turning customer relationships into a discipline. A recognized pioneer of customer success in the cloud era, he built and scaled the practice at Salesforce as EVP of Customer Success, and today serves as Chief Operations Officer at Calix. He leads Subtex on a simple conviction: the relationship is the product.
+            </p>
+          </div>
         </div>
 
         <!-- Steve Mammone -->
         <div class="leader" style="--accent: #7b9874;">
-          <div class="leader-monogram">SM</div>
-          <div class="leader-name">Steve Mammone</div>
-          <div class="leader-role">Chief Marketing Officer</div>
-          <p class="leader-bio">
-            Steve has been building digital products since before that was a job title. As co-founder and president of the creative agency Getfused, he's spent his career making complex ideas feel effortless — pairing an engineer's instinct for structure with a marketer's sense of what makes people actually care.
-          </p>
+          <div class="leader-photo-wrap">
+            <img class="leader-photo" src="images/leader-steve.svg" alt="Steve Mammone">
+          </div>
+          <div class="leader-info">
+            <div class="leader-role">Chief Marketing Officer</div>
+            <div class="leader-name">Steve Mammone</div>
+            <p class="leader-bio">
+              Steve has been building digital products since before that was a job title. As co-founder and president of the creative agency Getfused, he's spent his career making complex ideas feel effortless — pairing an engineer's instinct for structure with a marketer's sense of what makes people actually care.
+            </p>
+          </div>
         </div>
 
         <!-- Zack Kilgore -->
         <div class="leader" style="--accent: #024466;">
-          <div class="leader-monogram">ZK</div>
-          <div class="leader-name">Zack Kilgore</div>
-          <div class="leader-role">Chief Technology Officer</div>
-          <p class="leader-bio">
-            Zack builds where data meets design. He's spent his career helping organizations turn raw engagement data into decisions that actually move the needle, and he leads Subtex's technology with the same obsession — making the insight feel invisible and the connection feel personal.
-          </p>
+          <div class="leader-photo-wrap">
+            <img class="leader-photo" src="images/leader-zack.svg" alt="Zack Kilgore">
+          </div>
+          <div class="leader-info">
+            <div class="leader-role">Chief Technology Officer</div>
+            <div class="leader-name">Zack Kilgore</div>
+            <p class="leader-bio">
+              Zack builds where data meets design. He's spent his career helping organizations turn raw engagement data into decisions that actually move the needle, and he leads Subtex's technology with the same obsession — making the insight feel invisible and the connection feel personal.
+            </p>
+          </div>
         </div>
 
       </div>
