@@ -415,13 +415,11 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: grayscale(35%);
-      transition: transform 0.5s ease, filter 0.4s ease;
+      transition: transform 0.5s ease;
     }
 
     .leader:hover .leader-photo {
       transform: scale(1.04);
-      filter: grayscale(0%);
     }
 
     /* accent bar that sits between photo and text */
@@ -689,8 +687,8 @@
       .section-title { font-size: 28px; }
       .story-body p { font-size: 15px; }
 
-      /* cap portrait height so cards don't get too tall on phones */
-      .leader-photo-wrap { aspect-ratio: 3 / 2; }
+      /* keep portrait framing on phones so faces aren't cropped */
+      .leader-photo-wrap { aspect-ratio: 4 / 5; }
       .leader-info { padding: 22px 22px 26px; }
 
       .manifesto-quote { font-size: 23px; }
@@ -835,7 +833,7 @@
         <!-- John Durocher -->
         <div class="leader" style="--accent: #f5ab62;">
           <div class="leader-photo-wrap">
-            <img class="leader-photo" src="images/leader-john.svg" alt="John Durocher">
+            <img class="leader-photo" src="images/leader-john.jpg" alt="John Durocher">
           </div>
           <div class="leader-info">
             <div class="leader-role">Chief Executive Officer</div>
@@ -849,7 +847,7 @@
         <!-- Steve Mammone -->
         <div class="leader" style="--accent: #7b9874;">
           <div class="leader-photo-wrap">
-            <img class="leader-photo" src="images/leader-steve.svg" alt="Steve Mammone">
+            <img class="leader-photo" src="images/leader-steve.jpg" alt="Steve Mammone">
           </div>
           <div class="leader-info">
             <div class="leader-role">Chief Experience Officer</div>
@@ -863,7 +861,7 @@
         <!-- Zack Kilgore -->
         <div class="leader" style="--accent: #024466;">
           <div class="leader-photo-wrap">
-            <img class="leader-photo" src="images/leader-zack.svg" alt="Zack Kilgore">
+            <img class="leader-photo" src="images/leader-zack.jpg" alt="Zack Kilgore">
           </div>
           <div class="leader-info">
             <div class="leader-role">Chief Technology Officer</div>
