@@ -292,6 +292,58 @@
     .pricing-section { margin-bottom: 72px; }
     .pricing-section:last-child { margin-bottom: 0; }
 
+    /* ── TIER TABS ── */
+    .tier-tabs-wrap { text-align: center; margin-bottom: 14px; }
+
+    .tier-tabs {
+      display: inline-flex;
+      gap: 4px;
+      background: var(--bg);
+      border: 1px solid var(--divider);
+      border-radius: 100px;
+      padding: 5px;
+      max-width: 100%;
+    }
+
+    .tier-tab {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+      padding: 11px 26px;
+      border-radius: 100px;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .tier-tab:hover { color: var(--twilight); }
+
+    .tier-tab[aria-selected="true"] {
+      background: var(--twilight);
+      color: #fff;
+    }
+    .tier-tab[aria-selected="true"]:hover { color: #fff; }
+
+    /* Panels — only the active tier shows */
+    .tier-panel { display: none; }
+    .tier-panel.active { display: block; }
+
+    @media (max-width: 520px) {
+      .tier-tabs { display: flex; width: 100%; }
+      .tier-tab {
+        flex: 1;
+        padding: 10px 10px;
+        font-size: 12px;
+        letter-spacing: 0.01em;
+        white-space: normal;
+        line-height: 1.2;
+      }
+    }
+
     .section-head {
       text-align: center;
       max-width: 680px;
@@ -662,7 +714,6 @@
   <nav>
     <a href="/" class="nav-logo">Subtex<span>.</span></a>
     <ul class="nav-links">
-      <li><a href="index.html#how">How It Works</a></li>
       <li><a href="index.html#features">Features</a></li>
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -695,6 +746,14 @@
   <!-- PRICING -->
   <div class="pricing-wrap">
 
+    <!-- Tier tabs -->
+    <div class="tier-tabs-wrap">
+      <div class="tier-tabs" role="tablist" aria-label="Choose a pricing tier">
+        <button class="tier-tab" id="tab-personal" role="tab" aria-controls="panel-personal" aria-selected="true">Personal</button>
+        <button class="tier-tab" id="tab-teams" role="tab" aria-controls="panel-teams" aria-selected="false">Teams + Organizations</button>
+      </div>
+    </div>
+
     <!-- Billing toggle -->
     <div class="billing-toggle">
       <span class="billing-label active" id="label-monthly">Monthly</span>
@@ -703,7 +762,7 @@
     </div>
 
     <!-- ══ PERSONAL ══ -->
-    <div class="pricing-section">
+    <div class="pricing-section tier-panel active" id="panel-personal" role="tabpanel" aria-labelledby="tab-personal">
       <div class="section-head">
         <div class="section-head-eyebrow">Personal</div>
         <h2 class="section-head-title">For you and the people you meet</h2>
@@ -771,7 +830,7 @@
     </div>
 
     <!-- ══ TEAMS + ORGANIZATIONS ══ -->
-    <div class="pricing-section">
+    <div class="pricing-section tier-panel" id="panel-teams" role="tabpanel" aria-labelledby="tab-teams">
       <div class="section-head">
         <div class="section-head-eyebrow">Teams + Organizations</div>
         <h2 class="section-head-title">Run events and grow your network at scale</h2>
@@ -975,6 +1034,39 @@
     });
     lblM.addEventListener('click', function() { setBilling(false); });
     lblA.addEventListener('click', function() { setBilling(true); });
+
+    // ── Tier tabs (Personal / Teams + Organizations) ──
+    var tabPersonal  = document.getElementById('tab-personal');
+    var tabTeams     = document.getElementById('tab-teams');
+    var panelPersonal = document.getElementById('panel-personal');
+    var panelTeams    = document.getElementById('panel-teams');
+
+    // hash aliases that should open the Teams tier
+    var teamsHashes = ['teams','team','teams-organizations','organizations','organization','org','orgs','business','enterprise'];
+
+    function showTier(tier, updateHash) {
+      var teams = (tier === 'teams');
+      tabPersonal.setAttribute('aria-selected', String(!teams));
+      tabTeams.setAttribute('aria-selected', String(teams));
+      panelPersonal.classList.toggle('active', !teams);
+      panelTeams.classList.toggle('active', teams);
+      if (updateHash && window.history && history.replaceState) {
+        history.replaceState(null, '', '#' + (teams ? 'teams' : 'personal'));
+      }
+    }
+
+    function tierFromHash() {
+      var h = (location.hash || '').replace('#', '').toLowerCase();
+      if (teamsHashes.indexOf(h) !== -1) return 'teams';
+      return 'personal';
+    }
+
+    tabPersonal.addEventListener('click', function() { showTier('personal', true); });
+    tabTeams.addEventListener('click', function() { showTier('teams', true); });
+    window.addEventListener('hashchange', function() { showTier(tierFromHash(), false); });
+
+    // set initial tier from the URL (so deep links open the right tab)
+    showTier(tierFromHash(), false);
   })();
   </script>
 </body>
