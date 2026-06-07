@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="apple-itunes-app" content="app-id=6764664936, app-argument=https://apps.apple.com/us/app/subtex/id6764664936?itscg=30200&itsct=apps_box_link&mttnsubad=6764664936">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC9HWR08BE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZC9HWR08BE');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vstu3ehwp5");
+  </script>
+  <title>About — Subtex</title>
+  <meta name="description" content="Why we built Subtex — adding context behind every connection while turning everyday networking into actionable insights for individuals, teams, and organizations.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Subtex">
+  <meta property="og:title" content="About — Subtex">
+  <meta property="og:description" content="Why we built Subtex — adding context behind every connection while turning everyday networking into actionable insights for individuals, teams, and organizations.">
+  <meta property="og:url" content="https://getsubtex.com/about.html">
+  <meta property="og:image" content="https://getsubtex.com/images/hero-mockup.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About — Subtex">
+  <meta name="twitter:description" content="Why we built Subtex — adding context behind every connection while turning everyday networking into actionable insights for individuals, teams, and organizations.">
+  <meta name="twitter:image" content="https://getsubtex.com/images/hero-mockup.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --twilight:   #024466;
+      --twilight-d: #1a4366;
+      --lionsmane:  #fdf4e7;
+      --celeste:    #c3d8d1;
+      --herb:       #7b9874;
+      --marigold:   #f5ab62;
+      --body-text:  #3a5a6e;
+      --muted:      #a09585;
+      --divider:    #e4ddd0;
+      --bg:         #f0ebe0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      background-color: var(--lionsmane);
+      color: var(--body-text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 40px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(2, 68, 102, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--marigold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--celeste);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .nav-cta {
+      background-color: var(--marigold) !important;
+      color: var(--twilight) !important;
+      padding: 10px 22px;
+      border-radius: 3px;
+      font-weight: 700 !important;
+    }
+
+    .nav-cta:hover { background-color: #f0a050 !important; }
+
+    .nav-cta-secondary {
+      background-color: transparent !important;
+      color: var(--celeste) !important;
+      padding: 10px 22px;
+      border-radius: 3px;
+      border: 2px solid var(--celeste);
+      font-weight: 700 !important;
+    }
+
+    .nav-cta-secondary:hover { background-color: rgba(195,216,209,0.15) !important; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background-color: var(--twilight);
+      padding: 120px 40px 72px;
+    }
+
+    .page-hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .page-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--marigold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .page-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--marigold);
+    }
+
+    .page-title {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .page-lead {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--celeste);
+    }
+
+    /* ── COLOR BAR ── */
+    .color-bar { height: 5px; display: flex; }
+    .color-bar-seg { flex: 1; }
+
+    /* ── CONTENT ── */
+    .content-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px 40px 100px;
+    }
+
+    .about-section { margin-bottom: 64px; }
+    .about-section:last-child { margin-bottom: 0; }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--herb);
+      margin-bottom: 14px;
+    }
+
+    .about-section h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--twilight);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .about-section p {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--body-text);
+      margin-bottom: 18px;
+    }
+
+    .about-section p:last-child { margin-bottom: 0; }
+
+    .lead-paragraph {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--twilight);
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    /* Audience cards */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .audience-card {
+      background-color: var(--bg);
+      border-radius: 8px;
+      padding: 26px 24px;
+      border-top: 3px solid var(--marigold);
+    }
+
+    .audience-card h3 {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--twilight);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .audience-card p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--body-text);
+      margin-bottom: 0;
+    }
+
+    /* Leadership */
+    .leader-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .leader-card {
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+      background-color: var(--bg);
+      border-radius: 10px;
+      padding: 28px;
+      border-left: 3px solid var(--celeste);
+    }
+
+    .leader-avatar {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: var(--twilight);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .leader-body { flex: 1; }
+
+    .leader-name {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--twilight);
+      letter-spacing: -0.01em;
+    }
+
+    .leader-role {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--marigold);
+      margin: 4px 0 12px;
+    }
+
+    .leader-bio {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: var(--body-text);
+      margin-bottom: 12px;
+    }
+
+    .leader-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .leader-links a {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--twilight);
+      text-decoration: none;
+      border-bottom: 1px solid var(--divider);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .leader-links a:hover { color: var(--herb); border-color: var(--herb); }
+
+    .highlight-box {
+      background-color: var(--bg);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin: 24px 0 0;
+      border-left: 3px solid var(--marigold);
+    }
+
+    .highlight-box p { margin-bottom: 0; font-size: 14px; line-height: 1.8; }
+
+    /* ── FOOTER ── */
+    footer {
+      background-color: var(--twilight);
+      padding: 48px 40px 32px;
+    }
+
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(195,216,209,0.1);
+      margin-bottom: 28px;
+    }
+
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .footer-logo span { color: var(--marigold); }
+
+    .footer-tagline {
+      font-size: 12px;
+      color: var(--celeste);
+      opacity: 0.6;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--celeste);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover { opacity: 1; }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy { font-size: 11px; color: rgba(195,216,209,0.35); }
+
+    .footer-email {
+      font-size: 11px;
+      color: var(--herb);
+      text-decoration: none;
+    }
+
+    .footer-email:hover { color: var(--celeste); }
+
+
+    /* ── HAMBURGER ── */
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+
+      .nav-burger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0; right: 0;
+        background-color: rgba(2,68,102,0.98);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 0 16px;
+        border-top: 1px solid rgba(195,216,209,0.12);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 13px 24px; border-bottom: 1px solid rgba(195,216,209,0.08); }
+      .nav-links li:last-child a { border-bottom: none; }
+      .nav-cta { margin: 0 !important; border-radius: 0 !important; padding: 13px 24px !important; }
+      .nav-cta-secondary { margin: 0 !important; border-radius: 0 !important; border: none !important; border-top: 1px solid rgba(195,216,209,0.12) !important; padding: 13px 24px !important; }
+      .page-hero { padding: 100px 24px 56px; }
+      .content-wrap { padding: 48px 24px 72px; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .leader-card { flex-direction: column; gap: 16px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Subtex<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#how">How It Works</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://apps.apple.com/us/app/subtex/id6764664936" class="nav-cta">Get the App</a></li>
+      <li><a href="https://dashboard.getsubtex.com/" class="nav-cta-secondary">Admin</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">About</div>
+      <h1 class="page-title">Context behind every connection</h1>
+      <p class="page-lead">
+        Subtex was built to capture the story behind the people you meet — and to turn that everyday networking into meaningful insight for individuals, teams, and organizations.
+      </p>
+    </div>
+  </div>
+
+  <!-- COLOR BAR -->
+  <div class="color-bar">
+    <div class="color-bar-seg" style="background:#024466;"></div>
+    <div class="color-bar-seg" style="background:#c3d8d1;"></div>
+    <div class="color-bar-seg" style="background:#7b9874;"></div>
+    <div class="color-bar-seg" style="background:#f5ab62;"></div>
+    <div class="color-bar-seg" style="background:#fdf4e7; border-top:1px solid #e4ddd0;"></div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content-wrap">
+
+    <!-- Why we built it -->
+    <div class="about-section">
+      <div class="section-eyebrow">Why we built Subtex</div>
+      <h2>A connection is more than a name on a card.</h2>
+      <p class="lead-paragraph">
+        Every introduction carries a story — where you met, what you talked about, why it mattered. Yet that context is exactly what slips away first. A week later the name remains, but the meaning behind the connection is gone.
+      </p>
+      <p>
+        We created Subtex to fix that. Instead of letting your network flatten into a list of contacts, Subtex preserves the context behind each connection — the conversations, the moments, and the details that make a relationship worth remembering. It keeps the "why" attached to the "who," so your relationships stay as rich as the day you made them.
+      </p>
+      <p>
+        From there, Subtex goes a step further: it transforms those everyday interactions into advanced networking insights. By understanding the patterns across your connections, Subtex helps you see your relationships more clearly, follow up at the right moments, and turn a scattered web of contacts into a genuine, navigable network.
+      </p>
+    </div>
+
+    <!-- Who it's for -->
+    <div class="about-section">
+      <div class="section-eyebrow">Built for the way people really connect</div>
+      <h2>Insight that scales — from one person to an entire organization.</h2>
+      <p>
+        The value of context compounds as more people share it. That's why Subtex is designed to deliver networking intelligence at every level:
+      </p>
+      <div class="audience-grid">
+        <div class="audience-card">
+          <h3>Individuals</h3>
+          <p>Remember the context behind every connection and nurture the relationships that matter most — effortlessly.</p>
+        </div>
+        <div class="audience-card">
+          <h3>Teams</h3>
+          <p>Share a collective memory of who knows whom, surface warm introductions, and never let an opportunity fall through the cracks.</p>
+        </div>
+        <div class="audience-card">
+          <h3>Organizations</h3>
+          <p>Understand the full reach of your network, uncover hidden connections, and turn relationship data into a strategic advantage.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leadership -->
+    <div class="about-section">
+      <div class="section-eyebrow">Our leadership</div>
+      <h2>The team behind Subtex</h2>
+      <p>
+        Subtex is led by a team with deep experience across customer success, marketing, and engineering — people who have spent their careers helping organizations build better relationships at scale.
+      </p>
+
+      <div class="leader-list">
+
+        <!-- John Durocher -->
+        <div class="leader-card">
+          <div class="leader-avatar">JD</div>
+          <div class="leader-body">
+            <div class="leader-name">John Durocher</div>
+            <div class="leader-role">Chief Executive Officer</div>
+            <p class="leader-bio">
+              A recognized pioneer of customer success in the cloud industry, John brings more than 30 years of experience helping organizations achieve breakthrough transformations. He previously led customer success at Salesforce and spent nearly two decades at Accenture's financial services practice, and is widely published as a thought leader in customer relationship management.
+            </p>
+            <div class="leader-links">
+              <a href="https://www.calix.com/about/calix-leadership/john-durocher.html" target="_blank" rel="noopener">Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Steve Mammone -->
+        <div class="leader-card">
+          <div class="leader-avatar">SM</div>
+          <div class="leader-body">
+            <div class="leader-name">Steve Mammone</div>
+            <div class="leader-role">Chief Marketing Officer</div>
+            <p class="leader-bio">
+              Steve blends technical depth with marketing craft, with decades of experience building portals, web applications, and digital experiences for organizations ranging from startups to Fortune 500 companies. As co-founder and president of the creative marketing agency Getfused, he has spent his career turning complex ideas into clear, usable products.
+            </p>
+            <div class="leader-links">
+              <a href="https://www.getfused.com/about/steve-mammone/" target="_blank" rel="noopener">Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zack Kilgore -->
+        <div class="leader-card">
+          <div class="leader-avatar">ZK</div>
+          <div class="leader-body">
+            <div class="leader-name">Zack Kilgore</div>
+            <div class="leader-role">Chief Technology Officer</div>
+            <p class="leader-bio">
+              Zack pairs a lifetime of broadband and connectivity experience with a passion for data-driven engineering. He has worked with communications service providers around the world to revolutionize their operations and deepen customer engagement, blending analytical rigor with creative problem-solving to build the technology that powers Subtex.
+            </p>
+            <div class="leader-links">
+              <a href="https://www.linkedin.com/in/kilgorezack/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.calix.com/resources/hub/buffering.html" target="_blank" rel="noopener">Buffering Podcast</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Closing -->
+    <div class="about-section">
+      <div class="section-eyebrow">Our mission</div>
+      <h2>Make every connection count.</h2>
+      <p>
+        We believe the best opportunities come from the relationships we already have — if only we could remember the context that makes them valuable. Subtex exists to give that context back, and to help individuals, teams, and organizations turn their networks into something truly meaningful.
+      </p>
+      <div class="highlight-box">
+        <p>
+          Have a question or want to learn more? Reach us anytime at <a href="mailto:feedback@getsubtex.com" style="color:var(--twilight); font-weight:600;">feedback@getsubtex.com</a>.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Subtex<span>.</span></div>
+          <div class="footer-tagline">Meaningful Connections</div>
+        </div>
+        <div class="footer-links">
+          <a href="pricing.html">Pricing</a>
+          <a href="feedback.html">Feedback</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="https://subtex.statuspage.io/">Status</a>
+          <a href="https://apps.apple.com/us/app/subtex/id6764664936">App Store</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 GetSubtex LLC. All rights reserved.</div>
+        <a href="mailto:feedback@getsubtex.com" class="footer-email">feedback@getsubtex.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    var burger = document.getElementById('nav-burger');
+    var links  = document.querySelector('.nav-links');
+    burger.addEventListener('click', function() {
+      var open = links.classList.toggle('open');
+      burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('nav')) {
+        links.classList.remove('open');
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
