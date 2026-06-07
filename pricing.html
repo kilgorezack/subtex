@@ -202,7 +202,7 @@
       align-items: center;
       justify-content: center;
       gap: 14px;
-      margin-bottom: 48px;
+      margin-bottom: 36px;
     }
 
     .billing-label {
@@ -347,7 +347,7 @@
     .section-head {
       text-align: center;
       max-width: 680px;
-      margin: 0 auto 40px;
+      margin: 0 auto 28px;
     }
 
     .section-head-eyebrow {
@@ -754,18 +754,18 @@
       </div>
     </div>
 
-    <!-- Billing toggle -->
-    <div class="billing-toggle">
-      <span class="billing-label active" id="label-monthly">Monthly</span>
-      <button class="switch" id="billing-switch" role="switch" aria-checked="false" aria-label="Toggle annual billing"></button>
-      <span class="billing-label" id="label-annual">Annual<span class="billing-save">Save more</span></span>
-    </div>
-
     <!-- ══ PERSONAL ══ -->
     <div class="pricing-section tier-panel active" id="panel-personal" role="tabpanel" aria-labelledby="tab-personal">
       <div class="section-head">
         <div class="section-head-eyebrow">Personal</div>
         <h2 class="section-head-title">For you and the people you meet</h2>
+      </div>
+
+      <!-- Billing toggle -->
+      <div class="billing-toggle">
+        <span class="billing-label js-label-monthly active">Monthly</span>
+        <button class="switch js-switch" role="switch" aria-checked="false" aria-label="Toggle annual billing"></button>
+        <span class="billing-label js-label-annual">Annual<span class="billing-save">Save more</span></span>
       </div>
 
       <div class="pricing-grid two">
@@ -835,6 +835,13 @@
         <div class="section-head-eyebrow">Teams + Organizations</div>
         <h2 class="section-head-title">Run events and grow your network at scale</h2>
         <p class="section-head-sub">Every plan includes our full suite of event and team tools — pick the one that fits your event volume and team size.</p>
+      </div>
+
+      <!-- Billing toggle -->
+      <div class="billing-toggle">
+        <span class="billing-label js-label-monthly active">Monthly</span>
+        <button class="switch js-switch" role="switch" aria-checked="false" aria-label="Toggle annual billing"></button>
+        <span class="billing-label js-label-annual">Annual<span class="billing-save">Save more</span></span>
       </div>
 
       <div class="pricing-grid">
@@ -984,14 +991,16 @@
       }
     });
 
-    // Billing toggle
-    var sw       = document.getElementById('billing-switch');
+    // Billing toggle — one instance per tier panel, kept in sync
+    var switches = document.querySelectorAll('.js-switch');
+    var lblsM    = document.querySelectorAll('.js-label-monthly');
+    var lblsA    = document.querySelectorAll('.js-label-annual');
     var amount   = document.getElementById('price-amount');
     var period   = document.getElementById('price-period');
     var subprice = document.getElementById('price-subprice');
     var strike   = document.getElementById('price-strike');
-    var lblM     = document.getElementById('label-monthly');
-    var lblA     = document.getElementById('label-annual');
+
+    var isAnnual = false;
 
     // Teams + Organizations plans (monthly / annual amounts)
     var orgPlans = {
@@ -1011,10 +1020,13 @@
     }
 
     function setBilling(annual) {
-      sw.classList.toggle('annual', annual);
-      sw.setAttribute('aria-checked', String(annual));
-      lblM.classList.toggle('active', !annual);
-      lblA.classList.toggle('active', annual);
+      isAnnual = annual;
+      switches.forEach(function(s) {
+        s.classList.toggle('annual', annual);
+        s.setAttribute('aria-checked', String(annual));
+      });
+      lblsM.forEach(function(l) { l.classList.toggle('active', !annual); });
+      lblsA.forEach(function(l) { l.classList.toggle('active', annual); });
       if (annual) {
         amount.textContent   = '$99';
         period.textContent   = '/ year';
@@ -1029,11 +1041,11 @@
       Object.keys(orgPlans).forEach(function(k) { setOrg(k, annual); });
     }
 
-    sw.addEventListener('click', function() {
-      setBilling(!sw.classList.contains('annual'));
+    switches.forEach(function(s) {
+      s.addEventListener('click', function() { setBilling(!isAnnual); });
     });
-    lblM.addEventListener('click', function() { setBilling(false); });
-    lblA.addEventListener('click', function() { setBilling(true); });
+    lblsM.forEach(function(l) { l.addEventListener('click', function() { setBilling(false); }); });
+    lblsA.forEach(function(l) { l.addEventListener('click', function() { setBilling(true); }); });
 
     // ── Tier tabs (Personal / Teams + Organizations) ──
     var tabPersonal  = document.getElementById('tab-personal');
