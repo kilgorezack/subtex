@@ -627,9 +627,19 @@
     .nav-burger.open span:nth-child(2) { opacity: 0; }
     .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+    /* balanced wrapping so headings don't leave orphan words */
+    .hero-title, .section-title, .cta-title, .manifesto-quote,
+    .who-card h3, .leader-name { text-wrap: balance; }
+
+    .leader-bio, .story-body p, .hero-sub, .who-card p,
+    .who-header p, .team-header p, .cta-body { text-wrap: pretty; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 0 24px; }
+
+      /* let desktop-only line breaks reflow naturally */
+      br.nb { display: none; }
       .nav-burger { display: flex; }
       .nav-links {
         display: none;
@@ -666,6 +676,30 @@
       .footer-top { flex-direction: column; gap: 24px; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
+
+    @media (max-width: 600px) {
+      .hero { padding: 116px 22px 64px; }
+      .hero-title { font-size: 32px; line-height: 1.12; }
+      .hero-sub { font-size: 15px; }
+
+      .section { padding: 60px 22px; }
+      .manifesto { padding: 64px 22px; }
+      .cta-section { padding: 64px 22px; }
+
+      .section-title { font-size: 28px; }
+      .story-body p { font-size: 15px; }
+
+      /* cap portrait height so cards don't get too tall on phones */
+      .leader-photo-wrap { aspect-ratio: 3 / 2; }
+      .leader-info { padding: 22px 22px 26px; }
+
+      .manifesto-quote { font-size: 23px; }
+
+      /* stack and full-width the CTA actions */
+      .cta-buttons { flex-direction: column; align-items: stretch; }
+      .store-badge { justify-content: center; }
+      .btn-ghost-dark { justify-content: center; }
+    }
   </style>
 </head>
 <body>
@@ -691,8 +725,8 @@
     <div class="hero-inner">
       <div class="hero-eyebrow">Our Story</div>
       <h1 class="hero-title">
-        The handshake is easy.<br>
-        Remembering <em>why it<br>mattered</em> is the hard part.
+        The handshake is easy.<br class="nb">
+        Remembering <em>why it mattered</em> is the hard part.
       </h1>
       <p class="hero-sub">
         Subtex was built to hold on to the part of a connection that usually slips away — the context. Then it turns that context into something useful, for one person or an entire organization.
