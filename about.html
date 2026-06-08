@@ -311,8 +311,8 @@
     .who-section { background-color: var(--bg); }
 
     .who-header {
-      max-width: 600px;
-      margin-bottom: 64px;
+      max-width: 620px;
+      margin-bottom: 48px;
     }
 
     .who-header .section-title { margin-top: 14px; }
@@ -324,55 +324,217 @@
       color: var(--body-text);
     }
 
-    .who-grid {
+    /* Two tracks: individual vs organization */
+    .track-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
     }
 
-    .who-card {
+    .track {
+      border-radius: 16px;
+      padding: 40px 38px 40px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .track.light {
       background-color: var(--lionsmane);
-      padding: 44px 36px 48px;
+      border: 1px solid var(--divider);
+    }
+
+    .track.dark {
+      background: linear-gradient(155deg, var(--twilight) 0%, #0d2133 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .track.dark::before {
+      content: '';
+      position: absolute;
+      top: -70px; right: -50px;
+      width: 240px; height: 240px;
+      background: radial-gradient(circle, rgba(245,171,98,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .track-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 22px;
       position: relative;
     }
+    .track.light .track-icon { background: var(--celeste); }
+    .track.dark  .track-icon { background: rgba(245,171,98,0.18); }
 
-    .who-card:first-child { border-radius: 4px 0 0 4px; }
-    .who-card:last-child  { border-radius: 0 4px 4px 0; }
+    .track-eyebrow {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      position: relative;
+    }
+    .track.light .track-eyebrow { color: var(--herb); }
+    .track.dark  .track-eyebrow { color: var(--marigold); }
 
-    .who-num {
-      font-size: 56px;
-      font-weight: 900;
-      color: var(--celeste);
-      line-height: 1;
-      opacity: 0.55;
-      margin-bottom: 26px;
+    .track h3 {
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .track.light h3 { color: var(--twilight); }
+    .track.dark  h3 { color: #fff; }
+
+    .track-lead {
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .track.light .track-lead { color: var(--body-text); }
+    .track.dark  .track-lead { color: var(--celeste); }
+
+    .track-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .track-list li {
+      font-size: 13.5px;
+      line-height: 1.55;
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+    }
+    .track-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 18px; height: 18px;
+      margin-top: 1px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .track.light .track-list li { color: var(--body-text); }
+    .track.light .track-list li::before {
+      background-color: rgba(123,152,116,0.15);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%237b9874' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    }
+    .track.dark .track-list li { color: rgba(195,216,209,0.92); }
+    .track.dark .track-list li::before {
+      background-color: rgba(245,171,98,0.2);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23f5ab62' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
     }
 
-    .who-card h3 {
-      font-size: 19px;
+    .track-cta {
+      margin-top: auto;
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: gap 0.2s;
+      position: relative;
+    }
+    .track.light .track-cta { color: var(--twilight); }
+    .track.dark  .track-cta { color: var(--marigold); }
+    .track-cta:hover { gap: 12px; }
+
+    /* ── EVENTS SECTION ── */
+    .events-section { background-color: var(--lionsmane); }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .events-text .section-title { margin: 14px 0 18px; }
+    .events-text > p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--body-text);
+      margin-bottom: 30px;
+    }
+
+    .evt-points { display: flex; flex-direction: column; gap: 20px; }
+    .evt-point { display: flex; gap: 14px; align-items: flex-start; }
+    .evt-point-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--celeste);
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .evt-point h4 {
+      font-size: 14px;
       font-weight: 800;
       color: var(--twilight);
-      letter-spacing: -0.01em;
-      margin-bottom: 12px;
+      margin-bottom: 4px;
     }
-
-    .who-card p {
-      font-size: 13.5px;
-      line-height: 1.7;
+    .evt-point p {
+      font-size: 13px;
+      line-height: 1.6;
       color: var(--body-text);
     }
 
-    .who-accent {
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 100%; height: 3px;
-      background-color: var(--marigold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
+    /* Events visual mock */
+    .events-visual {
+      background: linear-gradient(155deg, var(--twilight) 0%, #0d2133 100%);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
     }
-
-    .who-card:hover .who-accent { transform: scaleX(1); }
+    .events-visual::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -50px;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(245,171,98,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .evt-vis-tag {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--marigold); margin-bottom: 6px;
+      position: relative;
+    }
+    .evt-vis-title { font-size: 19px; font-weight: 800; color: #fff; margin-bottom: 18px; position: relative; }
+    .evt-card {
+      background: rgba(195,216,209,0.07);
+      border: 1px solid rgba(195,216,209,0.12);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .evt-card-name { font-size: 13px; font-weight: 700; color: var(--celeste); margin-bottom: 4px; }
+    .evt-card-meta { font-size: 11px; color: rgba(195,216,209,0.5); }
+    .evt-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; position: relative; }
+    .evt-chip {
+      font-size: 10px; font-weight: 600; color: var(--celeste);
+      background: rgba(195,216,209,0.1); border-radius: 100px; padding: 4px 11px;
+    }
+    .evt-insight {
+      background: rgba(245,171,98,0.08);
+      border: 1px solid rgba(245,171,98,0.2);
+      border-radius: 10px; padding: 14px 16px;
+      position: relative;
+    }
+    .evt-insight-label { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--marigold); margin-bottom: 7px; }
+    .evt-insight-text { font-size: 11px; line-height: 1.6; color: rgba(195,216,209,0.75); font-style: italic; }
 
     /* ── LEADERSHIP ── */
     .team-section { background-color: var(--lionsmane); }
@@ -540,19 +702,22 @@
       line-height: 1;
     }
 
-    .btn-ghost-dark {
+    .cta-org-btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      background: var(--marigold);
       color: var(--twilight);
       text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      transition: gap 0.2s;
+      padding: 18px 30px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.15s;
     }
 
-    .btn-ghost-dark:hover { gap: 12px; }
+    .cta-org-btn:hover { background: #f0a050; transform: translateY(-2px); }
 
     /* ── FOOTER ── */
     footer { background-color: var(--twilight); padding: 48px 40px 32px; }
@@ -634,10 +799,10 @@
 
     /* balanced wrapping so headings don't leave orphan words */
     .hero-title, .section-title, .cta-title, .manifesto-quote,
-    .who-card h3, .leader-name { text-wrap: balance; }
+    .track h3, .evt-point h4, .leader-name { text-wrap: balance; }
 
-    .leader-bio, .story-body p, .hero-sub, .who-card p,
-    .who-header p, .team-header p, .cta-body { text-wrap: pretty; }
+    .leader-bio, .story-body p, .hero-sub, .track-lead,
+    .who-header p, .team-header p, .events-text > p, .cta-body { text-wrap: pretty; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
@@ -672,9 +837,8 @@
 
       .story-grid { grid-template-columns: 1fr; gap: 32px; }
 
-      .who-grid { grid-template-columns: 1fr; }
-      .who-card:first-child { border-radius: 4px 4px 0 0; }
-      .who-card:last-child  { border-radius: 0 0 4px 4px; }
+      .track-grid { grid-template-columns: 1fr; gap: 18px; }
+      .events-grid { grid-template-columns: 1fr; gap: 36px; }
 
       .team-grid { grid-template-columns: 1fr; gap: 20px; }
 
@@ -703,7 +867,9 @@
       /* stack and full-width the CTA actions */
       .cta-buttons { flex-direction: column; align-items: stretch; }
       .store-badge { justify-content: center; }
-      .btn-ghost-dark { justify-content: center; }
+      .cta-org-btn { justify-content: center; }
+      .track { padding: 32px 26px 32px; }
+      .events-visual { padding: 26px; }
     }
   </style>
 </head>
@@ -786,29 +952,103 @@
     <div class="section-inner">
       <div class="who-header">
         <div class="section-eyebrow">Who It's For</div>
-        <h2 class="section-title">Context that <em>compounds.</em></h2>
+        <h2 class="section-title">Two ways to use <em>Subtex.</em></h2>
         <p>
-          The more people share what they know, the more valuable a network becomes. Subtex is built to deliver that payoff at every level.
+          Whether you're building your own network or running events for an entire organization, the value compounds the more context you capture.
         </p>
       </div>
-      <div class="who-grid">
-        <div class="who-card">
-          <div class="who-num">01</div>
-          <h3>For You</h3>
-          <p>At conferences, meetups, career fairs, or a chance conversation on a flight — keep the full story behind every person you meet and follow up at the right moment, without digging through scattered notes or trying to remember who was who.</p>
-          <div class="who-accent"></div>
+
+      <div class="track-grid">
+
+        <!-- For You -->
+        <div class="track light">
+          <div class="track-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#024466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="track-eyebrow">For You</div>
+          <h3>The individual professional</h3>
+          <p class="track-lead">At conferences, meetups, career fairs, or a chance conversation on a flight — keep the full story behind everyone you meet and follow up at exactly the right moment, without digging through scattered notes.</p>
+          <ul class="track-list">
+            <li>Capture the context the moment you meet someone</li>
+            <li>Smart reminders so you follow up on time</li>
+            <li>Notes, tags &amp; AI summaries for every connection</li>
+            <li>Your entire network, always in your pocket</li>
+          </ul>
+          <a href="https://apps.apple.com/us/app/subtex/id6764664936" class="track-cta">Get Subtex free
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
-        <div class="who-card">
-          <div class="who-num">02</div>
-          <h3>For Teams &amp; Groups</h3>
-          <p>From sales teams and conferences to universities, alumni networks, clubs, and reunions — build a shared memory of who knows whom, spot the warm introduction sitting one seat away, and make sure no opportunity quietly falls through the cracks.</p>
-          <div class="who-accent"></div>
+
+        <!-- For Organizations -->
+        <div class="track dark">
+          <div class="track-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5ab62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V8l7-4v17M18 21V11l-5-2.5"/><path d="M9.5 9.5v.01M9.5 13v.01M9.5 16.5v.01"/></svg>
+          </div>
+          <div class="track-eyebrow">For Organizations</div>
+          <h3>Conference, HR &amp; program leaders</h3>
+          <p class="track-lead">For the people running events and teams — conference organizers, HR leaders, university program directors, and membership associations. Turn the relationships forming across your events into a real strategic advantage.</p>
+          <ul class="track-list">
+            <li>Network-wide intelligence across every attendee</li>
+            <li>Surface the warm introductions hiding in your org</li>
+            <li>Event creation, check-in &amp; attendee management</li>
+            <li>Admin portal, org-wide insights &amp; enterprise-grade controls</li>
+          </ul>
+          <a href="pricing.html#teams" class="track-cta">Explore team &amp; org plans
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
-        <div class="who-card">
-          <div class="who-num">03</div>
-          <h3>For Organizations</h3>
-          <p>Across companies, universities, nonprofits, and membership associations — see the true reach of your network, uncover the connections you didn't know you had, and turn relationship data into a real strategic advantage.</p>
-          <div class="who-accent"></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="section events-section">
+    <div class="section-inner">
+      <div class="events-grid">
+        <div class="events-text">
+          <div class="section-eyebrow">Built for Events</div>
+          <h2 class="section-title">Events that actually <em>connect.</em></h2>
+          <p>A great event isn't measured by badge scans — it's measured by the relationships that outlast it. Subtex gives organizers a live picture of who's in the room, who's meeting whom, and which connections are worth a follow-up, long after everyone heads home.</p>
+          <div class="evt-points">
+            <div class="evt-point">
+              <div class="evt-point-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#024466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <h4>A living map of the room</h4>
+                <p>See how your attendees are actually connecting — in real time, not in a spreadsheet weeks later.</p>
+              </div>
+            </div>
+            <div class="evt-point">
+              <div class="evt-point-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#024466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+              </div>
+              <div>
+                <h4>Context that becomes a lasting asset</h4>
+                <p>Every conversation captured at your event stays useful — for the attendee and for your organization.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="events-visual">
+          <div class="evt-vis-tag">Event Details</div>
+          <div class="evt-vis-title">OtterCorp Summit</div>
+          <div class="evt-card">
+            <div class="evt-card-name">142 attendees connected</div>
+            <div class="evt-card-meta">April 30, 2026 · Jackson, WY</div>
+          </div>
+          <div class="evt-chips">
+            <span class="evt-chip">Employees</span>
+            <span class="evt-chip">Partners</span>
+            <span class="evt-chip">Investors</span>
+            <span class="evt-chip">Press</span>
+          </div>
+          <div class="evt-insight">
+            <div class="evt-insight-label">✦ Event Insight</div>
+            <div class="evt-insight-text">"38 new partner connections formed today. Sarah from Opal Labs met four of your investors — a strong follow-up opportunity for the team."</div>
+          </div>
         </div>
       </div>
     </div>
@@ -845,7 +1085,7 @@
             <div class="leader-role">Chief Executive Officer</div>
             <div class="leader-name">John Durocher</div>
             <p class="leader-bio">
-              John has spent three decades turning customer relationships into a discipline. A recognized pioneer of customer success in the cloud era, he built and scaled the practice at Salesforce as EVP of Customer Success, and today serves as Chief Operations Officer at Calix. He leads Subtex on a simple conviction: the relationship is the product.
+              John has spent three decades turning customer relationships into a discipline. A recognized pioneer of customer success in the cloud era, he's built and scaled the practice at some of the industry's defining software companies. He leads Subtex on a simple conviction: the relationship is the product.
             </p>
           </div>
         </div>
@@ -885,10 +1125,10 @@
   <!-- CTA -->
   <section class="cta-section">
     <div class="cta-inner">
-      <div class="cta-eyebrow">Made for everywhere you meet people</div>
+      <div class="cta-eyebrow">Two ways to get started</div>
       <h2 class="cta-title">Make every connection <em>count.</em></h2>
       <p class="cta-body">
-        The best opportunities tend to come from people we already know — if only we could remember why they mattered. That's the whole idea behind Subtex.
+        Whether you're growing your own network or running events for an entire organization, Subtex keeps the context that makes relationships worth having.
       </p>
       <div class="cta-buttons">
         <a href="https://apps.apple.com/us/app/subtex/id6764664936" class="store-badge">
@@ -900,9 +1140,9 @@
             <div class="store-line2">App Store</div>
           </div>
         </a>
-        <a href="contact.html" class="btn-ghost-dark">
-          Get in touch
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <a href="pricing.html#teams" class="cta-org-btn">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V8l7-4v17M18 21V11l-5-2.5"/><path d="M9.5 9.5v.01M9.5 13v.01M9.5 16.5v.01"/></svg>
+          Deploy for your Organization
         </a>
       </div>
     </div>
