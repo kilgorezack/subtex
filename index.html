@@ -82,9 +82,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: rgba(2, 68, 102, 0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 32%), linear-gradient(180deg, rgba(3,72,108,0.74) 0%, rgba(2,60,92,0.60) 100%);
+      backdrop-filter: blur(26px) saturate(200%);
+      -webkit-backdrop-filter: blur(26px) saturate(200%);
+      border-bottom: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.20), inset 0 1px 0 rgba(255,255,255,0.30), inset 0 -1px 0 rgba(255,255,255,0.05);
     }
 
     .nav-logo {
@@ -121,22 +123,26 @@
       background-color: var(--marigold) !important;
       color: var(--twilight) !important;
       padding: 10px 22px;
-      border-radius: 3px;
+      border-radius: 999px;
       font-weight: 700 !important;
+      box-shadow: 0 2px 10px rgba(245,171,98,0.35), inset 0 1px 0 rgba(255,255,255,0.45);
+      transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
-    .nav-cta:hover { background-color: #f0a050 !important; }
+    .nav-cta:hover { background-color: #f0a050 !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(245,171,98,0.45), inset 0 1px 0 rgba(255,255,255,0.55); }
 
     .nav-cta-secondary {
-      background-color: transparent !important;
+      background-color: rgba(255,255,255,0.06) !important;
       color: var(--celeste) !important;
       padding: 10px 22px;
-      border-radius: 3px;
-      border: 2px solid var(--celeste);
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.28);
       font-weight: 700 !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+      transition: background-color 0.2s, border-color 0.2s;
     }
 
-    .nav-cta-secondary:hover { background-color: rgba(195,216,209,0.15) !important; }
+    .nav-cta-secondary:hover { background-color: rgba(255,255,255,0.14) !important; border-color: rgba(255,255,255,0.45); }
 
     /* ── HERO ── */
     .hero {
@@ -836,7 +842,9 @@
         position: absolute;
         top: 68px;
         left: 0; right: 0;
-        background-color: rgba(2,68,102,0.98);
+        background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 24px), rgba(2,60,92,0.82);
+        backdrop-filter: blur(26px) saturate(200%);
+        -webkit-backdrop-filter: blur(26px) saturate(200%);
         flex-direction: column;
         align-items: stretch;
         gap: 0;
