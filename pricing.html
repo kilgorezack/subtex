@@ -849,9 +849,9 @@
 
       <!-- Billing toggle -->
       <div class="billing-toggle">
-        <span class="billing-label js-label-monthly active">Monthly</span>
-        <button class="switch js-switch" role="switch" aria-checked="false" aria-label="Toggle annual billing"></button>
-        <span class="billing-label js-label-annual">Annual<span class="billing-save">Save more</span></span>
+        <span class="billing-label js-label-monthly">Monthly</span>
+        <button class="switch js-switch annual" role="switch" aria-checked="true" aria-label="Toggle annual billing"></button>
+        <span class="billing-label js-label-annual active">Annual<span class="billing-save">Save more</span></span>
       </div>
 
       <div class="pricing-grid">
@@ -864,10 +864,10 @@
 
           <div class="plan-pricing">
             <div class="plan-price">
-              <span class="plan-amount" id="connect-amount">$149</span>
-              <span class="plan-period" id="connect-period">/ month</span>
+              <span class="plan-amount" id="connect-amount">$1,199</span>
+              <span class="plan-period" id="connect-period">/ year</span>
             </div>
-            <div class="plan-subprice" id="connect-subprice">Billed monthly</div>
+            <div class="plan-subprice" id="connect-subprice">Billed annually</div>
           </div>
 
           <a href="https://dashboard.getsubtex.com/" class="plan-cta outline">Get Started</a>
@@ -895,10 +895,10 @@
 
           <div class="plan-pricing">
             <div class="plan-price">
-              <span class="plan-amount" id="engage-amount">$399</span>
-              <span class="plan-period" id="engage-period">/ month</span>
+              <span class="plan-amount" id="engage-amount">$3,199</span>
+              <span class="plan-period" id="engage-period">/ year</span>
             </div>
-            <div class="plan-subprice" id="engage-subprice">Billed monthly</div>
+            <div class="plan-subprice" id="engage-subprice">Billed annually</div>
           </div>
 
           <a href="https://dashboard.getsubtex.com/" class="plan-cta primary">Get Started</a>
@@ -926,10 +926,10 @@
 
           <div class="plan-pricing">
             <div class="plan-price">
-              <span class="plan-amount" id="influence-amount">$549</span>
-              <span class="plan-period" id="influence-period">/ month</span>
+              <span class="plan-amount" id="influence-amount">$7,999</span>
+              <span class="plan-period" id="influence-period">/ year</span>
             </div>
-            <div class="plan-subprice" id="influence-subprice">Billed monthly</div>
+            <div class="plan-subprice" id="influence-subprice">Billed annually</div>
           </div>
 
           <a href="https://dashboard.getsubtex.com/" class="plan-cta outline">Get Started</a>
@@ -1000,18 +1000,56 @@
       }
     });
 
-    // Billing toggle — one instance per tier panel, kept in sync
-    var switches = document.querySelectorAll('.js-switch');
-    var lblsM    = document.querySelectorAll('.js-label-monthly');
-    var lblsA    = document.querySelectorAll('.js-label-annual');
+    // Billing toggles — each tier panel keeps its own billing state, so the
+    // Personal tab can default to monthly while Teams + Organizations defaults
+    // to annual. wireBilling sets up one panel and returns nothing.
+    function wireBilling(panelId, render, defaultAnnual) {
+      var panel = document.getElementById(panelId);
+      if (!panel) return;
+      var sw   = panel.querySelector('.js-switch');
+      var lblM = panel.querySelector('.js-label-monthly');
+      var lblA = panel.querySelector('.js-label-annual');
+      var isAnnual = false;
+
+      function set(annual) {
+        isAnnual = annual;
+        if (sw) {
+          sw.classList.toggle('annual', annual);
+          sw.setAttribute('aria-checked', String(annual));
+        }
+        if (lblM) lblM.classList.toggle('active', !annual);
+        if (lblA) lblA.classList.toggle('active', annual);
+        render(annual);
+      }
+
+      if (sw)   sw.addEventListener('click', function() { set(!isAnnual); });
+      if (lblM) lblM.addEventListener('click', function() { set(false); });
+      if (lblA) lblA.addEventListener('click', function() { set(true); });
+
+      set(!!defaultAnnual);
+    }
+
+    // Personal (Subtex One) — defaults to monthly
     var amount   = document.getElementById('price-amount');
     var period   = document.getElementById('price-period');
     var subprice = document.getElementById('price-subprice');
     var strike   = document.getElementById('price-strike');
 
-    var isAnnual = false;
+    wireBilling('panel-personal', function(annual) {
+      if (annual) {
+        amount.textContent   = '$99';
+        period.textContent   = '/ year';
+        subprice.textContent = 'Just $8.25/mo — billed annually';
+        strike.hidden = false;
+      } else {
+        amount.textContent   = '$9.99';
+        period.textContent   = '/ month';
+        subprice.textContent = 'Billed monthly';
+        strike.hidden = true;
+      }
+    }, false);
 
-    // Teams + Organizations plans (monthly / annual amounts)
+    // Teams + Organizations plans (monthly / annual amounts) — defaults to annual
     var orgPlans = {
       connect:   { m: '$149', a: '$1,199' },
       engage:    { m: '$399', a: '$3,199' },
@@ -1028,33 +1066,9 @@
       s.textContent = annual ? 'Billed annually' : 'Billed monthly';
     }
 
-    function setBilling(annual) {
-      isAnnual = annual;
-      switches.forEach(function(s) {
-        s.classList.toggle('annual', annual);
-        s.setAttribute('aria-checked', String(annual));
-      });
-      lblsM.forEach(function(l) { l.classList.toggle('active', !annual); });
-      lblsA.forEach(function(l) { l.classList.toggle('active', annual); });
-      if (annual) {
-        amount.textContent   = '$99';
-        period.textContent   = '/ year';
-        subprice.textContent = 'Just $8.25/mo — billed annually';
-        strike.hidden = false;
-      } else {
-        amount.textContent   = '$9.99';
-        period.textContent   = '/ month';
-        subprice.textContent = 'Billed monthly';
-        strike.hidden = true;
-      }
+    wireBilling('panel-teams', function(annual) {
       Object.keys(orgPlans).forEach(function(k) { setOrg(k, annual); });
-    }
-
-    switches.forEach(function(s) {
-      s.addEventListener('click', function() { setBilling(!isAnnual); });
-    });
-    lblsM.forEach(function(l) { l.addEventListener('click', function() { setBilling(false); }); });
-    lblsA.forEach(function(l) { l.addEventListener('click', function() { setBilling(true); }); });
+    }, true);
 
     // ── Tier tabs (Personal / Teams + Organizations) ──
     var tabPersonal  = document.getElementById('tab-personal');
