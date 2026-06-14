@@ -607,7 +607,7 @@
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 3fr 2fr;
       gap: 72px;
       align-items: center;
     }
@@ -622,7 +622,7 @@
     }
 
     .team-headline {
-      font-size: clamp(24px, 3vw, 36px);
+      font-size: clamp(22px, 2.8vw, 34px);
       font-weight: 900;
       color: #fff;
       line-height: 1.15;
@@ -635,7 +635,32 @@
       color: var(--celeste);
       opacity: 0.8;
       line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .teaser-facts {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       margin-bottom: 28px;
+    }
+
+    .teaser-fact {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--celeste);
+      opacity: 0.75;
+    }
+
+    .teaser-fact-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--herb);
+      flex-shrink: 0;
     }
 
     .team-about-link {
@@ -655,8 +680,9 @@
 
     .team-faces {
       display: flex;
-      gap: 32px;
-      align-items: flex-start;
+      flex-direction: column;
+      gap: 28px;
+      align-items: center;
     }
 
     .team-face {
@@ -664,13 +690,13 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
     }
 
     .team-face-img {
-      width: 86px;
-      height: 86px;
+      width: 76px;
+      height: 76px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid rgba(195,216,209,0.12);
@@ -680,7 +706,7 @@
 
     .team-face:hover .team-face-img {
       border-color: rgba(245,171,98,0.4);
-      transform: scale(1.04);
+      transform: scale(1.05);
     }
 
     .team-face-name {
@@ -695,7 +721,13 @@
       color: var(--celeste);
       opacity: 0.45;
       letter-spacing: 0.03em;
-      margin-top: -8px;
+      margin-top: -6px;
+    }
+
+    .team-faces-row {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
     }
 
     /* ── CTA ── */
@@ -957,6 +989,8 @@
       .features-text { padding-right: 0; }
 
       .team-teaser-inner { grid-template-columns: 1fr; gap: 40px; }
+      .team-faces { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+      .team-faces-row { gap: 24px; }
 
       .footer-top {
         flex-direction: column;
@@ -1158,27 +1192,34 @@
   <div class="team-teaser">
     <div class="team-teaser-inner">
       <div>
-        <div class="team-eyebrow">The Team</div>
+        <div class="team-eyebrow">Built for This</div>
         <h2 class="team-headline">Built by people who've<br>done this before.</h2>
         <p class="team-body">
-          The people behind Subtex spent decades managing customer relationships, building products, and watching context slip through the cracks after every event. They solved this problem because they'd lived it.
+          Most networking tools stop at the handshake. Subtex is built for everything after it — capturing context, surfacing it when it matters, and making follow-up feel less like homework. The people who made it spent decades in customer success and product work watching context disappear after every event. They solved the problem because they'd lived it.
         </p>
+        <div class="teaser-facts">
+          <div class="teaser-fact"><div class="teaser-fact-dot"></div>Free on iOS — no credit card, no commitment</div>
+          <div class="teaser-fact"><div class="teaser-fact-dot"></div>Connect in under 2 seconds, no setup required</div>
+          <div class="teaser-fact"><div class="teaser-fact-dot"></div>AI summaries that actually tell you who you met</div>
+        </div>
         <a href="about.html" class="team-about-link">
           Meet the team
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
       <div class="team-faces">
-        <a href="about.html" class="team-face">
-          <img src="images/leader-john.jpg" alt="John Durocher" class="team-face-img">
-          <div class="team-face-name">John Durocher</div>
-          <div class="team-face-role">CEO</div>
-        </a>
-        <a href="about.html" class="team-face">
-          <img src="images/leader-steve.jpg" alt="Steve Mammone" class="team-face-img">
-          <div class="team-face-name">Steve Mammone</div>
-          <div class="team-face-role">CXO</div>
-        </a>
+        <div class="team-faces-row">
+          <a href="about.html" class="team-face">
+            <img src="images/leader-john.jpg" alt="John Durocher" class="team-face-img">
+            <div class="team-face-name">John Durocher</div>
+            <div class="team-face-role">CEO</div>
+          </a>
+          <a href="about.html" class="team-face">
+            <img src="images/leader-steve.jpg" alt="Steve Mammone" class="team-face-img">
+            <div class="team-face-name">Steve Mammone</div>
+            <div class="team-face-role">CXO</div>
+          </a>
+        </div>
         <a href="about.html" class="team-face">
           <img src="images/leader-zack.jpg" alt="Zack Kilgore" class="team-face-img">
           <div class="team-face-name">Zack Kilgore</div>
