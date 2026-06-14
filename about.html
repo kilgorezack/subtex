@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="apple-itunes-app" content="app-id=6764664936, app-argument=https://apps.apple.com/us/app/subtex/id6764664936?itscg=30200&itsct=apps_box_link&mttnsubad=6764664936">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC9HWR08BE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZC9HWR08BE');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vstu3ehwp5");
+  </script>
+  <title>About — Subtex</title>
+  <meta name="description" content="The handshake is easy. Remembering why it mattered is the hard part. Subtex keeps the context behind every connection — and turns it into insight for people, teams, and organizations.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Subtex">
+  <meta property="og:title" content="About — Subtex">
+  <meta property="og:description" content="The handshake is easy. Remembering why it mattered is the hard part. Subtex keeps the context behind every connection.">
+  <meta property="og:url" content="https://getsubtex.com/about.html">
+  <meta property="og:image" content="https://getsubtex.com/images/social-card.jpg">
+  <meta property="og:image:secure_url" content="https://getsubtex.com/images/social-card.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:image:alt" content="Subtex — Connections, Remembered.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About — Subtex">
+  <meta name="twitter:description" content="The handshake is easy. Remembering why it mattered is the hard part. Subtex keeps the context behind every connection.">
+  <meta name="twitter:image" content="https://getsubtex.com/images/social-card.jpg">
+  <meta name="twitter:image:alt" content="Subtex — Connections, Remembered.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --twilight:   #024466;
+      --twilight-d: #1a4366;
+      --lionsmane:  #fdf4e7;
+      --celeste:    #c3d8d1;
+      --herb:       #7b9874;
+      --marigold:   #f5ab62;
+      --body-text:  #3a5a6e;
+      --muted:      #a09585;
+      --divider:    #e4ddd0;
+      --bg:         #f0ebe0;
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+
+    body {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      background-color: var(--lionsmane);
+      color: var(--body-text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 40px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 32%), linear-gradient(180deg, rgba(3,72,108,0.74) 0%, rgba(2,60,92,0.60) 100%);
+      backdrop-filter: blur(26px) saturate(200%);
+      -webkit-backdrop-filter: blur(26px) saturate(200%);
+      border-bottom: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.20), inset 0 1px 0 rgba(255,255,255,0.30), inset 0 -1px 0 rgba(255,255,255,0.05);
+    }
+
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--marigold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--celeste);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .nav-cta {
+      background-color: var(--marigold) !important;
+      color: var(--twilight) !important;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-weight: 700 !important;
+      box-shadow: 0 2px 10px rgba(245,171,98,0.35), inset 0 1px 0 rgba(255,255,255,0.45);
+      transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .nav-cta:hover { background-color: #f0a050 !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(245,171,98,0.45), inset 0 1px 0 rgba(255,255,255,0.55); }
+
+    .nav-cta-secondary {
+      background-color: rgba(255,255,255,0.06) !important;
+      color: var(--celeste) !important;
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.28);
+      font-weight: 700 !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+
+    .nav-cta-secondary:hover { background-color: rgba(255,255,255,0.14) !important; border-color: rgba(255,255,255,0.45); }
+
+    /* ── HERO ── */
+    .hero {
+      background-color: var(--twilight);
+      padding: 168px 40px 110px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -220px; right: -180px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(245,171,98,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -160px; left: -140px;
+      width: 560px; height: 560px;
+      background: radial-gradient(circle, rgba(195,216,209,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--marigold);
+      margin-bottom: 26px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px; height: 2px;
+      background-color: var(--marigold);
+    }
+
+    .hero-title {
+      font-size: clamp(38px, 5.2vw, 64px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+    }
+
+    .hero-title em { font-style: normal; color: var(--marigold); }
+
+    .hero-sub {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--celeste);
+      line-height: 1.75;
+      max-width: 560px;
+    }
+
+    /* ── COLOR BAR ── */
+    .color-bar { height: 5px; display: flex; }
+    .color-bar-seg { flex: 1; }
+
+    /* ── SECTION SHARED ── */
+    .section { padding: 100px 40px; }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--herb);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 800;
+      color: var(--twilight);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title em { font-style: normal; color: var(--marigold); }
+
+    /* ── ORIGIN / STORY ── */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .story-head .section-title { margin-top: 10px; }
+
+    .story-body p {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--body-text);
+      margin-bottom: 20px;
+    }
+
+    .story-body p:last-child { margin-bottom: 0; }
+
+    .story-body strong { color: var(--twilight); font-weight: 700; }
+
+    /* ── MANIFESTO / PULL QUOTE ── */
+    .manifesto {
+      background: linear-gradient(145deg, var(--twilight) 0%, #0d2133 100%);
+      padding: 110px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .manifesto::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -60px;
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, rgba(245,171,98,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .manifesto-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .manifesto-mark {
+      font-size: 80px;
+      font-weight: 900;
+      line-height: 0.6;
+      color: var(--marigold);
+      opacity: 0.5;
+      margin-bottom: 14px;
+    }
+
+    .manifesto-quote {
+      font-size: clamp(24px, 3.2vw, 38px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    .manifesto-quote em { font-style: normal; color: var(--marigold); }
+
+    .manifesto-attr {
+      margin-top: 28px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--celeste);
+      opacity: 0.7;
+    }
+
+    /* ── AUDIENCE / BELIEF CARDS ── */
+    .who-section { background-color: var(--bg); }
+
+    .who-header {
+      max-width: 620px;
+      margin-bottom: 48px;
+    }
+
+    .who-header .section-title { margin-top: 14px; }
+
+    .who-header p {
+      margin-top: 18px;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--body-text);
+    }
+
+    /* Two tracks: individual vs organization */
+    .track-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .track {
+      border-radius: 16px;
+      padding: 40px 38px 40px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .track.light {
+      background-color: var(--lionsmane);
+      border: 1px solid var(--divider);
+    }
+
+    .track.dark {
+      background: linear-gradient(155deg, var(--twilight) 0%, #0d2133 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .track.dark::before {
+      content: '';
+      position: absolute;
+      top: -70px; right: -50px;
+      width: 240px; height: 240px;
+      background: radial-gradient(circle, rgba(245,171,98,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .track-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 22px;
+      position: relative;
+    }
+    .track.light .track-icon { background: var(--celeste); }
+    .track.dark  .track-icon { background: rgba(245,171,98,0.18); }
+
+    .track-eyebrow {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      position: relative;
+    }
+    .track.light .track-eyebrow { color: var(--herb); }
+    .track.dark  .track-eyebrow { color: var(--marigold); }
+
+    .track h3 {
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .track.light h3 { color: var(--twilight); }
+    .track.dark  h3 { color: #fff; }
+
+    .track-lead {
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .track.light .track-lead { color: var(--body-text); }
+    .track.dark  .track-lead { color: var(--celeste); }
+
+    .track-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .track-list li {
+      font-size: 13.5px;
+      line-height: 1.55;
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+    }
+    .track-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 18px; height: 18px;
+      margin-top: 1px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .track.light .track-list li { color: var(--body-text); }
+    .track.light .track-list li::before {
+      background-color: rgba(123,152,116,0.15);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%237b9874' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    }
+    .track.dark .track-list li { color: rgba(195,216,209,0.92); }
+    .track.dark .track-list li::before {
+      background-color: rgba(245,171,98,0.2);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23f5ab62' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    }
+
+    .track-cta {
+      margin-top: auto;
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: gap 0.2s;
+      position: relative;
+    }
+    .track.light .track-cta { color: var(--twilight); }
+    .track.dark  .track-cta { color: var(--marigold); }
+    .track-cta:hover { gap: 12px; }
+
+    /* ── EVENTS SECTION ── */
+    .events-section { background-color: var(--lionsmane); }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .events-text .section-title { margin: 14px 0 18px; }
+    .events-text > p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--body-text);
+      margin-bottom: 30px;
+    }
+
+    .evt-points { display: flex; flex-direction: column; gap: 20px; }
+    .evt-point { display: flex; gap: 14px; align-items: flex-start; }
+    .evt-point-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--celeste);
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .evt-point h4 {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--twilight);
+      margin-bottom: 4px;
+    }
+    .evt-point p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--body-text);
+    }
+
+    /* Events visual mock */
+    .events-visual {
+      background: linear-gradient(155deg, var(--twilight) 0%, #0d2133 100%);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .events-visual::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -50px;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(245,171,98,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .evt-vis-tag {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--marigold); margin-bottom: 6px;
+      position: relative;
+    }
+    .evt-vis-title { font-size: 19px; font-weight: 800; color: #fff; margin-bottom: 18px; position: relative; }
+    .evt-card {
+      background: rgba(195,216,209,0.07);
+      border: 1px solid rgba(195,216,209,0.12);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .evt-card-name { font-size: 13px; font-weight: 700; color: var(--celeste); margin-bottom: 4px; }
+    .evt-card-meta { font-size: 11px; color: rgba(195,216,209,0.5); }
+    .evt-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; position: relative; }
+    .evt-chip {
+      font-size: 10px; font-weight: 600; color: var(--celeste);
+      background: rgba(195,216,209,0.1); border-radius: 100px; padding: 4px 11px;
+    }
+    .evt-insight {
+      background: rgba(245,171,98,0.08);
+      border: 1px solid rgba(245,171,98,0.2);
+      border-radius: 10px; padding: 14px 16px;
+      position: relative;
+    }
+    .evt-insight-label { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--marigold); margin-bottom: 7px; }
+    .evt-insight-text { font-size: 11px; line-height: 1.6; color: rgba(195,216,209,0.75); font-style: italic; }
+
+    /* ── LEADERSHIP ── */
+    .team-section { background-color: var(--lionsmane); }
+
+    .team-header {
+      max-width: 620px;
+      margin-bottom: 56px;
+    }
+
+    .team-header .section-title { margin-top: 14px; }
+
+    .team-header p {
+      margin-top: 18px;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--body-text);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .leader {
+      background-color: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--divider);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .leader:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 50px rgba(2,68,102,0.14);
+    }
+
+    .leader-photo-wrap {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background-color: var(--bg);
+    }
+
+    .leader-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .leader:hover .leader-photo {
+      transform: scale(1.04);
+    }
+
+    /* accent bar that sits between photo and text */
+    .leader-photo-wrap::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 5px;
+      background-color: var(--accent, var(--marigold));
+    }
+
+    .leader-info { padding: 26px 28px 30px; }
+
+    .leader-role {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent, var(--marigold));
+      margin-bottom: 6px;
+    }
+
+    .leader-name {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--twilight);
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+
+    .leader-bio {
+      font-size: 13.5px;
+      line-height: 1.78;
+      color: var(--body-text);
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background-color: var(--bg);
+      padding: 110px 40px;
+      text-align: center;
+    }
+
+    .cta-inner { max-width: 620px; margin: 0 auto; }
+
+    .cta-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--herb);
+      margin-bottom: 20px;
+    }
+
+    .cta-title {
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 900;
+      color: var(--twilight);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+
+    .cta-title em { font-style: normal; color: var(--marigold); }
+
+    .cta-body {
+      font-size: 15px;
+      color: var(--body-text);
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background-color: var(--twilight);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 4px;
+      transition: background-color 0.2s, transform 0.15s;
+    }
+
+    .store-badge:hover { background-color: var(--twilight-d); transform: translateY(-2px); }
+
+    .store-badge-text { text-align: left; }
+
+    .store-line1 {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--celeste);
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .store-line2 {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+
+    .cta-org-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--marigold);
+      color: var(--twilight);
+      text-decoration: none;
+      padding: 18px 30px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .cta-org-btn:hover { background: #f0a050; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer { background-color: var(--twilight); padding: 48px 40px 32px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(195,216,209,0.1);
+      margin-bottom: 28px;
+    }
+
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .footer-logo span { color: var(--marigold); }
+
+    .footer-tagline {
+      font-size: 12px;
+      color: var(--celeste);
+      opacity: 0.6;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-links { display: flex; gap: 32px; }
+
+    .footer-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--celeste);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover { opacity: 1; }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy { font-size: 11px; color: rgba(195,216,209,0.35); }
+
+    .footer-email { font-size: 11px; color: var(--herb); text-decoration: none; }
+    .footer-email:hover { color: var(--celeste); }
+
+    /* ── HAMBURGER ── */
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .nav-burger span {
+      display: block;
+      width: 22px; height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* balanced wrapping so headings don't leave orphan words */
+    .hero-title, .section-title, .cta-title, .manifesto-quote,
+    .track h3, .evt-point h4, .leader-name { text-wrap: balance; }
+
+    .leader-bio, .story-body p, .hero-sub, .track-lead,
+    .who-header p, .team-header p, .events-text > p, .cta-body { text-wrap: pretty; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+
+      /* let desktop-only line breaks reflow naturally */
+      br.nb { display: none; }
+      .nav-burger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px; left: 0; right: 0;
+        background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 24px), rgba(2,60,92,0.94);
+        backdrop-filter: blur(26px) saturate(200%);
+        -webkit-backdrop-filter: blur(26px) saturate(200%);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 0 16px;
+        border-top: 1px solid rgba(195,216,209,0.12);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 13px 24px; border-bottom: 1px solid rgba(195,216,209,0.08); }
+      .nav-links li:last-child a { border-bottom: none; }
+      .nav-cta { margin: 0 !important; border-radius: 0 !important; padding: 13px 24px !important; }
+      .nav-cta-secondary { margin: 0 !important; border-radius: 0 !important; border: none !important; border-top: 1px solid rgba(195,216,209,0.12) !important; padding: 13px 24px !important; }
+
+      .hero { padding: 128px 24px 80px; }
+      .section { padding: 72px 24px; }
+      .manifesto { padding: 80px 24px; }
+      .cta-section { padding: 80px 24px; }
+
+      .story-grid { grid-template-columns: 1fr; gap: 32px; }
+
+      .track-grid { grid-template-columns: 1fr; gap: 18px; }
+      .events-grid { grid-template-columns: 1fr; gap: 36px; }
+
+      .team-grid { grid-template-columns: 1fr; gap: 20px; }
+
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 116px 22px 64px; }
+      .hero-title { font-size: 32px; line-height: 1.12; }
+      .hero-sub { font-size: 15px; }
+
+      .section { padding: 60px 22px; }
+      .manifesto { padding: 64px 22px; }
+      .cta-section { padding: 64px 22px; }
+
+      .section-title { font-size: 28px; }
+      .story-body p { font-size: 15px; }
+
+      /* keep portrait framing on phones so faces aren't cropped */
+      .leader-photo-wrap { aspect-ratio: 4 / 5; }
+      .leader-info { padding: 22px 22px 26px; }
+
+      .manifesto-quote { font-size: 23px; }
+
+      /* stack and full-width the CTA actions */
+      .cta-buttons { flex-direction: column; align-items: stretch; }
+      .store-badge { justify-content: center; }
+      .cta-org-btn { justify-content: center; }
+      .track { padding: 32px 26px 32px; }
+      .events-visual { padding: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Subtex<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="features.html">Features</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://apps.apple.com/us/app/subtex/id6764664936" class="nav-cta">Get the App</a></li>
+      <li><a href="https://dashboard.getsubtex.com/" class="nav-cta-secondary">Admin</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Our Story</div>
+      <h1 class="hero-title">
+        The handshake is easy.<br class="nb">
+        Remembering <em>why it mattered</em> is the hard part.
+      </h1>
+      <p class="hero-sub">
+        Subtex was built to hold on to the part of a connection that usually slips away — the context. Then it turns that context into something useful, for one person or an entire organization.
+      </p>
+    </div>
+  </section>
+
+  <!-- COLOR BAR -->
+  <div class="color-bar">
+    <div class="color-bar-seg" style="background:#024466;"></div>
+    <div class="color-bar-seg" style="background:#c3d8d1;"></div>
+    <div class="color-bar-seg" style="background:#7b9874;"></div>
+    <div class="color-bar-seg" style="background:#f5ab62;"></div>
+    <div class="color-bar-seg" style="background:#fdf4e7; border-top:1px solid #e4ddd0;"></div>
+  </div>
+
+  <!-- ORIGIN -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="story-grid">
+        <div class="story-head">
+          <div class="section-eyebrow">Where Subtex Started</div>
+          <h2 class="section-title">Names are<br>easy to save.<br><em>Context isn't.</em></h2>
+        </div>
+        <div class="story-body">
+          <p>
+            We kept running into the same problem. You meet someone worth knowing, the conversation clicks, and a week later all that's left is a name and a vague sense that you should follow up. The <strong>why</strong> — where you met, what you talked about, the thing you promised to send — was already gone.
+          </p>
+          <p>
+            Every tool we tried solved the wrong half. Contacts apps stored the name. Card scanners stored the title. None of them kept the story, and the story was the only part that actually mattered.
+          </p>
+          <p>
+            So we built Subtex to capture the context in the moment and keep it attached to the person — not buried in a note you'll never open again. From there it does the work for you, reading the patterns across your connections and surfacing the right detail at the right time. The result isn't a longer contact list. It's a network you can actually use.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto">
+    <div class="manifesto-inner">
+      <div class="manifesto-mark">&ldquo;</div>
+      <p class="manifesto-quote">
+        A relationship is only as strong as what you remember about it. We're building the place that <em>remembers for you</em> — so the connection stays as real as the day you made it.
+      </p>
+      <div class="manifesto-attr">— The Subtex Team</div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="section who-section">
+    <div class="section-inner">
+      <div class="who-header">
+        <div class="section-eyebrow">Who It's For</div>
+        <h2 class="section-title">Two ways to use <em>Subtex.</em></h2>
+        <p>
+          Whether you're building your own network or running events for an entire organization, the value compounds the more context you capture.
+        </p>
+      </div>
+
+      <div class="track-grid">
+
+        <!-- For You -->
+        <div class="track light">
+          <div class="track-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#024466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="track-eyebrow">For You</div>
+          <h3>The individual professional</h3>
+          <p class="track-lead">At conferences, meetups, career fairs, or a chance conversation on a flight — keep the full story behind everyone you meet and follow up at exactly the right moment, without digging through scattered notes.</p>
+          <ul class="track-list">
+            <li>Capture the context the moment you meet someone</li>
+            <li>Smart reminders so you follow up on time</li>
+            <li>Notes, tags &amp; AI summaries for every connection</li>
+            <li>Your entire network, always in your pocket</li>
+          </ul>
+          <a href="https://apps.apple.com/us/app/subtex/id6764664936" class="track-cta">Get Subtex free
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- For Organizations -->
+        <div class="track dark">
+          <div class="track-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5ab62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V8l7-4v17M18 21V11l-5-2.5"/><path d="M9.5 9.5v.01M9.5 13v.01M9.5 16.5v.01"/></svg>
+          </div>
+          <div class="track-eyebrow">For Organizations</div>
+          <h3>Conference, HR &amp; program leaders</h3>
+          <p class="track-lead">For the people running events and teams — conference organizers, HR leaders, university program directors, and membership associations. Turn the relationships forming across your events into a real strategic advantage.</p>
+          <ul class="track-list">
+            <li>Network-wide intelligence across every attendee</li>
+            <li>Surface the warm introductions hiding in your org</li>
+            <li>Event creation, check-in &amp; attendee management</li>
+            <li>Admin portal, org-wide insights &amp; enterprise-grade controls</li>
+          </ul>
+          <a href="pricing.html#teams" class="track-cta">Explore team &amp; org plans
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="section events-section">
+    <div class="section-inner">
+      <div class="events-grid">
+        <div class="events-text">
+          <div class="section-eyebrow">Built for Events</div>
+          <h2 class="section-title">Events that actually <em>connect.</em></h2>
+          <p>A great event isn't measured by badge scans — it's measured by the relationships that outlast it. Subtex gives organizers a live picture of who's in the room, who's meeting whom, and which connections are worth a follow-up, long after everyone heads home.</p>
+          <div class="evt-points">
+            <div class="evt-point">
+              <div class="evt-point-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#024466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <h4>A living map of the room</h4>
+                <p>See how your attendees are actually connecting — in real time, not in a spreadsheet weeks later.</p>
+              </div>
+            </div>
+            <div class="evt-point">
+              <div class="evt-point-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#024466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+              </div>
+              <div>
+                <h4>Context that becomes a lasting asset</h4>
+                <p>Every conversation captured at your event stays useful — for the attendee and for your organization.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="events-visual">
+          <div class="evt-vis-tag">Event Details</div>
+          <div class="evt-vis-title">OtterCorp Summit</div>
+          <div class="evt-card">
+            <div class="evt-card-name">142 attendees connected</div>
+            <div class="evt-card-meta">April 30, 2026 · Jackson, WY</div>
+          </div>
+          <div class="evt-chips">
+            <span class="evt-chip">Employees</span>
+            <span class="evt-chip">Partners</span>
+            <span class="evt-chip">Investors</span>
+            <span class="evt-chip">Press</span>
+          </div>
+          <div class="evt-insight">
+            <div class="evt-insight-label">✦ Event Insight</div>
+            <div class="evt-insight-text">"38 new partner connections formed today. Sarah from Opal Labs met four of your investors — a strong follow-up opportunity for the team."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOR BAR -->
+  <div class="color-bar">
+    <div class="color-bar-seg" style="background:#f5ab62;"></div>
+    <div class="color-bar-seg" style="background:#7b9874;"></div>
+    <div class="color-bar-seg" style="background:#c3d8d1;"></div>
+    <div class="color-bar-seg" style="background:#024466;"></div>
+    <div class="color-bar-seg" style="background:#fdf4e7; border-top:1px solid #e4ddd0;"></div>
+  </div>
+
+  <!-- LEADERSHIP -->
+  <section class="section team-section">
+    <div class="section-inner">
+      <div class="team-header">
+        <div class="section-eyebrow">The Team</div>
+        <h2 class="section-title">Led by people who've <em>done this before.</em></h2>
+        <p>
+          Subtex is built by a small team with deep roots in the three disciplines a relationship product lives or dies by — customer success, marketing, and engineering.
+        </p>
+      </div>
+
+      <div class="team-grid">
+
+        <!-- John Durocher -->
+        <div class="leader" style="--accent: #f5ab62;">
+          <div class="leader-photo-wrap">
+            <img class="leader-photo" src="images/leader-john.jpg" alt="John Durocher">
+          </div>
+          <div class="leader-info">
+            <div class="leader-role">Chief Executive Officer</div>
+            <div class="leader-name">John Durocher</div>
+            <p class="leader-bio">
+              John has spent three decades turning customer relationships into a discipline. A recognized pioneer of customer success in the cloud era, he's built and scaled the practice at some of the industry's defining software companies. He leads Subtex on a simple conviction: the relationship is the product.
+            </p>
+          </div>
+        </div>
+
+        <!-- Steve Mammone -->
+        <div class="leader" style="--accent: #7b9874;">
+          <div class="leader-photo-wrap">
+            <img class="leader-photo" src="images/leader-steve.jpg" alt="Steve Mammone">
+          </div>
+          <div class="leader-info">
+            <div class="leader-role">Chief Experience Officer</div>
+            <div class="leader-name">Steve Mammone</div>
+            <p class="leader-bio">
+              Steve has been building digital products since before that was a job title. As co-founder and president of the creative agency Getfused, he's spent his career making complex ideas feel effortless — pairing an engineer's instinct for structure with a marketer's sense of what makes people actually care.
+            </p>
+          </div>
+        </div>
+
+        <!-- Zack Kilgore -->
+        <div class="leader" style="--accent: #024466;">
+          <div class="leader-photo-wrap">
+            <img class="leader-photo" src="images/leader-zack.jpg" alt="Zack Kilgore">
+          </div>
+          <div class="leader-info">
+            <div class="leader-role">Chief Technology Officer</div>
+            <div class="leader-name">Zack Kilgore</div>
+            <p class="leader-bio">
+              Zack has built his career at the intersection of technology, design, and human connection. He's spent years bridging those worlds — translating complex technology into experiences people actually trust, and turning customer signals into products that feel genuinely personal. He leads Subtex on a simple principle: the best experiences feel personal.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-eyebrow">Two ways to get started</div>
+      <h2 class="cta-title">Make every connection <em>count.</em></h2>
+      <p class="cta-body">
+        Whether you're growing your own network or running events for an entire organization, Subtex keeps the context that makes relationships worth having.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://apps.apple.com/us/app/subtex/id6764664936" class="store-badge">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.19 1.28-2.17 3.82.03 3.02 2.65 4.03 2.68 4.04l-.06.21zm-5.25-17.43c.65-.79 1.72-1.39 2.61-1.43.09 1.1-.32 2.19-.93 2.98-.61.8-1.63 1.43-2.6 1.36-.1-1.07.35-2.16.92-2.91z"/>
+          </svg>
+          <div class="store-badge-text">
+            <div class="store-line1">Download on the</div>
+            <div class="store-line2">App Store</div>
+          </div>
+        </a>
+        <a href="pricing.html#teams" class="cta-org-btn">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V8l7-4v17M18 21V11l-5-2.5"/><path d="M9.5 9.5v.01M9.5 13v.01M9.5 16.5v.01"/></svg>
+          Deploy for your Organization
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Subtex<span>.</span></div>
+          <div class="footer-tagline">Meaningful Connections</div>
+        </div>
+        <div class="footer-links">
+          <a href="pricing.html">Pricing</a>
+          <a href="feedback.html">Feedback</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="https://subtex.statuspage.io/">Status</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 GetSubtex LLC. All rights reserved.</div>
+        <a href="mailto:feedback@getsubtex.com" class="footer-email">feedback@getsubtex.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    var burger = document.getElementById('nav-burger');
+    var links  = document.querySelector('.nav-links');
+    burger.addEventListener('click', function() {
+      var open = links.classList.toggle('open');
+      burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('nav')) {
+        links.classList.remove('open');
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

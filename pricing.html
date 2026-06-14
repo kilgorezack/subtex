@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="apple-itunes-app" content="app-id=6764664936, app-argument=https://apps.apple.com/us/app/subtex/id6764664936?itscg=30200&itsct=apps_box_link&mttnsubad=6764664936">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC9HWR08BE"></script>
@@ -22,17 +23,23 @@
     })(window, document, "clarity", "script", "vstu3ehwp5");
   </script>
   <title>Pricing — Subtex</title>
-  <meta name="description" content="Subtex pricing — get Subtex One for $9.99/month or $99/year, or contact us for Enterprise team plans.">
+  <meta name="description" content="Subtex pricing — start free, upgrade to Subtex One, or choose a Teams + Organizations plan to run events at scale.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Subtex">
   <meta property="og:title" content="Pricing — Subtex">
-  <meta property="og:description" content="Subtex pricing — get Subtex One for $9.99/month or $99/year, or contact us for Enterprise team plans.">
+  <meta property="og:description" content="Subtex pricing — start free, upgrade to Subtex One, or choose a Teams + Organizations plan to run events at scale.">
   <meta property="og:url" content="https://getsubtex.com/pricing.html">
-  <meta property="og:image" content="https://getsubtex.com/images/hero-mockup.jpg">
+  <meta property="og:image" content="https://getsubtex.com/images/social-card.jpg">
+  <meta property="og:image:secure_url" content="https://getsubtex.com/images/social-card.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:image:alt" content="Subtex — Connections, Remembered.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pricing — Subtex">
-  <meta name="twitter:description" content="Subtex pricing — get Subtex One for $9.99/month or $99/year, or contact us for Enterprise team plans.">
-  <meta name="twitter:image" content="https://getsubtex.com/images/hero-mockup.jpg">
+  <meta name="twitter:description" content="Subtex pricing — start free, upgrade to Subtex One, or choose a Teams + Organizations plan to run events at scale.">
+  <meta name="twitter:image" content="https://getsubtex.com/images/social-card.jpg">
+  <meta name="twitter:image:alt" content="Subtex — Connections, Remembered.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -52,7 +59,8 @@
       --bg:         #f0ebe0;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { overflow-x: hidden; }
 
     body {
       font-family: 'Montserrat', system-ui, sans-serif;
@@ -71,9 +79,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: rgba(2, 68, 102, 0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 32%), linear-gradient(180deg, rgba(3,72,108,0.74) 0%, rgba(2,60,92,0.60) 100%);
+      backdrop-filter: blur(26px) saturate(200%);
+      -webkit-backdrop-filter: blur(26px) saturate(200%);
+      border-bottom: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.20), inset 0 1px 0 rgba(255,255,255,0.30), inset 0 -1px 0 rgba(255,255,255,0.05);
     }
 
     .nav-logo {
@@ -110,22 +120,26 @@
       background-color: var(--marigold) !important;
       color: var(--twilight) !important;
       padding: 10px 22px;
-      border-radius: 3px;
+      border-radius: 999px;
       font-weight: 700 !important;
+      box-shadow: 0 2px 10px rgba(245,171,98,0.35), inset 0 1px 0 rgba(255,255,255,0.45);
+      transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
-    .nav-cta:hover { background-color: #f0a050 !important; }
+    .nav-cta:hover { background-color: #f0a050 !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(245,171,98,0.45), inset 0 1px 0 rgba(255,255,255,0.55); }
 
     .nav-cta-secondary {
-      background-color: transparent !important;
+      background-color: rgba(255,255,255,0.06) !important;
       color: var(--celeste) !important;
       padding: 10px 22px;
-      border-radius: 3px;
-      border: 2px solid var(--celeste);
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.28);
       font-weight: 700 !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+      transition: background-color 0.2s, border-color 0.2s;
     }
 
-    .nav-cta-secondary:hover { background-color: rgba(195,216,209,0.15) !important; }
+    .nav-cta-secondary:hover { background-color: rgba(255,255,255,0.14) !important; border-color: rgba(255,255,255,0.45); }
 
     /* ── PAGE HERO ── */
     .page-hero {
@@ -195,7 +209,7 @@
       align-items: center;
       justify-content: center;
       gap: 14px;
-      margin-bottom: 48px;
+      margin-bottom: 36px;
     }
 
     .billing-label {
@@ -279,6 +293,99 @@
       border: 2px solid var(--marigold);
       box-shadow: 0 14px 44px rgba(2,68,102,0.12);
       z-index: 1;
+    }
+
+    /* ── PRICING SECTIONS ── */
+    .pricing-section { margin-bottom: 72px; }
+    .pricing-section:last-child { margin-bottom: 0; }
+
+    /* ── TIER TABS ── */
+    .tier-tabs-wrap { text-align: center; margin-bottom: 14px; }
+
+    .tier-tabs {
+      display: inline-flex;
+      gap: 4px;
+      background: var(--bg);
+      border: 1px solid var(--divider);
+      border-radius: 100px;
+      padding: 5px;
+      max-width: 100%;
+    }
+
+    .tier-tab {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+      padding: 11px 26px;
+      border-radius: 100px;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .tier-tab:hover { color: var(--twilight); }
+
+    .tier-tab[aria-selected="true"] {
+      background: var(--twilight);
+      color: #fff;
+    }
+    .tier-tab[aria-selected="true"]:hover { color: #fff; }
+
+    /* Panels — only the active tier shows */
+    .tier-panel { display: none; }
+    .tier-panel.active { display: block; }
+
+    @media (max-width: 520px) {
+      .tier-tabs { display: flex; width: 100%; }
+      .tier-tab {
+        flex: 1;
+        padding: 10px 10px;
+        font-size: 12px;
+        letter-spacing: 0.01em;
+        white-space: normal;
+        line-height: 1.2;
+      }
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 28px;
+    }
+
+    .section-head-eyebrow {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--herb);
+      margin-bottom: 12px;
+    }
+
+    .section-head-title {
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 800;
+      color: var(--twilight);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .section-head-sub {
+      margin-top: 14px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--body-text);
+    }
+
+    /* two-up grid for the Personal section */
+    .pricing-grid.two {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     .plan-badge {
@@ -585,7 +692,9 @@
         position: absolute;
         top: 68px;
         left: 0; right: 0;
-        background-color: rgba(2,68,102,0.98);
+        background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 24px), rgba(2,60,92,0.94);
+        backdrop-filter: blur(26px) saturate(200%);
+        -webkit-backdrop-filter: blur(26px) saturate(200%);
         flex-direction: column;
         align-items: stretch;
         gap: 0;
@@ -614,9 +723,9 @@
   <nav>
     <a href="/" class="nav-logo">Subtex<span>.</span></a>
     <ul class="nav-links">
-      <li><a href="index.html#how">How It Works</a></li>
-      <li><a href="index.html#features">Features</a></li>
+      <li><a href="features.html">Features</a></li>
       <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="https://apps.apple.com/us/app/subtex/id6764664936" class="nav-cta">Get the App</a></li>
       <li><a href="https://dashboard.getsubtex.com/" class="nav-cta-secondary">Admin</a></li>
@@ -631,7 +740,7 @@
     <div class="page-hero-inner">
       <div class="page-eyebrow">Pricing</div>
       <h1 class="page-title">Simple pricing for<br>meaningful connections</h1>
-      <p class="page-intro">Download Subtex free. Upgrade to Subtex One to unlock everything, or talk to us about a plan for your whole team.</p>
+      <p class="page-intro">Download Subtex free, upgrade to Subtex One, or choose a Teams + Organizations plan to run events and grow your network at scale.</p>
     </div>
   </div>
 
@@ -647,105 +756,206 @@
   <!-- PRICING -->
   <div class="pricing-wrap">
 
-    <!-- Billing toggle -->
-    <div class="billing-toggle">
-      <span class="billing-label active" id="label-monthly">Monthly</span>
-      <button class="switch" id="billing-switch" role="switch" aria-checked="false" aria-label="Toggle annual billing"></button>
-      <span class="billing-label" id="label-annual">Annual<span class="billing-save">2 months free</span></span>
+    <!-- Tier tabs -->
+    <div class="tier-tabs-wrap">
+      <div class="tier-tabs" role="tablist" aria-label="Choose a pricing tier">
+        <button class="tier-tab" id="tab-personal" role="tab" aria-controls="panel-personal" aria-selected="true">Personal</button>
+        <button class="tier-tab" id="tab-teams" role="tab" aria-controls="panel-teams" aria-selected="false">Teams + Organizations</button>
+      </div>
     </div>
 
-    <div class="pricing-grid">
-
-      <!-- Free -->
-      <div class="plan">
-        <span class="plan-badge" style="background:var(--divider);color:var(--muted);">Free</span>
-        <div class="plan-name">Subtex</div>
-        <p class="plan-desc">Start building better connections — no credit card, no commitment.</p>
-
-        <div class="plan-pricing">
-          <div class="plan-price">
-            <span class="plan-amount">$0</span>
-            <span class="plan-period">forever</span>
-          </div>
-          <div class="plan-subprice">Free on the App Store</div>
-        </div>
-
-        <a href="https://apps.apple.com/us/app/subtex/id6764664936" class="plan-cta outline">Download Free</a>
-        <div class="plan-note">No credit card required</div>
-
-        <div class="plan-features-label">What's included</div>
-        <ul class="plan-features">
-          <li><span class="feat-text"><strong>1</strong> personal profile</span></li>
-          <li><span class="feat-text">Collect up to <strong>50 cards</strong></span></li>
-          <li><span class="feat-text">Notes with a character limit</span></li>
-          <li><span class="feat-text">QR code exchange &amp; profile swap</span></li>
-        </ul>
+    <!-- ══ PERSONAL ══ -->
+    <div class="pricing-section tier-panel active" id="panel-personal" role="tabpanel" aria-labelledby="tab-personal">
+      <div class="section-head">
+        <div class="section-head-eyebrow">Personal</div>
+        <h2 class="section-head-title">For you and the people you meet</h2>
       </div>
 
-      <!-- Subtex One -->
-      <div class="plan featured">
-        <span class="plan-badge">Most Popular</span>
-        <div class="plan-name">Subtex One</div>
-        <p class="plan-desc">Everything you need to capture, remember, and follow up on every connection you make.</p>
-
-        <div class="plan-pricing">
-          <div class="plan-price">
-            <span class="plan-amount" id="price-amount">$9.99</span>
-            <span class="plan-period" id="price-period">/ month</span>
-            <span class="plan-strike" id="price-strike" hidden>$119.88</span>
-          </div>
-          <div class="plan-subprice" id="price-subprice">Billed monthly</div>
-        </div>
-
-        <a href="https://apps.apple.com/us/app/subtex/id6764664936" class="plan-cta primary">Get Subtex One</a>
-        <div class="plan-note">In-app purchase &middot; subscribe in the Subtex app</div>
-
-        <div class="plan-features-label">Everything in Free, plus</div>
-        <ul class="plan-features">
-          <li><span class="feat-text"><strong>Unlimited</strong> personal profiles</span></li>
-          <li><span class="feat-text"><strong>Unlimited</strong> card collection</span></li>
-          <li><span class="feat-text">Notes with <strong>no character limit</strong></span></li>
-          <li><span class="feat-text"><strong>AI summaries</strong> on demand</span></li>
-          <li><span class="feat-text">Connect card profiles across events</span></li>
-          <li><span class="feat-text">Personal event insights</span></li>
-          <li><span class="feat-text">Priority support</span></li>
-        </ul>
+      <!-- Billing toggle -->
+      <div class="billing-toggle">
+        <span class="billing-label js-label-monthly active">Monthly</span>
+        <button class="switch js-switch" role="switch" aria-checked="false" aria-label="Toggle annual billing"></button>
+        <span class="billing-label js-label-annual">Annual<span class="billing-save">Save more</span></span>
       </div>
 
-      <!-- Enterprise -->
-      <div class="plan">
-        <span class="plan-badge" style="background:var(--celeste);">For Teams</span>
-        <div class="plan-name">Enterprise</div>
-        <p class="plan-desc">Admin tools, team licenses, and org-wide insights for companies networking at scale.</p>
+      <div class="pricing-grid two">
 
-        <div class="plan-pricing">
-          <div class="plan-price">
-            <span class="plan-amount sm">Let's talk</span>
+        <!-- Free -->
+        <div class="plan">
+          <span class="plan-badge" style="background:var(--divider);color:var(--muted);">Free</span>
+          <div class="plan-name">Subtex</div>
+          <p class="plan-desc">Start building better connections — no credit card, no commitment.</p>
+
+          <div class="plan-pricing">
+            <div class="plan-price">
+              <span class="plan-amount">$0</span>
+              <span class="plan-period">forever</span>
+            </div>
+            <div class="plan-subprice">Free on the App Store</div>
           </div>
-          <div class="plan-subprice">Custom pricing for your team</div>
+
+          <a href="https://apps.apple.com/us/app/subtex/id6764664936" class="plan-cta outline">Download Free</a>
+          <div class="plan-note">No credit card required</div>
+
+          <div class="plan-features-label">What's included</div>
+          <ul class="plan-features">
+            <li><span class="feat-text"><strong>1</strong> personal profile</span></li>
+            <li><span class="feat-text">Collect up to <strong>50 cards</strong></span></li>
+            <li><span class="feat-text">Notes with a character limit</span></li>
+            <li><span class="feat-text">QR code exchange &amp; profile swap</span></li>
+          </ul>
         </div>
 
-        <a href="contact.html" class="plan-cta outline">Contact Us</a>
-        <div class="plan-note">Billed on the web &middot; tailored to your organization</div>
+        <!-- Subtex One -->
+        <div class="plan featured">
+          <span class="plan-badge">For Individuals</span>
+          <div class="plan-name">Subtex One</div>
+          <p class="plan-desc">Everything you need to capture, remember, and follow up on every connection you make.</p>
 
-        <div class="plan-features-label">Everything in Subtex One, plus</div>
-        <ul class="plan-features">
-          <li><span class="feat-text"><strong>Team management</strong> &amp; admin-invited seats</span></li>
-          <li><span class="feat-text">Event creation &amp; attendee invitations</span></li>
-          <li><span class="feat-text">Admin-managed attendee &amp; meeting briefs</span></li>
-          <li><span class="feat-text">Full event insights for the team</span></li>
-          <li><span class="feat-text">Org-level <strong>usage reporting</strong></span></li>
-          <li><span class="feat-text">Admin portal &amp; team license</span></li>
-          <li><span class="feat-text">Dedicated onboarding &amp; support</span></li>
-        </ul>
+          <div class="plan-pricing">
+            <div class="plan-price">
+              <span class="plan-amount" id="price-amount">$9.99</span>
+              <span class="plan-period" id="price-period">/ month</span>
+              <span class="plan-strike" id="price-strike" hidden>$119.88</span>
+            </div>
+            <div class="plan-subprice" id="price-subprice">Billed monthly</div>
+          </div>
+
+          <a href="https://apps.apple.com/us/app/subtex/id6764664936" class="plan-cta primary">Get Subtex One</a>
+          <div class="plan-note">In-app purchase &middot; subscribe in the Subtex app</div>
+
+          <div class="plan-features-label">Everything in Free, plus</div>
+          <ul class="plan-features">
+            <li><span class="feat-text"><strong>Unlimited</strong> personal profiles</span></li>
+            <li><span class="feat-text"><strong>Unlimited</strong> card collection</span></li>
+            <li><span class="feat-text">Notes with <strong>no character limit</strong></span></li>
+            <li><span class="feat-text"><strong>AI summaries</strong> on demand</span></li>
+            <li><span class="feat-text">Connect card profiles across events</span></li>
+            <li><span class="feat-text">Personal event insights</span></li>
+            <li><span class="feat-text">Priority support</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ TEAMS + ORGANIZATIONS ══ -->
+    <div class="pricing-section tier-panel" id="panel-teams" role="tabpanel" aria-labelledby="tab-teams">
+      <div class="section-head">
+        <div class="section-head-eyebrow">Teams + Organizations</div>
+        <h2 class="section-head-title">Run events and grow your network at scale</h2>
+        <p class="section-head-sub">Every plan includes our full suite of event and team tools — pick the one that fits your event volume and team size.</p>
       </div>
 
+      <!-- Billing toggle -->
+      <div class="billing-toggle">
+        <span class="billing-label js-label-monthly">Monthly</span>
+        <button class="switch js-switch annual" role="switch" aria-checked="true" aria-label="Toggle annual billing"></button>
+        <span class="billing-label js-label-annual active">Annual<span class="billing-save">Save more</span></span>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- Connect -->
+        <div class="plan">
+          <span class="plan-badge" style="background:var(--celeste);">Growing Teams</span>
+          <div class="plan-name">Connect</div>
+          <p class="plan-desc">For smaller teams and growing organizations just getting started with events — clubs, local chapters, and lean teams who bring their network together a handful of times a year.</p>
+
+          <div class="plan-pricing">
+            <div class="plan-price">
+              <span class="plan-amount" id="connect-amount">$1,199</span>
+              <span class="plan-period" id="connect-period">/ year</span>
+            </div>
+            <div class="plan-subprice" id="connect-subprice">Billed annually</div>
+          </div>
+
+          <a href="https://dashboard.getsubtex.com/" class="plan-cta outline">Get Started</a>
+
+          <div class="plan-features-label">What's included</div>
+          <ul class="plan-features">
+            <li><span class="feat-text"><strong>12 events</strong> per year</span></li>
+            <li><span class="feat-text"><strong>500</strong>-person attendee pool</span></li>
+            <li><span class="feat-text"><strong>100</strong> member seats</span></li>
+            <li><span class="feat-text"><strong>Team management</strong> &amp; admin-invited seats</span></li>
+            <li><span class="feat-text">Event creation &amp; attendee invitations</span></li>
+            <li><span class="feat-text">Admin-managed attendee &amp; meeting briefs</span></li>
+            <li><span class="feat-text">Full event insights for the team</span></li>
+            <li><span class="feat-text">Org-level <strong>usage reporting</strong></span></li>
+            <li><span class="feat-text">Admin portal &amp; team license</span></li>
+            <li><span class="feat-text">Dedicated onboarding &amp; support</span></li>
+          </ul>
+        </div>
+
+        <!-- Engage -->
+        <div class="plan featured">
+          <span class="plan-badge">Most Popular</span>
+          <div class="plan-name">Engage</div>
+          <p class="plan-desc">For active organizations and mid-sized teams running a steady calendar of events — associations, universities, and companies engaging their members month after month.</p>
+
+          <div class="plan-pricing">
+            <div class="plan-price">
+              <span class="plan-amount" id="engage-amount">$3,199</span>
+              <span class="plan-period" id="engage-period">/ year</span>
+            </div>
+            <div class="plan-subprice" id="engage-subprice">Billed annually</div>
+          </div>
+
+          <a href="https://dashboard.getsubtex.com/" class="plan-cta primary">Get Started</a>
+
+          <div class="plan-features-label">What's included</div>
+          <ul class="plan-features">
+            <li><span class="feat-text"><strong>36 events</strong> per year</span></li>
+            <li><span class="feat-text"><strong>2,000</strong>-person attendee pool</span></li>
+            <li><span class="feat-text"><strong>500</strong> member seats</span></li>
+            <li><span class="feat-text"><strong>Team management</strong> &amp; admin-invited seats</span></li>
+            <li><span class="feat-text">Event creation &amp; attendee invitations</span></li>
+            <li><span class="feat-text">Admin-managed attendee &amp; meeting briefs</span></li>
+            <li><span class="feat-text">Full event insights for the team</span></li>
+            <li><span class="feat-text">Org-level <strong>usage reporting</strong></span></li>
+            <li><span class="feat-text">Admin portal &amp; team license</span></li>
+            <li><span class="feat-text">Dedicated onboarding &amp; support</span></li>
+          </ul>
+        </div>
+
+        <!-- Influence -->
+        <div class="plan">
+          <span class="plan-badge" style="background:var(--celeste);">Large Organizations</span>
+          <div class="plan-name">Influence</div>
+          <p class="plan-desc">For large organizations and enterprises operating at scale — national networks, major alumni programs, and event-driven teams managing thousands of relationships at once.</p>
+
+          <div class="plan-pricing">
+            <div class="plan-price">
+              <span class="plan-amount" id="influence-amount">$7,999</span>
+              <span class="plan-period" id="influence-period">/ year</span>
+            </div>
+            <div class="plan-subprice" id="influence-subprice">Billed annually</div>
+          </div>
+
+          <a href="https://dashboard.getsubtex.com/" class="plan-cta outline">Get Started</a>
+
+          <div class="plan-features-label">What's included</div>
+          <ul class="plan-features">
+            <li><span class="feat-text"><strong>100 events</strong> per year</span></li>
+            <li><span class="feat-text"><strong>10,000</strong>-person attendee pool</span></li>
+            <li><span class="feat-text"><strong>2,000</strong> member seats</span></li>
+            <li><span class="feat-text"><strong>Team management</strong> &amp; admin-invited seats</span></li>
+            <li><span class="feat-text">Event creation &amp; attendee invitations</span></li>
+            <li><span class="feat-text">Admin-managed attendee &amp; meeting briefs</span></li>
+            <li><span class="feat-text">Full event insights for the team</span></li>
+            <li><span class="feat-text">Org-level <strong>usage reporting</strong></span></li>
+            <li><span class="feat-text">Admin portal &amp; team license</span></li>
+            <li><span class="feat-text">Dedicated onboarding &amp; support</span></li>
+          </ul>
+        </div>
+
+      </div>
     </div>
   </div>
 
   <div class="pricing-foot">
     <p>
-      Prices in USD. Subtex One is billed through your Apple account and renews automatically until cancelled — manage or cancel anytime in your device settings. Questions about a plan? <a href="contact.html">Get in touch</a>.
+      Prices in USD. Subtex One is billed through your Apple account and renews automatically until cancelled — manage or cancel anytime in your device settings. Teams + Organizations plans are billed on the web. Questions about a plan? <a href="contact.html">Get in touch</a>.
     </p>
   </div>
 
@@ -764,7 +974,6 @@
           <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>
           <a href="https://subtex.statuspage.io/">Status</a>
-          <a href="https://apps.apple.com/us/app/subtex/id6764664936">App Store</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -791,20 +1000,42 @@
       }
     });
 
-    // Billing toggle
-    var sw       = document.getElementById('billing-switch');
+    // Billing toggles — each tier panel keeps its own billing state, so the
+    // Personal tab can default to monthly while Teams + Organizations defaults
+    // to annual. wireBilling sets up one panel and returns nothing.
+    function wireBilling(panelId, render, defaultAnnual) {
+      var panel = document.getElementById(panelId);
+      if (!panel) return;
+      var sw   = panel.querySelector('.js-switch');
+      var lblM = panel.querySelector('.js-label-monthly');
+      var lblA = panel.querySelector('.js-label-annual');
+      var isAnnual = false;
+
+      function set(annual) {
+        isAnnual = annual;
+        if (sw) {
+          sw.classList.toggle('annual', annual);
+          sw.setAttribute('aria-checked', String(annual));
+        }
+        if (lblM) lblM.classList.toggle('active', !annual);
+        if (lblA) lblA.classList.toggle('active', annual);
+        render(annual);
+      }
+
+      if (sw)   sw.addEventListener('click', function() { set(!isAnnual); });
+      if (lblM) lblM.addEventListener('click', function() { set(false); });
+      if (lblA) lblA.addEventListener('click', function() { set(true); });
+
+      set(!!defaultAnnual);
+    }
+
+    // Personal (Subtex One) — defaults to monthly
     var amount   = document.getElementById('price-amount');
     var period   = document.getElementById('price-period');
     var subprice = document.getElementById('price-subprice');
     var strike   = document.getElementById('price-strike');
-    var lblM     = document.getElementById('label-monthly');
-    var lblA     = document.getElementById('label-annual');
 
-    function setBilling(annual) {
-      sw.classList.toggle('annual', annual);
-      sw.setAttribute('aria-checked', String(annual));
-      lblM.classList.toggle('active', !annual);
-      lblA.classList.toggle('active', annual);
+    wireBilling('panel-personal', function(annual) {
       if (annual) {
         amount.textContent   = '$99';
         period.textContent   = '/ year';
@@ -816,13 +1047,61 @@
         subprice.textContent = 'Billed monthly';
         strike.hidden = true;
       }
+    }, false);
+
+    // Teams + Organizations plans (monthly / annual amounts) — defaults to annual
+    var orgPlans = {
+      connect:   { m: '$149', a: '$1,199' },
+      engage:    { m: '$399', a: '$3,199' },
+      influence: { m: '$549', a: '$7,999' }
+    };
+
+    function setOrg(key, annual) {
+      var a = document.getElementById(key + '-amount');
+      var p = document.getElementById(key + '-period');
+      var s = document.getElementById(key + '-subprice');
+      if (!a) return;
+      a.textContent = annual ? orgPlans[key].a : orgPlans[key].m;
+      p.textContent = annual ? '/ year' : '/ month';
+      s.textContent = annual ? 'Billed annually' : 'Billed monthly';
     }
 
-    sw.addEventListener('click', function() {
-      setBilling(!sw.classList.contains('annual'));
-    });
-    lblM.addEventListener('click', function() { setBilling(false); });
-    lblA.addEventListener('click', function() { setBilling(true); });
+    wireBilling('panel-teams', function(annual) {
+      Object.keys(orgPlans).forEach(function(k) { setOrg(k, annual); });
+    }, true);
+
+    // ── Tier tabs (Personal / Teams + Organizations) ──
+    var tabPersonal  = document.getElementById('tab-personal');
+    var tabTeams     = document.getElementById('tab-teams');
+    var panelPersonal = document.getElementById('panel-personal');
+    var panelTeams    = document.getElementById('panel-teams');
+
+    // hash aliases that should open the Teams tier
+    var teamsHashes = ['teams','team','teams-organizations','organizations','organization','org','orgs','business','enterprise'];
+
+    function showTier(tier, updateHash) {
+      var teams = (tier === 'teams');
+      tabPersonal.setAttribute('aria-selected', String(!teams));
+      tabTeams.setAttribute('aria-selected', String(teams));
+      panelPersonal.classList.toggle('active', !teams);
+      panelTeams.classList.toggle('active', teams);
+      if (updateHash && window.history && history.replaceState) {
+        history.replaceState(null, '', '#' + (teams ? 'teams' : 'personal'));
+      }
+    }
+
+    function tierFromHash() {
+      var h = (location.hash || '').replace('#', '').toLowerCase();
+      if (teamsHashes.indexOf(h) !== -1) return 'teams';
+      return 'personal';
+    }
+
+    tabPersonal.addEventListener('click', function() { showTier('personal', true); });
+    tabTeams.addEventListener('click', function() { showTier('teams', true); });
+    window.addEventListener('hashchange', function() { showTier(tierFromHash(), false); });
+
+    // set initial tier from the URL (so deep links open the right tab)
+    showTier(tierFromHash(), false);
   })();
   </script>
 </body>

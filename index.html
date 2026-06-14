@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="apple-itunes-app" content="app-id=6764664936, app-argument=https://apps.apple.com/us/app/subtex/id6764664936?itscg=30200&itsct=apps_box_link&mttnsubad=6764664936">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC9HWR08BE"></script>
@@ -28,11 +29,17 @@
   <meta property="og:title" content="Subtex — Meaningful Connections">
   <meta property="og:description" content="Stop shuffling cards. Subtex replaces business cards with a smarter way to connect — scan a QR code, swap profiles, and remember everyone you meet.">
   <meta property="og:url" content="https://getsubtex.com/">
-  <meta property="og:image" content="https://getsubtex.com/images/hero-mockup.jpg">
+  <meta property="og:image" content="https://getsubtex.com/images/social-card.jpg">
+  <meta property="og:image:secure_url" content="https://getsubtex.com/images/social-card.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:image:alt" content="Subtex — Connections, Remembered.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Subtex — Meaningful Connections">
   <meta name="twitter:description" content="Stop shuffling cards. Subtex replaces business cards with a smarter way to connect — scan a QR code, swap profiles, and remember everyone you meet.">
-  <meta name="twitter:image" content="https://getsubtex.com/images/hero-mockup.jpg">
+  <meta name="twitter:image" content="https://getsubtex.com/images/social-card.jpg">
+  <meta name="twitter:image:alt" content="Subtex — Connections, Remembered.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -53,7 +60,7 @@
       --bg:         #f0ebe0;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       font-family: 'Montserrat', system-ui, sans-serif;
@@ -75,9 +82,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: rgba(2, 68, 102, 0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 32%), linear-gradient(180deg, rgba(3,72,108,0.74) 0%, rgba(2,60,92,0.60) 100%);
+      backdrop-filter: blur(26px) saturate(200%);
+      -webkit-backdrop-filter: blur(26px) saturate(200%);
+      border-bottom: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.20), inset 0 1px 0 rgba(255,255,255,0.30), inset 0 -1px 0 rgba(255,255,255,0.05);
     }
 
     .nav-logo {
@@ -114,22 +123,26 @@
       background-color: var(--marigold) !important;
       color: var(--twilight) !important;
       padding: 10px 22px;
-      border-radius: 3px;
+      border-radius: 999px;
       font-weight: 700 !important;
+      box-shadow: 0 2px 10px rgba(245,171,98,0.35), inset 0 1px 0 rgba(255,255,255,0.45);
+      transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
-    .nav-cta:hover { background-color: #f0a050 !important; }
+    .nav-cta:hover { background-color: #f0a050 !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(245,171,98,0.45), inset 0 1px 0 rgba(255,255,255,0.55); }
 
     .nav-cta-secondary {
-      background-color: transparent !important;
+      background-color: rgba(255,255,255,0.06) !important;
       color: var(--celeste) !important;
       padding: 10px 22px;
-      border-radius: 3px;
-      border: 2px solid var(--celeste);
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.28);
       font-weight: 700 !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+      transition: background-color 0.2s, border-color 0.2s;
     }
 
-    .nav-cta-secondary:hover { background-color: rgba(195,216,209,0.15) !important; }
+    .nav-cta-secondary:hover { background-color: rgba(255,255,255,0.14) !important; border-color: rgba(255,255,255,0.45); }
 
     /* ── HERO ── */
     .hero {
@@ -584,42 +597,105 @@
       font-style: italic;
     }
 
-    /* ── SOCIAL PROOF / STATS ── */
-    .stats-section {
-      background-color: var(--twilight);
+    /* ── TEAM TEASER ── */
+    .team-teaser {
+      background: linear-gradient(135deg, var(--twilight) 0%, #0d2133 100%);
       padding: 80px 40px;
     }
 
-    .stats-inner {
+    .team-teaser-inner {
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
     }
 
-    .stat-block {
-      text-align: center;
-      padding: 48px 32px;
-      background: rgba(255,255,255,0.03);
-      border-radius: 4px;
-    }
-
-    .stat-num {
-      font-size: 52px;
-      font-weight: 900;
+    .team-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
       color: var(--marigold);
-      line-height: 1;
-      letter-spacing: -0.02em;
-      margin-bottom: 8px;
+      margin-bottom: 16px;
     }
 
-    .stat-label {
-      font-size: 12px;
-      font-weight: 600;
+    .team-headline {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .team-body {
+      font-size: 14px;
+      color: var(--celeste);
+      opacity: 0.8;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .team-about-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--marigold);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+    }
+
+    .team-about-link svg { transition: transform 0.2s; }
+    .team-about-link:hover svg { transform: translateX(3px); }
+
+    .team-faces {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .team-face {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(195,216,209,0.1);
+      border-radius: 10px;
+      padding: 14px 18px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .team-face:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(195,216,209,0.2);
+    }
+
+    .team-face-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .team-face-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .team-face-role {
+      font-size: 11px;
       color: var(--celeste);
+      opacity: 0.55;
+      letter-spacing: 0.03em;
     }
 
     /* ── CTA ── */
@@ -829,7 +905,9 @@
         position: absolute;
         top: 68px;
         left: 0; right: 0;
-        background-color: rgba(2,68,102,0.98);
+        background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 24px), rgba(2,60,92,0.94);
+        backdrop-filter: blur(26px) saturate(200%);
+        -webkit-backdrop-filter: blur(26px) saturate(200%);
         flex-direction: column;
         align-items: stretch;
         gap: 0;
@@ -878,7 +956,7 @@
 
       .features-text { padding-right: 0; }
 
-      .stats-inner { grid-template-columns: 1fr; gap: 2px; }
+      .team-teaser-inner { grid-template-columns: 1fr; gap: 40px; }
 
       .footer-top {
         flex-direction: column;
@@ -923,9 +1001,9 @@
   <nav>
     <a href="#" class="nav-logo">Subtex<span>.</span></a>
     <ul class="nav-links">
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="#features">Features</a></li>
+      <li><a href="features.html">Features</a></li>
       <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="https://apps.apple.com/us/app/subtex/id6764664936" class="nav-cta">Get the App</a></li>
       <li><a href="https://dashboard.getsubtex.com/" class="nav-cta-secondary">Admin</a></li>
@@ -1076,20 +1154,42 @@
     </div>
   </section>
 
-  <!-- STATS -->
-  <div class="stats-section">
-    <div class="stats-inner">
-      <div class="stat-block">
-        <div class="stat-num">2s</div>
-        <div class="stat-label">Average Connection Time</div>
+  <!-- TEAM TEASER -->
+  <div class="team-teaser">
+    <div class="team-teaser-inner">
+      <div>
+        <div class="team-eyebrow">The Team</div>
+        <h2 class="team-headline">Built by people who've<br>done this before.</h2>
+        <p class="team-body">
+          Subtex is the product of three people with decades of experience in customer success, creative product work, and engineering — who lived through the exact problem they set out to fix. They built the tool they always wished they had.
+        </p>
+        <a href="about.html" class="team-about-link">
+          Meet the team
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
-      <div class="stat-block">
-        <div class="stat-num">iOS</div>
-        <div class="stat-label">Available Now · Free</div>
-      </div>
-      <div class="stat-block">
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Connections You Can Make</div>
+      <div class="team-faces">
+        <a href="about.html" class="team-face">
+          <img src="images/leader-john.jpg" alt="John Durocher" class="team-face-img">
+          <div>
+            <div class="team-face-name">John Durocher</div>
+            <div class="team-face-role">Chief Executive Officer</div>
+          </div>
+        </a>
+        <a href="about.html" class="team-face">
+          <img src="images/leader-steve.jpg" alt="Steve Mammone" class="team-face-img">
+          <div>
+            <div class="team-face-name">Steve Mammone</div>
+            <div class="team-face-role">Chief Experience Officer</div>
+          </div>
+        </a>
+        <a href="about.html" class="team-face">
+          <img src="images/leader-zack.jpg" alt="Zack Kilgore" class="team-face-img">
+          <div>
+            <div class="team-face-name">Zack Kilgore</div>
+            <div class="team-face-role">Chief Technology Officer</div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -1143,7 +1243,6 @@
           <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>
           <a href="https://subtex.statuspage.io/">Status</a>
-          <a href="https://apps.apple.com/us/app/subtex/id6764664936">App Store</a>
         </div>
       </div>
       <div class="footer-bottom">
