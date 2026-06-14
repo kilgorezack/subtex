@@ -597,42 +597,105 @@
       font-style: italic;
     }
 
-    /* ── SOCIAL PROOF / STATS ── */
-    .stats-section {
-      background-color: var(--twilight);
+    /* ── TEAM TEASER ── */
+    .team-teaser {
+      background: linear-gradient(135deg, var(--twilight) 0%, #0d2133 100%);
       padding: 80px 40px;
     }
 
-    .stats-inner {
+    .team-teaser-inner {
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
     }
 
-    .stat-block {
-      text-align: center;
-      padding: 48px 32px;
-      background: rgba(255,255,255,0.03);
-      border-radius: 4px;
-    }
-
-    .stat-num {
-      font-size: 52px;
-      font-weight: 900;
+    .team-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
       color: var(--marigold);
-      line-height: 1;
-      letter-spacing: -0.02em;
-      margin-bottom: 8px;
+      margin-bottom: 16px;
     }
 
-    .stat-label {
-      font-size: 12px;
-      font-weight: 600;
+    .team-headline {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .team-body {
+      font-size: 14px;
+      color: var(--celeste);
+      opacity: 0.8;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .team-about-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--marigold);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+    }
+
+    .team-about-link svg { transition: transform 0.2s; }
+    .team-about-link:hover svg { transform: translateX(3px); }
+
+    .team-faces {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .team-face {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(195,216,209,0.1);
+      border-radius: 10px;
+      padding: 14px 18px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .team-face:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(195,216,209,0.2);
+    }
+
+    .team-face-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .team-face-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .team-face-role {
+      font-size: 11px;
       color: var(--celeste);
+      opacity: 0.55;
+      letter-spacing: 0.03em;
     }
 
     /* ── CTA ── */
@@ -893,7 +956,7 @@
 
       .features-text { padding-right: 0; }
 
-      .stats-inner { grid-template-columns: 1fr; gap: 2px; }
+      .team-teaser-inner { grid-template-columns: 1fr; gap: 40px; }
 
       .footer-top {
         flex-direction: column;
@@ -1091,20 +1154,42 @@
     </div>
   </section>
 
-  <!-- STATS -->
-  <div class="stats-section">
-    <div class="stats-inner">
-      <div class="stat-block">
-        <div class="stat-num">2s</div>
-        <div class="stat-label">Average Connection Time</div>
+  <!-- TEAM TEASER -->
+  <div class="team-teaser">
+    <div class="team-teaser-inner">
+      <div>
+        <div class="team-eyebrow">The Team</div>
+        <h2 class="team-headline">Built by people who've<br>done this before.</h2>
+        <p class="team-body">
+          Subtex is the product of three people with decades of experience in customer success, creative product work, and engineering — who lived through the exact problem they set out to fix. They built the tool they always wished they had.
+        </p>
+        <a href="about.html" class="team-about-link">
+          Meet the team
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
-      <div class="stat-block">
-        <div class="stat-num">iOS</div>
-        <div class="stat-label">Available Now · Free</div>
-      </div>
-      <div class="stat-block">
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Connections You Can Make</div>
+      <div class="team-faces">
+        <a href="about.html" class="team-face">
+          <img src="images/leader-john.jpg" alt="John Durocher" class="team-face-img">
+          <div>
+            <div class="team-face-name">John Durocher</div>
+            <div class="team-face-role">Chief Executive Officer</div>
+          </div>
+        </a>
+        <a href="about.html" class="team-face">
+          <img src="images/leader-steve.jpg" alt="Steve Mammone" class="team-face-img">
+          <div>
+            <div class="team-face-name">Steve Mammone</div>
+            <div class="team-face-role">Chief Experience Officer</div>
+          </div>
+        </a>
+        <a href="about.html" class="team-face">
+          <img src="images/leader-zack.jpg" alt="Zack Kilgore" class="team-face-img">
+          <div>
+            <div class="team-face-name">Zack Kilgore</div>
+            <div class="team-face-role">Chief Technology Officer</div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
