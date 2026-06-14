@@ -655,47 +655,47 @@
 
     .team-faces {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      gap: 32px;
+      align-items: flex-start;
     }
 
     .team-face {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 16px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(195,216,209,0.1);
-      border-radius: 10px;
-      padding: 14px 18px;
+      text-align: center;
+      gap: 12px;
       text-decoration: none;
-      transition: background 0.2s, border-color 0.2s;
-    }
-
-    .team-face:hover {
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(195,216,209,0.2);
     }
 
     .team-face-img {
-      width: 44px;
-      height: 44px;
+      width: 86px;
+      height: 86px;
       border-radius: 50%;
       object-fit: cover;
-      flex-shrink: 0;
+      border: 2px solid rgba(195,216,209,0.12);
+      display: block;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .team-face:hover .team-face-img {
+      border-color: rgba(245,171,98,0.4);
+      transform: scale(1.04);
     }
 
     .team-face-name {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 2px;
+      line-height: 1.3;
     }
 
     .team-face-role {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--celeste);
-      opacity: 0.55;
+      opacity: 0.45;
       letter-spacing: 0.03em;
+      margin-top: -8px;
     }
 
     /* ── CTA ── */
@@ -1161,7 +1161,7 @@
         <div class="team-eyebrow">The Team</div>
         <h2 class="team-headline">Built by people who've<br>done this before.</h2>
         <p class="team-body">
-          Subtex is the product of three people with decades of experience in customer success, creative product work, and engineering — who lived through the exact problem they set out to fix. They built the tool they always wished they had.
+          The people behind Subtex spent decades managing customer relationships, building products, and watching context slip through the cracks after every event. They solved this problem because they'd lived it.
         </p>
         <a href="about.html" class="team-about-link">
           Meet the team
@@ -1171,24 +1171,18 @@
       <div class="team-faces">
         <a href="about.html" class="team-face">
           <img src="images/leader-john.jpg" alt="John Durocher" class="team-face-img">
-          <div>
-            <div class="team-face-name">John Durocher</div>
-            <div class="team-face-role">Chief Executive Officer</div>
-          </div>
+          <div class="team-face-name">John Durocher</div>
+          <div class="team-face-role">CEO</div>
         </a>
         <a href="about.html" class="team-face">
           <img src="images/leader-steve.jpg" alt="Steve Mammone" class="team-face-img">
-          <div>
-            <div class="team-face-name">Steve Mammone</div>
-            <div class="team-face-role">Chief Experience Officer</div>
-          </div>
+          <div class="team-face-name">Steve Mammone</div>
+          <div class="team-face-role">CXO</div>
         </a>
         <a href="about.html" class="team-face">
           <img src="images/leader-zack.jpg" alt="Zack Kilgore" class="team-face-img">
-          <div>
-            <div class="team-face-name">Zack Kilgore</div>
-            <div class="team-face-role">Chief Technology Officer</div>
-          </div>
+          <div class="team-face-name">Zack Kilgore</div>
+          <div class="team-face-role">CTO</div>
         </a>
       </div>
     </div>
