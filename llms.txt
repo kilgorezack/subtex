@@ -1,0 +1,47 @@
+# Subtex
+
+> Subtex is a mobile app (iOS) that replaces business cards with smarter networking. Scan a QR code to instantly swap profiles, take notes on everyone you meet, and get AI-powered summaries of your connections — so you never forget why a handshake mattered.
+
+## What Subtex Does
+
+Subtex solves the problem of forgetting the context behind professional connections. After meeting someone at a conference, event, or meeting, users exchange profiles via QR code, add private notes, and receive AI-generated summaries that surface the most important things to remember. For teams and organizations, Subtex provides an enterprise admin portal to run events at scale, manage attendees, and generate org-wide network insights.
+
+## Key Features
+
+- Instant QR-code profile exchange (no app required for the recipient to share)
+- Private notes with no character limit (Subtex One)
+- AI summaries of connections on demand (Subtex One)
+- Unlimited profiles and card collection (Subtex One)
+- Personal event insights
+- Teams + Organizations admin portal
+- Event creation, attendee invitations, and check-in management
+- Admin-managed attendee and meeting briefs
+- Org-level usage reporting and network intelligence
+- Enterprise-grade controls
+
+## Pricing
+
+- **Subtex (Free):** $0 — 1 profile, up to 50 cards, QR exchange
+- **Subtex One (Individual):** $9.99/month or discounted annually — unlimited profiles, unlimited cards, AI summaries, event insights
+- **Connect (Teams):** $1,199/year — 12 events/year, 500-person attendee pool, 100 member seats
+- **Engage (Teams):** $3,199/year — 36 events/year, 2,000-person attendee pool, 500 member seats
+- **Influence (Enterprise):** $7,999/year — 100 events/year, 10,000-person attendee pool, 2,000 member seats
+
+## Company
+
+GetSubtex LLC — Massachusetts, USA
+Website: https://getsubtex.com
+App Store: https://apps.apple.com/us/app/subtex/id6764664936
+Admin portal: https://dashboard.getsubtex.com
+Contact: feedback@getsubtex.com
+
+## Pages
+
+- [Home](https://getsubtex.com/)
+- [Features](https://getsubtex.com/features.html)
+- [Pricing](https://getsubtex.com/pricing.html)
+- [About](https://getsubtex.com/about.html)
+- [Contact](https://getsubtex.com/contact.html)
+- [Privacy Policy](https://getsubtex.com/privacy.html)
+- [Terms of Service](https://getsubtex.com/terms.html)
+- [EULA](https://getsubtex.com/eula.html)
