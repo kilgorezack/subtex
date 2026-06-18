@@ -25,11 +25,12 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "vstu3ehwp5");
   </script>
-  <title>About — Subtex</title>
-  <meta name="description" content="The handshake is easy. Remembering why it mattered is the hard part. Subtex keeps the context behind every connection — and turns it into insight for people, teams, and organizations.">
+  <title>About Us – The Team Behind Subtex | Digital Business Card App</title>
+  <meta name="description" content="Meet the team behind Subtex, the digital business card and professional networking app. GetSubtex LLC is based in Massachusetts, built by founders who've done this before.">
+  <meta name="keywords" content="Subtex team, GetSubtex LLC, digital business card company, professional networking startup, Massachusetts tech company, networking app founders">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Subtex">
-  <meta property="og:title" content="About — Subtex">
+  <meta property="og:title" content="About Us – The Team Behind Subtex">
   <meta property="og:description" content="The handshake is easy. Remembering why it mattered is the hard part. Subtex keeps the context behind every connection.">
   <meta property="og:url" content="https://getsubtex.com/about.html">
   <meta property="og:image" content="https://getsubtex.com/images/social-card.jpg">
@@ -39,10 +40,12 @@
   <meta property="og:image:height" content="1080">
   <meta property="og:image:alt" content="Subtex — Connections, Remembered.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About — Subtex">
+  <meta name="twitter:title" content="About Us – The Team Behind Subtex">
   <meta name="twitter:description" content="The handshake is easy. Remembering why it mattered is the hard part. Subtex keeps the context behind every connection.">
   <meta name="twitter:image" content="https://getsubtex.com/images/social-card.jpg">
   <meta name="twitter:image:alt" content="Subtex — Connections, Remembered.">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#024466">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -904,9 +907,17 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "GetSubtex LLC",
+      "alternateName": "Subtex",
       "url": "https://getsubtex.com",
-      "logo": "https://getsubtex.com/images/social-card.jpg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://getsubtex.com/favicon.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://getsubtex.com/images/social-card.jpg",
       "email": "feedback@getsubtex.com",
+      "foundingDate": "2024",
       "foundingLocation": {
         "@type": "Place",
         "address": {
@@ -915,6 +926,38 @@
           "addressCountry": "US"
         }
       },
+      "member": [
+        {
+          "@type": "OrganizationRole",
+          "member": {
+            "@type": "Person",
+            "name": "John Durocher",
+            "image": "https://getsubtex.com/images/leader-john.jpg",
+            "worksFor": { "@type": "Organization", "name": "GetSubtex LLC" }
+          },
+          "roleName": "CEO"
+        },
+        {
+          "@type": "OrganizationRole",
+          "member": {
+            "@type": "Person",
+            "name": "Steve Mammone",
+            "image": "https://getsubtex.com/images/leader-steve.jpg",
+            "worksFor": { "@type": "Organization", "name": "GetSubtex LLC" }
+          },
+          "roleName": "CXO"
+        },
+        {
+          "@type": "OrganizationRole",
+          "member": {
+            "@type": "Person",
+            "name": "Zack Kilgore",
+            "image": "https://getsubtex.com/images/leader-zack.jpg",
+            "worksFor": { "@type": "Organization", "name": "GetSubtex LLC" }
+          },
+          "roleName": "CTO"
+        }
+      ],
       "sameAs": [
         "https://apps.apple.com/us/app/subtex/id6764664936"
       ]

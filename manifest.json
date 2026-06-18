@@ -1,0 +1,21 @@
+{
+  "name": "Subtex – Digital Business Card & Networking App",
+  "short_name": "Subtex",
+  "description": "Replace business cards with smarter professional networking. Scan a QR code, swap profiles instantly, and remember everyone you meet.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#fdf4e7",
+  "theme_color": "#024466",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
