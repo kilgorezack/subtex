@@ -327,7 +327,13 @@
       border: 1.5px solid rgba(195, 216, 209, 0.3);
       border-radius: 3px;
       padding: 11px 24px;
-      cursor: default;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .btn-soon:hover {
+      border-color: rgba(195, 216, 209, 0.6);
+      transform: translateY(-1px);
     }
 
     .btn-soon svg { flex-shrink: 0; opacity: 0.85; }
@@ -344,15 +350,6 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-    }
-
-    .btn-soon-sub {
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      opacity: 0.6;
-      margin-top: 3px;
     }
 
     /* Phone mockup image */
@@ -870,9 +867,6 @@
       transform: translateY(-2px);
     }
 
-    .store-badge-soon { opacity: 0.55; cursor: default; }
-    .store-badge-soon:hover { background-color: var(--twilight); transform: none; }
-
     .store-badge svg { flex-shrink: 0; }
 
     .store-badge-text { text-align: left; }
@@ -1128,7 +1122,8 @@
       "areaServed": "Worldwide",
       "knowsAbout": ["digital business cards", "professional networking", "AI-powered networking", "event management", "contact management"],
       "sameAs": [
-        "https://apps.apple.com/us/app/subtex/id6764664936"
+        "https://apps.apple.com/us/app/subtex/id6764664936",
+        "https://play.google.com/store/apps/details?id=subtex.subtexapp"
       ]
     },
     {
@@ -1136,7 +1131,7 @@
       "@type": "MobileApplication",
       "name": "Subtex",
       "description": "Stop shuffling cards. Subtex replaces business cards with a smarter way to connect. Scan a QR code, swap profiles instantly, and remember everyone you meet.",
-      "operatingSystem": "iOS",
+      "operatingSystem": "iOS, Android",
       "applicationCategory": "BusinessApplication",
       "applicationSubCategory": "Networking",
       "featureList": "QR code profile exchange, AI connection summaries, private notes, unlimited card collection, personal event insights, enterprise admin portal",
@@ -1199,13 +1194,12 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.19 1.28-2.17 3.82.03 3.02 2.65 4.03 2.68 4.04l-.06.21zm-5.25-17.43c.65-.79 1.72-1.39 2.61-1.43.09 1.1-.32 2.19-.93 2.98-.61.8-1.63 1.43-2.6 1.36-.1-1.07.35-2.16.92-2.91z"/></svg>
             Download for iOS
           </a>
-          <span class="btn-soon" role="button" aria-disabled="true" aria-label="Download for Android — Coming July 2026">
+          <a href="https://play.google.com/store/apps/details?id=subtex.subtexapp" class="btn-soon" aria-label="Download for Android on Google Play">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-2.86-1.21-6.08-1.21-8.94 0L5.65 5.67c-.19-.29-.57-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25S8.25 13.31 8.25 14 7.69 15.25 7 15.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/></svg>
             <span class="btn-soon-text">
               <span class="btn-soon-main">Download for Android</span>
-              <span class="btn-soon-sub">Coming July 2026</span>
             </span>
-          </span>
+          </a>
         </div>
         <a href="#how" class="btn-ghost">
           See how it works
@@ -1388,17 +1382,17 @@
             <div class="store-line2">App Store</div>
           </div>
         </a>
-        <span class="store-badge store-badge-soon" role="button" aria-disabled="true" aria-label="Get it on Google Play — Coming July 2026">
+        <a href="https://play.google.com/store/apps/details?id=subtex.subtexapp" class="store-badge" aria-label="Get it on Google Play">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-2.86-1.21-6.08-1.21-8.94 0L5.65 5.67c-.19-.29-.57-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25S8.25 13.31 8.25 14 7.69 15.25 7 15.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/>
           </svg>
           <div class="store-badge-text">
-            <div class="store-line1">Coming July 2026</div>
+            <div class="store-line1">Get it on</div>
             <div class="store-line2">Google Play</div>
           </div>
-        </span>
+        </a>
       </div>
-      <div class="cta-note">Free · iOS now · Android coming July 2026 · No account required to browse</div>
+      <div class="cta-note">Free on iOS and Android · No account required to browse</div>
     </div>
   </section>
 
