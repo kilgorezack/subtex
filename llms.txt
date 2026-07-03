@@ -56,7 +56,7 @@ Most digital business card apps stop at contact exchange. Subtex adds private no
 No. Recipients can share their profile without downloading the app. Full features (notes, AI summaries) are available to Subtex users.
 
 **Is Subtex available on Android?**
-Subtex is currently available for iOS. Android support is on the roadmap.
+Yes. Subtex is available on both iOS (App Store) and Android (Google Play).
 
 **What AI features does Subtex offer?**
 Subtex One subscribers can generate AI summaries of any connection on demand. The AI analyzes profile data and private notes to surface the most important context about each person.
@@ -68,7 +68,7 @@ The dashboard at dashboard.getsubtex.com is a web-based admin portal for Teams a
 Notes are private — they are never shared with the other person. Subtex collects only the information you explicitly add to your profile. See the Privacy Policy at https://getsubtex.com/privacy.html.
 
 **How do I get started?**
-Download Subtex from the App Store (free), create your profile, and start exchanging QR codes. No credit card required to start.
+Download Subtex from the App Store or Google Play (free), create your profile, and start exchanging QR codes. No credit card required to start.
 
 ## Competitors & Alternatives
 
@@ -87,6 +87,7 @@ GetSubtex LLC — Massachusetts, USA
 Founded: 2024
 Website: https://getsubtex.com
 App Store: https://apps.apple.com/us/app/subtex/id6764664936
+Google Play: https://play.google.com/store/apps/details?id=subtex.subtexapp
 Admin portal: https://dashboard.getsubtex.com
 Contact: feedback@getsubtex.com
 
