@@ -1,6 +1,6 @@
 # Subtex
 
-> Subtex is a mobile app (iOS) that replaces business cards with smarter networking. Scan a QR code to instantly swap profiles, take notes on everyone you meet, and get AI-powered summaries of your connections — so you never forget why a handshake mattered.
+> Subtex is a digital business card and professional networking iOS app. It replaces physical business cards with QR-code profile exchange, AI-powered connection summaries, and private notes — so professionals never lose the context behind a handshake.
 
 ## What Subtex Does
 
@@ -19,21 +19,82 @@ Subtex solves the problem of forgetting the context behind professional connecti
 - Org-level usage reporting and network intelligence
 - Enterprise-grade controls
 
+## Use Cases
+
+- **Conferences & Trade Shows:** Exchange profiles instantly at the booth or in the hallway; AI summaries remind you who you met and why it mattered when you follow up.
+- **Corporate Networking Events:** Teams use Subtex Organizations to manage attendee lists, send invitations, run check-in, and generate post-event connection reports.
+- **Sales Teams:** Reps collect contacts at events, add private context notes, and surface insights that help prioritize follow-up.
+- **Job Seekers & Recruiters:** Keep track of every person met at a career fair or industry meetup, with notes and AI-generated summaries to recall key details during follow-up.
+- **Professional Associations:** Run member events with attendee management and generate org-level networking insights.
+- **Small Business Owners:** Replace printed business cards with a digital profile that always stays current.
+
+## How It Works
+
+1. **Create your profile** — Set up one or more professional profiles in the app with your contact information, role, and links.
+2. **Scan a QR code** — At a meeting or event, scan the other person's Subtex QR code (or they scan yours) to instantly exchange profiles.
+3. **Add notes** — Jot down private notes immediately after meeting someone: what you discussed, context, follow-up actions.
+4. **Get AI summaries** — On demand, Subtex generates an AI summary of your connection based on profile data and your notes.
+5. **Review insights** — Over time, see patterns in your network through personal event insights.
+
 ## Pricing
 
 - **Subtex (Free):** $0 — 1 profile, up to 50 cards, QR exchange
-- **Subtex One (Individual):** $9.99/month or discounted annually — unlimited profiles, unlimited cards, AI summaries, event insights
-- **Connect (Teams):** $1,199/year — 12 events/year, 500-person attendee pool, 100 member seats
-- **Engage (Teams):** $3,199/year — 36 events/year, 2,000-person attendee pool, 500 member seats
-- **Influence (Enterprise):** $7,999/year — 100 events/year, 10,000-person attendee pool, 2,000 member seats
+- **Subtex One (Individual):** $9.99/month or discounted annually — unlimited profiles, unlimited cards, AI summaries, event insights, priority support
+- **Connect (Teams):** $1,199/year — 12 events/year, 500-person attendee pool, 100 member seats, admin portal
+- **Engage (Teams):** $3,199/year — 36 events/year, 2,000-person attendee pool, 500 member seats, admin portal
+- **Influence (Enterprise):** $7,999/year — 100 events/year, 10,000-person attendee pool, 2,000 member seats, admin portal, dedicated support
+
+## Frequently Asked Questions
+
+**What is Subtex?**
+Subtex is a digital business card and professional networking app for iOS. It lets users exchange contact profiles via QR code, take private notes on connections, and receive AI-generated summaries to remember the context behind every meeting.
+
+**How is Subtex different from a regular digital business card app?**
+Most digital business card apps stop at contact exchange. Subtex adds private notes, AI-powered connection summaries, personal event insights, and an enterprise-grade admin portal for teams running events at scale.
+
+**Does the other person need to have the Subtex app?**
+No. Recipients can share their profile without downloading the app. Full features (notes, AI summaries) are available to Subtex users.
+
+**Is Subtex available on Android?**
+Subtex is currently available for iOS. Android support is on the roadmap.
+
+**What AI features does Subtex offer?**
+Subtex One subscribers can generate AI summaries of any connection on demand. The AI analyzes profile data and private notes to surface the most important context about each person.
+
+**What is the Subtex admin portal?**
+The dashboard at dashboard.getsubtex.com is a web-based admin portal for Teams and Organizations plan subscribers. Admins can create events, invite attendees, manage check-in, issue meeting briefs, and view org-wide network intelligence reports.
+
+**Is my data private?**
+Notes are private — they are never shared with the other person. Subtex collects only the information you explicitly add to your profile. See the Privacy Policy at https://getsubtex.com/privacy.html.
+
+**How do I get started?**
+Download Subtex from the App Store (free), create your profile, and start exchanging QR codes. No credit card required to start.
+
+## Competitors & Alternatives
+
+Subtex competes in the digital business card and professional networking space. Common alternatives include:
+- HiHello — digital business card app, no AI summaries or event management
+- Blinq — digital business card, limited notes, no enterprise event tools
+- Popl — NFC and QR-based card sharing, less focus on connection context
+- LinkedIn QR codes — contact exchange only, no notes or AI summaries
+- Paper business cards — no notes, no AI, easily lost
+
+Subtex's differentiator is the combination of QR exchange + private notes + AI summaries + enterprise event management in a single product.
 
 ## Company
 
 GetSubtex LLC — Massachusetts, USA
+Founded: 2024
 Website: https://getsubtex.com
 App Store: https://apps.apple.com/us/app/subtex/id6764664936
 Admin portal: https://dashboard.getsubtex.com
 Contact: feedback@getsubtex.com
+
+## Team
+
+- **John Durocher** — CEO
+- **Steve Mammone** — CXO
+- **Zack Kilgore** — CTO
 
 ## Pages
 

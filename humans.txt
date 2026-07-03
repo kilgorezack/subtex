@@ -1,0 +1,15 @@
+/* TEAM */
+John Durocher — CEO, GetSubtex LLC
+Steve Mammone — CXO, GetSubtex LLC
+Zack Kilgore — CTO, GetSubtex LLC
+
+/* SITE */
+Last update: 2026-06-18
+Language: English
+Standards: HTML5, Schema.org
+Components: Vanilla HTML/CSS
+
+/* CONTACT */
+feedback@getsubtex.com
+https://getsubtex.com
+Massachusetts, USA
