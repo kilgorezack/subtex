@@ -35,6 +35,44 @@
   src="https://www.facebook.com/tr?id=27469673699319983&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+  <!-- Meta Pixel — automatic event tracking -->
+  <script>
+  (function () {
+    function track() {
+      if (typeof fbq !== 'function') return;
+
+      // App Store / Google Play download clicks -> Lead
+      document.addEventListener('click', function (e) {
+        var link = e.target.closest ? e.target.closest('a[href]') : null;
+        if (!link || !link.href) return;
+        if (/apps\.apple\.com|play\.google\.com/.test(link.href)) {
+          fbq('track', 'Lead', {
+            content_name: 'App Download',
+            content_category: /play\.google\.com/.test(link.href) ? 'Google Play' : 'App Store'
+          });
+        }
+      }, true);
+
+      // Feedback form submission -> Lead
+      var feedback = document.querySelector('form.jotform-form');
+      if (feedback) {
+        feedback.addEventListener('submit', function () {
+          fbq('track', 'Lead', { content_name: 'Feedback' });
+        });
+      }
+
+      // Pricing page view -> ViewContent
+      if (/pricing/.test(location.pathname)) {
+        fbq('track', 'ViewContent', { content_name: 'Pricing' });
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', track);
+    } else {
+      track();
+    }
+  })();
+  </script>
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -897,6 +935,7 @@
           document.querySelector('.form-header').style.display = 'none';
           msgEl.className = 'form-message success';
           msgEl.textContent = "Thanks for reaching out! We'll get back to you within 24 hours.";
+          if (typeof fbq === 'function') fbq('track', 'Contact');
         } else {
           const data = await res.json().catch(() => ({}));
           throw new Error(data.message || 'Submission failed');
