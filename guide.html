@@ -149,13 +149,13 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "I can't finish setup. What's wrong?",
-        "acceptedAnswer": { "@type": "Answer", "text": "You need a profile photo. The last step of the setup wizard won't let you continue until you add one, so have a headshot ready before you start." }
+        "name": "Can I use Subtex on Android?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Subtex is free on both iPhone and Android — download it from the App Store or Google Play." }
       },
       {
         "@type": "Question",
-        "name": "I scanned a code but nothing happened.",
-        "acceptedAnswer": { "@type": "Answer", "text": "You can't scan your own card. Make sure you're scanning the other person's screen, not your own QR code." }
+        "name": "How do I save someone to my phone contacts?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Open their card and tap Contact, or long-press their card in your collection. Either way, it fills in your phone's Add Contact screen. You save people one at a time — there is no bulk export." }
       },
       {
         "@type": "Question",
@@ -220,16 +220,18 @@
       --bg:         #f0ebe0;
     }
 
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    /* offset anchor targets so the sticky sub-nav doesn't cover headings */
-    :target { scroll-margin-top: 128px; }
+    /* overflow-x: clip (not hidden) — clips horizontal overflow WITHOUT
+       turning the page into a scroll container, so position: sticky works */
+    html { scroll-behavior: smooth; overflow-x: clip; }
+    /* offset anchor targets so the floating TOC doesn't cover headings */
+    :target { scroll-margin-top: 150px; }
 
     body {
       font-family: 'Montserrat', system-ui, sans-serif;
       background-color: var(--lionsmane);
       color: var(--body-text);
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+      overflow-x: clip;
     }
 
     /* ── NAV ── */
@@ -311,35 +313,77 @@
     .color-bar { height: 5px; display: flex; }
     .color-bar-seg { flex: 1; }
 
-    /* ── STICKY SUB-NAV / TOC ── */
-    .guide-subnav {
+    /* ── STICKY TABLE-OF-CONTENTS (floating liquid-glass capsule) ── */
+    .guide-toc {
       position: sticky;
-      top: 68px;
+      top: 82px;                 /* floats just below the 68px fixed nav */
       z-index: 90;
-      background: rgba(253,244,231,0.92);
-      backdrop-filter: blur(12px) saturate(160%);
-      -webkit-backdrop-filter: blur(12px) saturate(160%);
-      border-bottom: 1px solid var(--divider);
+      display: flex;
+      justify-content: center;
+      padding: 0 16px;
+      pointer-events: none;      /* only the capsule itself is interactive */
     }
-    /* Single clean row: centered when it fits, scrolls (never clips) when it doesn't */
-    .guide-subnav-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; gap: 6px; align-items: center;
-      justify-content: safe center;
-      padding: 9px 20px;
+    .guide-toc-track {
+      pointer-events: auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      max-width: 100%;
+      padding: 5px;
+      border-radius: 999px;
+      background: rgba(253, 244, 231, 0.62);
+      backdrop-filter: blur(22px) saturate(190%);
+      -webkit-backdrop-filter: blur(22px) saturate(190%);
+      box-shadow:
+        0 10px 34px rgba(2, 68, 102, 0.18),
+        0 2px 6px rgba(2, 68, 102, 0.08),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
       overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
       -ms-overflow-style: none; scrollbar-width: none;
     }
-    .guide-subnav-inner::-webkit-scrollbar { display: none; }
-    .guide-subnav a {
+    .guide-toc-track::-webkit-scrollbar { display: none; }
+    .toc-link {
+      position: relative;
+      z-index: 1;
       flex: 0 0 auto;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--body-text); text-decoration: none;
-      padding: 9px 15px; border-radius: 100px;
-      transition: background 0.2s, color 0.2s;
       white-space: nowrap;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--twilight);
+      opacity: 0.62;
+      text-decoration: none;
+      padding: 10px 17px;
+      border-radius: 999px;
+      transition: opacity 0.25s ease, color 0.25s ease;
     }
-    .guide-subnav a:hover { background: rgba(2,68,102,0.07); color: var(--twilight); }
+    .toc-link:hover { opacity: 1; }
+    .toc-link.active { color: #fff; opacity: 1; }
+    /* the sliding "liquid" pill that sits behind the active link */
+    .toc-indicator {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      height: calc(100% - 10px);
+      width: 0;
+      border-radius: 999px;
+      background: var(--twilight);
+      box-shadow: 0 4px 12px rgba(2, 68, 102, 0.32), inset 0 1px 0 rgba(255,255,255,0.14);
+      opacity: 0;
+      transform: translateX(0);
+      transition: transform 0.42s cubic-bezier(0.34, 1.2, 0.4, 1), width 0.42s cubic-bezier(0.34, 1.2, 0.4, 1), opacity 0.25s ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .toc-indicator { transition: opacity 0.2s ease; }
+      .guide-toc-track { scroll-behavior: auto; }
+    }
 
     /* ── SECTION SHARED ── */
     .section { padding: 84px 40px; }
@@ -499,17 +543,9 @@
       .nav-cta { margin: 0 !important; border-radius: 0 !important; padding: 13px 24px !important; }
       .nav-cta-secondary { margin: 0 !important; border-radius: 0 !important; border: none !important; border-top: 1px solid rgba(195,216,209,0.12) !important; padding: 13px 24px !important; }
 
-      /* Mobile: left-aligned scroll with a fade hint on the right */
-      .guide-subnav { position: relative; }
-      .guide-subnav::after {
-        content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 32px;
-        background: linear-gradient(90deg, rgba(253,244,231,0) 0%, rgba(253,244,231,0.92) 90%);
-        pointer-events: none;
-      }
-      .guide-subnav-inner {
-        justify-content: flex-start;
-        padding: 8px 16px;
-      }
+      /* TOC capsule: allow it to span the width and scroll internally */
+      .guide-toc { top: 78px; padding: 0 12px; }
+      .guide-toc-track { width: 100%; }
 
       .page-hero { padding: 104px 24px 60px; }
       .section { padding: 60px 24px; }
@@ -603,18 +639,19 @@
     <div class="color-bar-seg" style="background:#fdf4e7; border-top:1px solid #e4ddd0;"></div>
   </div>
 
-  <!-- STICKY SUB-NAV -->
-  <div class="guide-subnav">
-    <nav class="guide-subnav-inner" aria-label="On this page">
-      <a href="#quickstart">Quick Start</a>
-      <a href="#account">Account</a>
-      <a href="#build-card">Your Card</a>
-      <a href="#swap">Swap Cards</a>
-      <a href="#collection">Collection</a>
-      <a href="#events">Events</a>
-      <a href="#teams">Teams</a>
-      <a href="#plans">Plans</a>
-      <a href="#troubleshooting">Help</a>
+  <!-- STICKY TABLE OF CONTENTS -->
+  <div class="guide-toc">
+    <nav class="guide-toc-track" id="guide-toc" aria-label="On this page">
+      <span class="toc-indicator" aria-hidden="true"></span>
+      <a href="#quickstart" class="toc-link">Quick Start</a>
+      <a href="#account" class="toc-link">Account</a>
+      <a href="#build-card" class="toc-link">Your Card</a>
+      <a href="#swap" class="toc-link">Swap Cards</a>
+      <a href="#collection" class="toc-link">Collection</a>
+      <a href="#events" class="toc-link">Events</a>
+      <a href="#teams" class="toc-link">Teams</a>
+      <a href="#plans" class="toc-link">Plans</a>
+      <a href="#troubleshooting" class="toc-link">Help</a>
     </nav>
   </div>
 
@@ -681,14 +718,14 @@
     <div class="section-inner narrow">
       <div class="step-badge"><span class="num">1</span><span class="lbl">Create your account</span></div>
       <h2 class="section-title">Getting in takes <em>one tap.</em></h2>
-      <p class="copy" style="margin-top:18px;">Open the app and pick one of three ways in:</p>
+      <p class="copy" style="margin-top:18px;">Open the app and create your login with whichever option you like:</p>
       <ul class="g-list">
         <li><span class="lit">"Sign in with Apple"</span></li>
         <li><span class="lit">"Sign in with Google"</span></li>
         <li><span class="lit">"Continue with Email"</span></li>
       </ul>
       <p class="copy" style="margin-top:22px;">
-        If you choose email, the sheet opens on <span class="lit">"Create Account"</span>. Your password needs at least <strong>8 characters</strong>, one uppercase letter, and one number. Coming back later? Switch the toggle to <span class="lit">"Sign In"</span> — and if a password slips your mind, the <span class="lit">"Forgot password?"</span> link emails you a reset.
+        If you sign up with email, just choose a password — at least <strong>8 characters</strong> with one uppercase letter and one number. Already have an account? Pick <span class="lit">"Sign In"</span> instead, and <span class="lit">"Forgot password?"</span> will email you a reset if you ever need one.
       </p>
     </div>
   </section>
@@ -757,11 +794,7 @@
         </table>
       </div>
 
-      <p class="copy" style="margin-top:24px;">
-        On iOS 18 and later, <strong>Share</strong> sits slightly apart from the others as its own round button on the right — that's your fast path to swapping a card.
-      </p>
-
-      <div class="callout info">
+      <div class="callout info" style="margin-top:24px;">
         <div class="callout-icon">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0112 0v1"/></svg>
         </div>
@@ -798,7 +831,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#024466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v14"/></svg>
           Not in the same room? Share a link
         </h3>
-        <p>Tap the <span class="lit">"Share"</span> button next to the scanner to send a connect link through Messages, Mail, or anything else — perfect for people who aren't standing in front of you. It arrives titled <span class="lit">"Add me on Subtex"</span>, and tapping it opens a confirmation reading <span class="lit">"Connecting adds {name}'s card to your collection and shares your card with them"</span>. Nothing happens until they tap <span class="lit">"Connect"</span>, and links expire after 7 days.</p>
+        <p>Tap the <span class="lit">"Share"</span> button next to the scanner to send a connect link through Messages, Mail, or anywhere else — perfect for people who aren't standing in front of you. They tap the link, confirm, and your cards are swapped. Links stay active for 7 days.</p>
       </div>
     </div>
   </section>
@@ -1007,12 +1040,12 @@
     </div>
     <div class="faq">
       <div class="faq-item">
-        <button class="faq-q">I can't finish setup.</button>
-        <div class="faq-a"><p>You need a profile photo. The last step of the wizard won't let you continue without one — pick a headshot and the <span class="lit">"Continue"</span> button lights up.</p></div>
+        <button class="faq-q">Can I use Subtex on Android?</button>
+        <div class="faq-a"><p>Yes. Subtex is free on both iPhone and Android — download it from the <a href="https://apps.apple.com/us/app/subtex/id6764664936">App Store</a> or <a href="https://play.google.com/store/apps/details?id=subtex.subtexapp">Google Play</a>.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">I scanned but nothing happened.</button>
-        <div class="faq-a"><p>You can't scan your own card. Make sure you're scanning the other person's screen, not your own QR code.</p></div>
+        <button class="faq-q">How do I save someone to my phone contacts?</button>
+        <div class="faq-a"><p>Open their card and tap <span class="lit">"Contact"</span>, or just long-press their card in your collection. Either way, it fills in your phone's Add Contact screen for you. You save people one at a time — there's no bulk export.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">I hit a card limit.</button>
@@ -1158,6 +1191,64 @@
         btn.parentElement.classList.toggle('open');
       });
     });
+
+    // Sticky table-of-contents: scroll-spy + sliding liquid-glass indicator
+    (function() {
+      var track = document.getElementById('guide-toc');
+      if (!track) return;
+      var indicator = track.querySelector('.toc-indicator');
+      var tocLinks = Array.prototype.slice.call(track.querySelectorAll('.toc-link'));
+      var sections = tocLinks.map(function(l) {
+        return document.querySelector(l.getAttribute('href'));
+      });
+      var current = -1;
+
+      function moveIndicator(link) {
+        if (!link) { indicator.style.opacity = '0'; return; }
+        indicator.style.opacity = '1';
+        indicator.style.width = link.offsetWidth + 'px';
+        indicator.style.transform = 'translateX(' + link.offsetLeft + 'px)';
+      }
+
+      function setActive(i, keepInView) {
+        if (i === current) return;
+        current = i;
+        tocLinks.forEach(function(l, idx) { l.classList.toggle('active', idx === i); });
+        var link = tocLinks[i];
+        moveIndicator(link);
+        if (keepInView && link) {
+          // center the active pill within the scrolling capsule (mobile)
+          var target = link.offsetLeft - (track.clientWidth - link.offsetWidth) / 2;
+          track.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+        }
+      }
+
+      function onScroll() {
+        var threshold = 150;   // px below the viewport top (clears nav + capsule)
+        var idx = 0;
+        for (var s = 0; s < sections.length; s++) {
+          if (sections[s] && sections[s].getBoundingClientRect().top <= threshold) idx = s;
+        }
+        setActive(idx, true);
+      }
+
+      tocLinks.forEach(function(l, i) {
+        l.addEventListener('click', function() { setActive(i, true); });
+      });
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', function() {
+        var link = tocLinks[current] || tocLinks[0];
+        moveIndicator(link);
+      });
+      // initial placement (and again once web fonts settle the widths)
+      onScroll();
+      if (current < 0) setActive(0, false);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function() { moveIndicator(tocLinks[current] || tocLinks[0]); });
+      }
+      window.addEventListener('load', function() { moveIndicator(tocLinks[current] || tocLinks[0]); });
+    })();
   })();
   </script>
 </body>
