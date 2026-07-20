@@ -107,7 +107,7 @@
     "name": "How to get started with Subtex",
     "description": "Set up your digital business card and swap contacts with anyone in seconds using Subtex.",
     "totalTime": "PT5M",
-    "tool": [{ "@type": "HowToTool", "name": "iPhone running iOS 18.6 or later" }],
+    "tool": [{ "@type": "HowToTool", "name": "An iPhone (iOS 18.6 or later) or an Android phone" }],
     "step": [
       {
         "@type": "HowToStep",
@@ -185,7 +185,7 @@
       {
         "@type": "Question",
         "name": "What do I need to run Subtex?",
-        "acceptedAnswer": { "@type": "Answer", "text": "An iPhone running iOS 18.6 or later. Subtex is iPhone-only and portrait-only — there is no iPad, Android, or web version." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Subtex is free on both iPhone and Android. On iPhone you'll need iOS 18.6 or later. Download it from the App Store or Google Play." }
       }
     ]
   }
@@ -277,7 +277,7 @@
     .page-title em { font-style: normal; color: var(--marigold); }
     .page-intro { font-size: 16px; line-height: 1.75; color: var(--celeste); opacity: 0.88; max-width: 580px; margin: 0 auto 34px; }
 
-    .hero-actions-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 30px; }
+    .hero-actions-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 10px;
       background-color: var(--marigold); color: var(--twilight);
@@ -287,6 +287,17 @@
       transition: background-color 0.2s, transform 0.15s;
     }
     .btn-primary:hover { background-color: #f0a050; transform: translateY(-1px); }
+    .btn-store-outline {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.06); color: var(--celeste);
+      text-decoration: none; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 16px 30px; border-radius: 3px;
+      border: 1.5px solid rgba(195,216,209,0.35);
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+    .btn-store-outline:hover { border-color: rgba(195,216,209,0.65); background: rgba(255,255,255,0.12); transform: translateY(-1px); }
+    .btn-store-outline svg { flex-shrink: 0; opacity: 0.9; }
     .btn-ghost-light { display: inline-flex; align-items: center; gap: 8px; color: var(--celeste); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
     .btn-ghost-light svg { transition: transform 0.2s; }
     .btn-ghost-light:hover { color: #fff; }
@@ -310,13 +321,11 @@
       -webkit-backdrop-filter: blur(12px) saturate(160%);
       border-bottom: 1px solid var(--divider);
     }
+    /* Desktop: wrap + center so every link is visible (nothing hidden) */
     .guide-subnav-inner {
       max-width: 1100px; margin: 0 auto;
-      display: flex; gap: 4px; align-items: center;
-      padding: 10px 20px;
-      overflow-x: auto;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+      display: flex; flex-wrap: wrap; gap: 4px; align-items: center; justify-content: center;
+      padding: 9px 20px;
     }
     .guide-subnav-inner::-webkit-scrollbar { display: none; }
     .guide-subnav a {
@@ -375,6 +384,8 @@
     .callout-icon { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
     .callout-body { font-size: 14px; line-height: 1.7; }
     .callout-body .callout-title { display: block; font-weight: 800; color: var(--twilight); margin-bottom: 4px; letter-spacing: -0.01em; }
+    .callout-body a { color: var(--twilight); font-weight: 700; text-decoration: underline; text-decoration-color: var(--marigold); text-decoration-thickness: 2px; text-underline-offset: 2px; }
+    .callout-body a:hover { color: var(--marigold); }
     .callout.tip { background: rgba(123,152,116,0.10); border: 1px solid rgba(123,152,116,0.25); }
     .callout.tip .callout-icon { background: var(--herb); }
     .callout.warn { background: rgba(245,171,98,0.12); border: 1px solid rgba(245,171,98,0.35); }
@@ -477,6 +488,19 @@
       .nav-cta { margin: 0 !important; border-radius: 0 !important; padding: 13px 24px !important; }
       .nav-cta-secondary { margin: 0 !important; border-radius: 0 !important; border: none !important; border-top: 1px solid rgba(195,216,209,0.12) !important; padding: 13px 24px !important; }
 
+      /* Mobile: single-row horizontal scroll with a fade hint on the right */
+      .guide-subnav { position: relative; }
+      .guide-subnav::after {
+        content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 36px;
+        background: linear-gradient(90deg, rgba(253,244,231,0) 0%, rgba(253,244,231,0.92) 90%);
+        pointer-events: none;
+      }
+      .guide-subnav-inner {
+        flex-wrap: nowrap; justify-content: flex-start;
+        overflow-x: auto; padding: 8px 16px;
+        -ms-overflow-style: none; scrollbar-width: none;
+      }
+
       .page-hero { padding: 104px 24px 60px; }
       .section { padding: 60px 24px; }
       .section.tight { padding: 48px 24px; }
@@ -492,8 +516,9 @@
 
     @media (max-width: 560px) {
       .help-grid { grid-template-columns: 1fr; }
-      .hero-actions-row { flex-direction: column; }
-      .hero-actions-row .btn-primary { width: 100%; justify-content: center; }
+      .hero-actions-row { flex-direction: column; width: 100%; }
+      .hero-actions-row .btn-primary,
+      .hero-actions-row .btn-store-outline { width: 100%; justify-content: center; box-sizing: border-box; }
     }
   </style>
 </head>
@@ -533,11 +558,15 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.19 1.28-2.17 3.82.03 3.02 2.65 4.03 2.68 4.04l-.06.21zm-5.25-17.43c.65-.79 1.72-1.39 2.61-1.43.09 1.1-.32 2.19-.93 2.98-.61.8-1.63 1.43-2.6 1.36-.1-1.07.35-2.16.92-2.91z"/></svg>
           Download for iPhone
         </a>
-        <a href="#quickstart" class="btn-ghost-light">
-          Jump to quick start
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        <a href="https://play.google.com/store/apps/details?id=subtex.subtexapp" class="btn-store-outline" aria-label="Download for Android on Google Play">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-2.86-1.21-6.08-1.21-8.94 0L5.65 5.67c-.19-.29-.57-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25S8.25 13.31 8.25 14 7.69 15.25 7 15.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/></svg>
+          Download for Android
         </a>
       </div>
+      <a href="#quickstart" class="btn-ghost-light" style="margin-bottom:30px;">
+        Jump to quick start
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      </a>
       <div class="hero-meta">
         <span class="hero-meta-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
@@ -549,7 +578,7 @@
         </span>
         <span class="hero-meta-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          iPhone · iOS 18.6+
+          Free on iPhone &amp; Android
         </span>
       </div>
     </div>
@@ -596,7 +625,7 @@
         </div>
         <div class="callout-body">
           <span class="callout-title">What you'll need</span>
-          An <strong>iPhone running iOS 18.6 or later</strong>. Subtex is iPhone-only and portrait-only — there's no iPad, Android, or web version today. If you're reading this on another device, grab your iPhone before you start.
+          Subtex is <strong>free on both iPhone and Android</strong>. On iPhone you'll need <strong>iOS 18.6 or later</strong>. Grab it from the <a href="https://apps.apple.com/us/app/subtex/id6764664936">App Store</a> or <a href="https://play.google.com/store/apps/details?id=subtex.subtexapp">Google Play</a> and you're ready to build your card.
         </div>
       </div>
     </div>
@@ -1063,16 +1092,20 @@
       <div class="cta-eyebrow">Every connection, remembered</div>
       <h2 class="cta-title">Ready to make your <em>first</em> connection?</h2>
       <p class="cta-sub">Download Subtex, build your card in minutes, and never lose another contact. Your next great conversation is one scan away.</p>
-      <div class="hero-actions-row" style="margin-bottom:0;">
+      <div class="hero-actions-row" style="margin-bottom:22px;">
         <a href="https://apps.apple.com/us/app/subtex/id6764664936" class="btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.19 1.28-2.17 3.82.03 3.02 2.65 4.03 2.68 4.04l-.06.21zm-5.25-17.43c.65-.79 1.72-1.39 2.61-1.43.09 1.1-.32 2.19-.93 2.98-.61.8-1.63 1.43-2.6 1.36-.1-1.07.35-2.16.92-2.91z"/></svg>
           Download for iPhone
         </a>
-        <a href="pricing.html" class="btn-ghost-light">
-          See plans &amp; pricing
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <a href="https://play.google.com/store/apps/details?id=subtex.subtexapp" class="btn-store-outline" aria-label="Download for Android on Google Play">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-2.86-1.21-6.08-1.21-8.94 0L5.65 5.67c-.19-.29-.57-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25S8.25 13.31 8.25 14 7.69 15.25 7 15.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/></svg>
+          Download for Android
         </a>
       </div>
+      <a href="pricing.html" class="btn-ghost-light">
+        See plans &amp; pricing
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
 
