@@ -321,18 +321,21 @@
       -webkit-backdrop-filter: blur(12px) saturate(160%);
       border-bottom: 1px solid var(--divider);
     }
-    /* Desktop: wrap + center so every link is visible (nothing hidden) */
+    /* Single clean row: centered when it fits, scrolls (never clips) when it doesn't */
     .guide-subnav-inner {
       max-width: 1100px; margin: 0 auto;
-      display: flex; flex-wrap: wrap; gap: 4px; align-items: center; justify-content: center;
+      display: flex; gap: 6px; align-items: center;
+      justify-content: safe center;
       padding: 9px 20px;
+      overflow-x: auto;
+      -ms-overflow-style: none; scrollbar-width: none;
     }
     .guide-subnav-inner::-webkit-scrollbar { display: none; }
     .guide-subnav a {
-      flex-shrink: 0;
+      flex: 0 0 auto;
       font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
       color: var(--body-text); text-decoration: none;
-      padding: 8px 14px; border-radius: 100px;
+      padding: 9px 15px; border-radius: 100px;
       transition: background 0.2s, color 0.2s;
       white-space: nowrap;
     }
@@ -431,12 +434,20 @@
     .faq-item.open .faq-a { max-height: 320px; }
 
     /* ── HELP CARDS ── */
-    .help-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
-    .help-card { display: block; background: #fff; border: 1px solid var(--divider); border-radius: 12px; padding: 26px 22px; text-decoration: none; transition: transform 0.15s, box-shadow 0.2s, border-color 0.2s; }
-    .help-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(2,68,102,0.10); border-color: var(--celeste); }
-    .help-card .hc-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--bg); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-    .help-card .hc-title { font-size: 15px; font-weight: 800; color: var(--twilight); margin-bottom: 6px; }
-    .help-card .hc-desc { font-size: 12.5px; line-height: 1.6; color: var(--body-text); }
+    .help-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 44px; }
+    .help-card {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      background: #fff; border: 1px solid var(--divider); border-radius: 16px;
+      padding: 34px 24px 26px; text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .help-card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(2,68,102,0.12); border-color: var(--celeste); }
+    .help-card .hc-icon { width: 54px; height: 54px; border-radius: 50%; background: var(--twilight); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .help-card .hc-title { font-size: 16px; font-weight: 800; color: var(--twilight); margin-bottom: 8px; letter-spacing: -0.01em; }
+    .help-card .hc-desc { font-size: 13px; line-height: 1.6; color: var(--body-text); margin-bottom: 18px; }
+    .help-card .hc-link { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--marigold); }
+    .help-card .hc-link svg { transition: transform 0.2s; }
+    .help-card:hover .hc-link svg { transform: translateX(3px); }
 
     /* ── CTA BAND ── */
     .cta-band { background: var(--twilight); padding: 96px 40px; text-align: center; position: relative; overflow: hidden; }
@@ -488,17 +499,16 @@
       .nav-cta { margin: 0 !important; border-radius: 0 !important; padding: 13px 24px !important; }
       .nav-cta-secondary { margin: 0 !important; border-radius: 0 !important; border: none !important; border-top: 1px solid rgba(195,216,209,0.12) !important; padding: 13px 24px !important; }
 
-      /* Mobile: single-row horizontal scroll with a fade hint on the right */
+      /* Mobile: left-aligned scroll with a fade hint on the right */
       .guide-subnav { position: relative; }
       .guide-subnav::after {
-        content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 36px;
+        content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 32px;
         background: linear-gradient(90deg, rgba(253,244,231,0) 0%, rgba(253,244,231,0.92) 90%);
         pointer-events: none;
       }
       .guide-subnav-inner {
-        flex-wrap: nowrap; justify-content: flex-start;
-        overflow-x: auto; padding: 8px 16px;
-        -ms-overflow-style: none; scrollbar-width: none;
+        justify-content: flex-start;
+        padding: 8px 16px;
       }
 
       .page-hero { padding: 104px 24px 60px; }
@@ -599,15 +609,12 @@
       <a href="#quickstart">Quick Start</a>
       <a href="#account">Account</a>
       <a href="#build-card">Your Card</a>
-      <a href="#navigate">The Tabs</a>
       <a href="#swap">Swap Cards</a>
-      <a href="#collection">Your Collection</a>
-      <a href="#personal-cards">Offline Contacts</a>
+      <a href="#collection">Collection</a>
       <a href="#events">Events</a>
       <a href="#teams">Teams</a>
       <a href="#plans">Plans</a>
-      <a href="#account-mgmt">Your Account</a>
-      <a href="#troubleshooting">Troubleshooting</a>
+      <a href="#troubleshooting">Help</a>
     </nav>
   </div>
 
@@ -666,15 +673,6 @@
           <div class="qs-accent"></div>
         </div>
       </div>
-      <div class="callout tip">
-        <div class="callout-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0012 2z"/></svg>
-        </div>
-        <div class="callout-body">
-          <span class="callout-title">No tapping phones together</span>
-          There's no NFC or tap-to-share — phones never need to touch. Sharing is by QR scan (and, soon, by link). Before your first exchange, though, you'll want a card to share. Let's build one.
-        </div>
-      </div>
     </div>
   </section>
 
@@ -690,17 +688,8 @@
         <li><span class="lit">"Continue with Email"</span></li>
       </ul>
       <p class="copy" style="margin-top:22px;">
-        If you choose email, the sheet opens on <span class="lit">"Create Account"</span>. Your password needs at least <strong>8 characters</strong>, at least <strong>1 uppercase letter</strong>, and at least <strong>1 number</strong>. Coming back later? Switch the toggle to <span class="lit">"Sign In"</span> — and if a password slips your mind, the <span class="lit">"Forgot password?"</span> link emails you a reset.
+        If you choose email, the sheet opens on <span class="lit">"Create Account"</span>. Your password needs at least <strong>8 characters</strong>, one uppercase letter, and one number. Coming back later? Switch the toggle to <span class="lit">"Sign In"</span> — and if a password slips your mind, the <span class="lit">"Forgot password?"</span> link emails you a reset.
       </p>
-      <div class="callout tip">
-        <div class="callout-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <div class="callout-body">
-          <span class="callout-title">Good to know</span>
-          There's no phone or email verification at sign-up — you're straight in. Verification only comes up later if you change your email address.
-        </div>
-      </div>
     </div>
   </section>
 
@@ -778,7 +767,7 @@
         </div>
         <div class="callout-body">
           <span class="callout-title">Where your settings live</span>
-          Not in a tab. Tap your <strong>profile picture in the top-right of Home</strong> to reach Edit Profile, your subscription, app icons, and support.
+          Not in a tab. Tap your <strong>photo in the top-right of Home</strong> to open your card and reach Edit Profile, your subscription, app icons, and support.
         </div>
       </div>
     </div>
@@ -806,23 +795,10 @@
 
       <div class="subcard">
         <h3>
-          Sharing a link instead
-          <span class="pill-soon">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            Coming soon
-          </span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#024466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v14"/></svg>
+          Not in the same room? Share a link
         </h3>
-        <p>A <span class="lit">"Share"</span> button next to the scanner will let you send a connect link through Messages, Mail, or anything else — perfect for people who aren't standing in front of you. It arrives titled <span class="lit">"Add me on Subtex"</span>. Tapping it opens a confirmation screen reading <span class="lit">"Connecting adds {name}'s card to your collection and shares your card with them"</span>, and nothing happens until they tap <span class="lit">"Connect"</span>. Links expire after 7 days.</p>
-      </div>
-
-      <div class="callout tip">
-        <div class="callout-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <div class="callout-body">
-          <span class="callout-title">Remember</span>
-          You can't scan your own card. If a scan doesn't register, make sure you're pointed at the other person's screen.
-        </div>
+        <p>Tap the <span class="lit">"Share"</span> button next to the scanner to send a connect link through Messages, Mail, or anything else — perfect for people who aren't standing in front of you. It arrives titled <span class="lit">"Add me on Subtex"</span>, and tapping it opens a confirmation reading <span class="lit">"Connecting adds {name}'s card to your collection and shares your card with them"</span>. Nothing happens until they tap <span class="lit">"Connect"</span>, and links expire after 7 days.</p>
       </div>
     </div>
   </section>
@@ -838,16 +814,16 @@
       <ul class="g-list">
         <li><strong>Search</strong> matches names, titles, and tags — look for the <span class="lit">"Search cards, tags..."</span> field.</li>
         <li><strong>Filter</strong> by <span class="lit">"All Cards"</span>, <span class="lit">"Recently Added"</span>, <span class="lit">"Sort A-Z"</span>, or <span class="lit">"Sort Z-A"</span>.</li>
-        <li><strong>Tap any card to flip it.</strong> The back holds their LinkedIn, email, and phone buttons, when you first connected, and which events you've shared.</li>
-        <li><strong>Save someone to your iPhone contacts</strong> by flipping the card and tapping <span class="lit">"Contact"</span> — that hands off to Apple's normal Add Contact screen with everything prefilled.</li>
+        <li><strong>Tap any card to flip it.</strong> The back holds their LinkedIn, email, and phone, plus when you first connected and which events you've shared.</li>
+        <li><strong>Save someone to your phone contacts</strong> by flipping the card and tapping <span class="lit">"Contact"</span> — it opens your phone's Add Contact screen with everything prefilled.</li>
       </ul>
-      <div class="callout info">
+      <div class="callout tip">
         <div class="callout-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4M12 16h.01M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
         </div>
         <div class="callout-body">
-          <span class="callout-title">One at a time, by design</span>
-          There's no bulk CSV or vCard download — contacts move to your phone individually via the <span class="lit">"Contact"</span> button.
+          <span class="callout-title">Shortcut: press and hold</span>
+          You don't even have to open a card to save it. <strong>Long-press any card</strong> in your collection and you'll get the option to add them straight to your phone contacts.
         </div>
       </div>
 
@@ -909,7 +885,16 @@
       <p class="copy" style="margin-top:18px;">
         <strong>To join an event:</strong> go to <span class="lit">Events → + → "Join Event"</span>, then enter the code from your organizer. Some events also ask for a password.
       </p>
-      <p class="copy" style="margin-top:16px;">
+      <div class="callout tip">
+        <div class="callout-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </div>
+        <div class="callout-body">
+          <span class="callout-title">Check your inbox</span>
+          When you're added to an event, you'll also receive an <strong>email invitation</strong> — a handy backup if you ever misplace the join code.
+        </div>
+      </div>
+      <p class="copy" style="margin-top:20px;">
         Inside an event you can tap <span class="lit">"Check In to Event"</span> (it flips to <span class="lit">"Checked In"</span>), read the <span class="lit">"Event Brief"</span> if the organizer wrote one, browse the <span class="lit">"Attendees"</span> list, and open the event playlist.
       </p>
       <div class="callout info">
@@ -990,9 +975,9 @@
   <section class="section tight" id="account-mgmt" style="background:var(--bg);">
     <div class="section-inner narrow">
       <div class="step-badge"><span class="num">10</span><span class="lbl">Managing your account</span></div>
-      <h2 class="section-title">Everything lives behind your <em>avatar.</em></h2>
+      <h2 class="section-title">Everything lives behind your <em>card.</em></h2>
       <p class="copy" style="margin-top:18px;">
-        Tap your profile picture on <strong>Home</strong> to manage your account. From there you can reach:
+        Open your card on <strong>Home</strong> to manage your account. From there you can reach:
       </p>
       <ul class="g-list">
         <li><span class="lit">"Edit Profile"</span> — name, title, company, location, email, phone, LinkedIn, and a bio</li>
@@ -1056,31 +1041,43 @@
       <div class="help-grid">
         <a href="contact.html" class="help-card">
           <div class="hc-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#024466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5ab62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
           </div>
           <div class="hc-title">Support</div>
-          <div class="hc-desc">Questions or trouble? Reach the team on our contact page.</div>
+          <div class="hc-desc">Questions or trouble? Reach the team.</div>
+          <span class="hc-link">Contact us
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
         </a>
         <a href="feedback.html" class="help-card">
           <div class="hc-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#024466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 00-6 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5ab62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
           </div>
           <div class="hc-title">Feedback</div>
-          <div class="hc-desc">An idea or a request? We read every note.</div>
+          <div class="hc-desc">An idea or request? We read every note.</div>
+          <span class="hc-link">Share it
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
         </a>
         <a href="privacy.html" class="help-card">
           <div class="hc-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#024466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5ab62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>
           </div>
           <div class="hc-title">Privacy</div>
           <div class="hc-desc">How your data is handled, in plain language.</div>
+          <span class="hc-link">Read policy
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
         </a>
         <a href="about.html" class="help-card">
           <div class="hc-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#024466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5ab62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
           </div>
           <div class="hc-title">About Subtex</div>
-          <div class="hc-desc">The story and the people behind the app.</div>
+          <div class="hc-desc">The story and people behind the app.</div>
+          <span class="hc-link">Our story
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
         </a>
       </div>
     </div>
